@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from './Logo';
 
 function App() {
+  console.log("A");
   return (
     <div className="App">
       <header className="App-header">
