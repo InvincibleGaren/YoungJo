@@ -1,0 +1,19 @@
+header .headerTop {
+    display: flex;
+    justify-content: space-between;
+}
+header .headerTop .headerLeft,
+.headerRight {
+    display: flex;
+    align-items: center;
+    margin: 0px 50px;
+}
+
+.headerRight ul {
+    list-style: none;
+    display: flex;
+}
+
+.headerRight ul li {
+    margin: 0px 10px;
+}

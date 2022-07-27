@@ -1,0 +1,13 @@
+/*
+font-size
+rem단위 -> 루트기준 배수 -> 권장
+em단위 -> 요소별 크기지정
+구글폰트 권장
+svn파일 -> 용량 적어서 좋음
+jpeg, png -> 용량 큼
+*/
+
+@import url(./common/common.css);
+@import url(./common/color.css);
+@import url(./layout/header.css);
+@import url(./layout/footer.css);
