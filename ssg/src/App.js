@@ -1,24 +1,24 @@
-import React from 'react';
-import Logo from './Logo';
+import React, { useState } from "react";
 
 function App() {
-  console.log("A");
+
+  const [qty, setQty] = useState(0);
+
+  const handleAdd = () => {
+    setQty(qty+1)
+    // console.log(qty)
+  }
+
+  const handleDec = () => {
+    setQty(qty-1)
+    // console.log(qty)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>QTY : {qty}</p>
+      <button onClick={handleAdd}>+</button>
+      <button onClick={handleDec}>-</button>
     </div>
   );
 }
