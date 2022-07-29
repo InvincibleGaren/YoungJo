@@ -1,12 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import HomeAnchor from '../components/homeAnchor';
+import ThanksgivingAnchor from '../components/thanksgivingAnchor';
+import RankAnchor from '../components/rankAnchor';
+import LuxuryHallAnchor from '../components/luxuryHallAnchor';
+import SpecialPriceAnchor from '../components/specialPriceAnchor';
+import SsgTvAnchor from '../components/ssgTvAnchor';
+import BrandAnchor from '../components/brandAnchor';
 
 function Header() {
     return ( 
         <header>
-           Header logo
-           <Link to = "/">Home</Link>
-           <Link to = "/product">Product</Link>
+            <div>
+            </div>
+            <nav>
+               <HomeAnchor />
+               <ThanksgivingAnchor />
+               <SpecialPriceAnchor />
+               <RankAnchor />
+               <SsgTvAnchor />
+               <LuxuryHallAnchor />
+               <BrandAnchor />
+            </nav>
         </header>
      );
 }

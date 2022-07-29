@@ -1,14 +1,18 @@
 import React from 'react';
 import Slider from '../components/widgets/Slider';
-import Footer from '../layouts/Footer';
-import Header from '../layouts/Header';
+import Header from '../layouts/header';
+import HomeMain from '../layouts/homeMain';
+import Footer from '../layouts/footer';
+
 
 
 function Home() {
     return ( 
-        <>
-            <Slider />
-        </>
+        <div>
+            <Header />
+            <homeMain />
+            <Footer />
+        </div>
      );
 }
 
