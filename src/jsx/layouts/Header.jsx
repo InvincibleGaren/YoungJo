@@ -7,12 +7,21 @@ import LuxuryHallAnchor from '../components/luxuryHallAnchor';
 import SpecialPriceAnchor from '../components/specialPriceAnchor';
 import SsgTvAnchor from '../components/ssgTvAnchor';
 import BrandAnchor from '../components/brandAnchor';
+import LogoText from "../components/logoText";
 
 function Header() {
     return ( 
         <header>
             <div>
-            </div>
+                <div>
+                    <LogoText />
+                    <mallListButton />
+                </div>
+                <div>
+                    <searchInput />
+                    <shoppingBasketButton />
+                </div>
+            </div> 
             <nav>
                <HomeAnchor />
                <ThanksgivingAnchor />
