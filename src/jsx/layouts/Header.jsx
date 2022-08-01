@@ -8,18 +8,20 @@ import SpecialPriceAnchor from '../components/specialPriceAnchor';
 import SsgTvAnchor from '../components/ssgTvAnchor';
 import BrandAnchor from '../components/brandAnchor';
 import LogoText from "../components/logoText";
-
+import MallListButton from '../components/mallListButton';
+import SearchInput from '../components/searchInput';
+import ShoppingBasketButton from '../components/shoppingBasketButton';
 function Header() {
     return ( 
         <header>
             <div>
                 <div>
                     <LogoText />
-                    <mallListButton />
+                    <MallListButton />
                 </div>
                 <div>
-                    <searchInput />
-                    <shoppingBasketButton />
+                    <SearchInput />
+                    <ShoppingBasketButton />
                 </div>
             </div> 
             <nav>

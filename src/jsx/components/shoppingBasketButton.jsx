@@ -6,7 +6,7 @@ function ShoppingBasketButton() {
 			<i class="icon icon_cart">
 				<span id="mHeaderCartNm" class="blind">장바구니</span>
 			</i>
-			<span class="cmnoti_cartshare" id="cmnoti_cartshare" style="display: none;"><span class="blind">함께 장보기</span></span> <span class="cmnoti_push" id="cartCnt_header"><span class="blind" id="cartCntSpan">담은 상품 수</span></span>
+			<span class="cmnoti_cartshare" id="cmnoti_cartshare"><span class="blind">함께 장보기</span></span> <span class="cmnoti_push" id="cartCnt_header"><span class="blind" id="cartCntSpan">담은 상품 수</span></span>
 		</a>
      );
 }
