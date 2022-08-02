@@ -4,6 +4,7 @@ import ShoppingBasketButton from '../components/ShoppingBasketButton';
 import Logo from '../components/ui/Logo';
 import Nav from '../components/ui/Nav';
 import Search from '../components/Search';
+import Slider from '../components/widgets/Slider';
 
 function Header() {
     return ( 
@@ -12,6 +13,8 @@ function Header() {
                 <Logo />
                 <Search />
             </div>
+            <Slider />
+            <Nav />
         </header>
      );
 }
