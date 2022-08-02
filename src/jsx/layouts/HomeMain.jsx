@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from "../components/widgets/slider"
+import Slider from "../components/widgets/Slider"
 
 function HomeMain() {
     return ( 
