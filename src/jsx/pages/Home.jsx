@@ -1,17 +1,14 @@
 import React from 'react';
-import Slider from '../components/widgets/slider';
-import Header from '../layouts/header';
-import HomeMain from '../layouts/homeMain';
-import Footer from '../layouts/footer';
+import HomeMain from '../layouts/HomeMain';
+
 
 
 
 function Home() {
     return ( 
         <div>
-            <Header />
+            
             <HomeMain />
-            <Footer />
         </div>
      );
 }

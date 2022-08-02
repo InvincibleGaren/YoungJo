@@ -1,38 +1,17 @@
 import React from 'react';
+import SearchInput from '../components/SearchInput';
+import ShoppingBasketButton from '../components/ShoppingBasketButton';
+import Logo from '../components/ui/Logo';
+import Nav from '../components/ui/Nav';
+import Search from '../components/Search';
 
-import HomeAnchor from '../components/homeAnchor';
-import ThanksgivingAnchor from '../components/thanksgivingAnchor';
-import RankAnchor from '../components/rankAnchor';
-import LuxuryHallAnchor from '../components/luxuryHallAnchor';
-import SpecialPriceAnchor from '../components/specialPriceAnchor';
-import SsgTvAnchor from '../components/ssgTvAnchor';
-import BrandAnchor from '../components/brandAnchor';
-import LogoText from "../components/logoText";
-import MallListButton from '../components/mallListButton';
-import SearchInput from '../components/searchInput';
-import ShoppingBasketButton from '../components/shoppingBasketButton';
 function Header() {
     return ( 
-        <header>
-            <div>
-                <div>
-                    <LogoText />
-                    <MallListButton />
-                </div>
-                <div>
-                    <SearchInput />
-                    <ShoppingBasketButton />
-                </div>
-            </div> 
-            <nav>
-               <HomeAnchor />
-               <ThanksgivingAnchor />
-               <SpecialPriceAnchor />
-               <RankAnchor />
-               <SsgTvAnchor />
-               <LuxuryHallAnchor />
-               <BrandAnchor />
-            </nav>
+        <header className='container-fluid'>
+            <div className='header-top'>
+                <Logo />
+                <Search />
+            </div>
         </header>
      );
 }
