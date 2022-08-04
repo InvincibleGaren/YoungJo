@@ -1,11 +1,12 @@
 .hNav {
     display : flex;
     justify-content: space-around;
-    height: 45px;
+    height: 60px;
     align-items: center;
-    /* position: sticky;
+    background-color: white;
+    position: sticky;
     top : 0px;
-    z-index: 200; */
+
 }
 
 .hNav a {

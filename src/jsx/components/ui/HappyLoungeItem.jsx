@@ -41,6 +41,19 @@ function HappyLoungeItem() {
                     <div className='plus'>+</div>    
                 </Link>              
             </div>
+            <div className='HappyLoungeItemText'>
+                <Link to="/">
+                    {
+                        // HappyLoungeItem && HappyLoungeItem.map((item)=>(             
+                        //     item.id > 1 ?  
+                        //         <span></span>
+                        //     :
+                        //     ""
+                        // ))
+                    }
+                </Link>
+                
+            </div>
         </div>
      );
 }

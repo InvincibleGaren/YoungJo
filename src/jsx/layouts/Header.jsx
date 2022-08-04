@@ -14,7 +14,6 @@ function Header() {
                 <Search />
             </div>
             <Slider />
-            <Nav />
         </header>
      );
 }

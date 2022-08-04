@@ -8,16 +8,21 @@ import Img3 from '../../../img/slider3.jfif'
 import Img4 from '../../../img/slider4.jfif'
 
 import "../../../css/components/HappyLounge.css"
+import TitleUi from './TitleUi';
 
 function HappyLounge() {
     return ( 
         <div className='HappyLounge'>
-            <h3>Happy Lounge</h3>
-            <div>
-                <span>당신의 쇼핑이 특별해지는, 매일 오전 9시</span>
-                <Link to="/">전체보기&gt;</Link>
-            </div>
-            <div>
+            <TitleUi 
+                title="Happy Lounge"
+                spanTxt="당신의 쇼핑이 특별해지는, 매일 오전 9시"
+                url="/"
+            />
+            <div className='HappyLoungeItemList'>
+                <HappyLoungeItem />
+                <HappyLoungeItem />
+                <HappyLoungeItem />
+                <HappyLoungeItem />
                 <HappyLoungeItem />
             </div>
         </div>
