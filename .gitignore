@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#jy for refrence
+/src/jsx/pages/LogIn_T.jsx
+/src/jsx/pages/MyState_T.jsx
+/src/jsx/pages/Review_T.jsx

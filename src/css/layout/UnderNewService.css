@@ -1,0 +1,31 @@
+/* 이거 아님 -> css는 import안 쓰고 index.html에 <link rel="stylesheet" href="./assets/css/footer.css"> 쓰면 됨. 
+jsx랑 css연결은 태그들의 같은 클래스명으로 찾아서 적용 */
+/* app.js에다 호출해야한다는데? 소스라서? + mystyle.css에도 url 추가 */
+
+.UNS {
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+/* list랑 img에 클래스네임 안 줘도 됨. 
+걍 ul에 클래스네임 주면 
+그 안에 li랑 img 한 종류니까 
+걍 li랑 img라고만 적어도 찾아들어감 */
+
+.UNS li{
+    flex: 1 120px;
+    list-style: none !important;  /*글머리 기호 없음으로 설정*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+} 
+
+.UNS p {
+    text-align: center;
+}
+
+.UNS img {
+    width: 120px;
+}

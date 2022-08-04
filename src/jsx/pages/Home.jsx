@@ -3,6 +3,7 @@ import HomeMain from '../layouts/HomeMain';
 
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
+import LogIn from './LogIn_T';
 
 
 
@@ -11,6 +12,7 @@ function Home() {
         <div>
             <Header />
             <HomeMain />
+            <LogIn/>
             <Footer />
         </div>    
      );
