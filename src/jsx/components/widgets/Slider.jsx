@@ -21,6 +21,24 @@ import 'swiper/css/autoplay';
 import '../../../css/components/Slider.css';
 
 function Slider() {
+
+    const [slideData, setSlideData] = useState([])
+    const url = "http://10.10.10.127:9000/api/slide/img"
+    useEffect(() => {
+        axios.get(url).then(Response => {
+            setSlideData(Response.data)
+        })
+    },[])
+
+    // const [slideData, setSlideData] = useState([])
+    // const url = "http://10.10.10.127:9000/api/ctg/main-detail"
+    // useEffect(() => {
+    //     axios.get(url).then(Response => {
+    //         console.log(Response);
+    //         setSlideData(Response.data)
+    //     })
+    // },[])
+
     return ( 
         <Swiper
             modules={[Autoplay]}
@@ -30,13 +48,13 @@ function Slider() {
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
         >
-            <SwiperSlide><Link to="/"><img src={SliderImg1} /></Link></SwiperSlide>
-            <SwiperSlide><img src={SliderImg2} /></SwiperSlide>
-            <SwiperSlide><img src={SliderImg3} /></SwiperSlide>
-            <SwiperSlide><img src={SliderImg4} /></SwiperSlide>
-            <SwiperSlide><img src={SliderImg5} /></SwiperSlide>
+            {
+                slideData && slideData.map(item=>(
+                    <SwiperSlide key={item.id}><img src={item.url} /></SwiperSlide>
+                ))
+            }
         </Swiper>
-     );
+    );
 }
 
 export default Slider;

@@ -1,0 +1,43 @@
+.HappyLoungeItem{
+    display: flex;
+    margin: 15px 0px 0px 15px;
+}
+.HappyLoungeItem .plus{
+    padding-top: 30%;
+    font-size: 30px;
+    text-align: center;
+}
+.HappyLoungeItemLeft a{
+    width: 579px;
+    height: 579px;
+    display: block;
+}
+
+.HappyLoungeItemLeft img{
+    width: 100%;
+    height: 100%;
+}
+
+.HappyLoungeItemRight a{
+    width: 133px;
+    height: 133px;
+    display: block;
+    background-color: rgba(0,0,0,0.3);
+    text-decoration: none;
+    color : black;
+    margin: 15px;
+}
+
+.HappyLoungeItemRight a:first-child{
+    margin-top: 0;
+}
+
+.HappyLoungeItemRight a:last-child{
+    margin-bottom: 0;
+}
+
+
+.HappyLoungeItemRight a img{
+    width: 100%;
+    height: 100%;
+}
