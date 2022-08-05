@@ -1,0 +1,10 @@
+.Cart{
+    display: block;
+    width: 34px;
+    height: 34px;
+}
+
+.Cart img{
+    width: 100%;
+    height: 100%;
+}

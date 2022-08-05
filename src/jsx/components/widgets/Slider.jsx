@@ -28,6 +28,9 @@ function Slider() {
         axios.get(url).then(Response => {
             setSlideData(Response.data)
         })
+        .catch(error => {
+            alert(error);
+          })
     },[])
 
     // const [slideData, setSlideData] = useState([])
@@ -45,8 +48,6 @@ function Slider() {
             autoplay={true}
             spaceBetween={0}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
         >
             {
                 slideData && slideData.map(item=>(

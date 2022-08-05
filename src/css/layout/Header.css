@@ -20,34 +20,7 @@ header .logo h1 {
     display: flex;
 }
 
-header .search{
-    display: flex;
-    margin-right: 20px;
-    align-items: center;
-    width: 16%;
-    height: 64%;
-}
 
-header .search a{
-    width: 24px;
-    height: 24px;
-}
-
-header .search img{
-    width: 100%;
-    height: 100%;
-}
-
-header .search input{
-    background-color: #f5f5f5;
-    border: none;
-    height: 100%;
-    width: 100%;
-}
-
-header .search .search-left{
-    display: flex;
-}
 
 header .search .search-icon{
     position: relative;

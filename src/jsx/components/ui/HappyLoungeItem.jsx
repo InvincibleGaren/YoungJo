@@ -1,58 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { HashRouter, Link } from 'react-router-dom';
 import axios from 'axios';
+import Hart from "../../components/ui/Hart";
+import Cart from "../../components/ui/Cart";
 
 import "../../../css/components/HappyLoungeItem.css"
+import PickBox from './PickBox';
 
-function HappyLoungeItem() {
+function HappyLoungeItem({product}) {
 
-    const [HappyLoungeItem, setHappyLoungeItem] = useState([])
-    const url = "http://10.10.10.127:9000/api/HappyLoungeItem/img"
-    useEffect(() => {
-        axios.get(url,{}).then(Response => {
-            console.log(Response);
-            setHappyLoungeItem(Response.data)
-            
-        })
-    },[])
-    
+    console.log(product);
     return ( 
         <div className='HappyLoungeItem'>
-            <div className='HappyLoungeItemLeft'>
-                {
-                    HappyLoungeItem && HappyLoungeItem.map((item)=>(             
-                            item.id == 1 ?  
-                                <Link to="/" key={item.id}><img src={item.url} /></Link>
-                            :
-                            ""
-                    ))
-                }
-            </div>
-            <div className='HappyLoungeItemRight'>
-                {
-                    HappyLoungeItem && HappyLoungeItem.map((item)=>(             
-                            item.id > 1 ?  
-                                <Link to="/" key={item.id}><img src={item.url} /></Link>
-                            :
-                            ""
-                    ))
-                } 
-                <Link to="/">
-                    <div className='plus'>+</div>    
-                </Link>              
+            <div className='HappyLoungeItemImg'>
+                <div className='HappyLoungeItemImgLeft'>
+                    {
+                        product && <Link to="/" key={product.id}><img src={product.imgUrl1} /></Link>
+                    }
+                </div>
+                <div className='HappyLoungeItemImgRight'>
+                    <Link to="/" key={product.id}><img src={product.imgUrl2}/></Link>
+                    <Link to="/" key={product.id}><img src={product.imgUrl3}/></Link>
+                    <Link to="/" key={product.id}><img src={product.imgUrl4}/></Link>
+                    <Link to="/"><div className='plus'>+</div></Link>              
+                </div>
             </div>
             <div className='HappyLoungeItemText'>
                 <Link to="/">
-                    {
-                        // HappyLoungeItem && HappyLoungeItem.map((item)=>(             
-                        //     item.id > 1 ?  
-                        //         <span></span>
-                        //     :
-                        //     ""
-                        // ))
-                    }
+                    <div className='text1'>{product.productTitle}</div>
+                    <div className='text2'>{product.title1}</div>
+                    <div className='text3'>{product.title2}</div>
+                    <div className='price'><span>{product.price}</span>원~</div>
+                    <div className='pick'>
+                        <PickBox pickCount={product.pick}/>
+                        <div className='pick-right'>
+                            <Hart />
+                            <Cart />
+                        </div>
+                    </div>
                 </Link>
-                
             </div>
         </div>
      );
