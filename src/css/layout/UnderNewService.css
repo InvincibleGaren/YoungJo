@@ -1,6 +1,7 @@
 /* 이거 아님 -> css는 import안 쓰고 index.html에 <link rel="stylesheet" href="./assets/css/footer.css"> 쓰면 됨. 
 jsx랑 css연결은 태그들의 같은 클래스명으로 찾아서 적용 */
-/* app.js에다 호출해야한다는데? 소스라서? + mystyle.css에도 url 추가 */
+/*  mystyle.css에 UNS.css url 추가 
+-> mystle이 app.js에 import되어있어서 uns.css는 mystyle을 거쳐서 app.js에 담기는 격  */
 
 .UNS {
     display: flex;
