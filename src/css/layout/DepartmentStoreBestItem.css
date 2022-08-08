@@ -1,0 +1,91 @@
+
+.DSBI {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /*없애니 화면 줄여도 담 줄로 안 넘어감*/
+} 
+
+/* list랑 img에 클래스네임 안 줘도 됨. 
+걍 ul에 클래스네임 주면 
+그 안에 li랑 img 한 종류니까 
+걍 li랑 img라고만 적어도 찾아들어감 */
+
+.DSBI li{
+    /* flex: 1 150px; */
+    /* 늘려도 리스트 사이 간격 안 늘어남. 유동적이지 않음*/
+    list-style: none !important;  /*글머리 기호 없음으로 설정*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+} 
+
+.priceimg {
+    width: 150px;
+}
+
+.brandname{
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* 클래스 네임 있는 애한테 css 먹일 땐 상위 클래스 네임 안 쓰고 걍 . 찍고 바로 해당 클래스네임 */
+.textlimit{
+    /*text-overflow를 구현하기 위한 조건
+    - width 또는 height가 고정적일 것
+    - overflow: hidden;을 사용해 영역을 감출 것 */
+
+    width: 150px;
+    overflow: hidden;
+    /*영역의 넘치는 요소를 숨겨줌.
+    안 하면 고정한 width값 무시하고 텍스트 다 나오는 듯*/
+    text-overflow: ellipsis;
+    /*clip :단순하게 텍스트를 자름
+      ellipsis: 잘린 부분에 "..." 표시*/
+    display: -webkit-box;
+    /*해당 영역을 box 형태로 관리되도록 함.*/
+    -webkit-line-clamp: 2;
+    /* 영역 내의 컨텐츠의 최대 라인수를 결정*/
+    -webkit-box-orient: vertical;
+    /*영역 박스의 내의 정렬을 수직으로 함*/
+    /* white-space: nowrap; 
+    white-space: no-wrap 속성은 
+    영역 내의 문장이 길 때 자동으로 다음줄로 내려가는 것을 제거
+    안 쓰면 width 넘칠 시 줄이 내려감*/
+
+}
+
+.salepp{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.saleprice {
+    font-weight: bold;
+}
+
+.salepercent {
+    color: red;
+}
+
+.starreview{
+    display: flex;
+    /* justify-content: flex-start; */
+    /* align-items: center; */
+    /*왼쪽에 위치 시켜야하는데...*/
+    vertical-align: middle;
+    width: 150px;
+}
+
+.starreview img {
+    width: 17px;
+   
+}
+
+.DSBI p {
+    text-align: center;
+    width: 150px;
+}
+
