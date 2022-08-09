@@ -2,9 +2,11 @@ import React from 'react';
 import SearchInput from '../components/SearchInput';
 import ShoppingBasketButton from '../components/ShoppingBasketButton';
 import Logo from '../components/ui/Logo';
-import Nav from '../components/ui/Nav';
+import Nav from '../components/ui/HeaderNav';
 import Search from '../components/Search';
-import Slider from '../components/widgets/Slider';
+import Slider from '../components/widgets/HeaderSlider';
+
+
 
 function Header() {
     return ( 

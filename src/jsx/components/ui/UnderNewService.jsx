@@ -1,10 +1,10 @@
 // UnderNewService.jsx는 App.js에서 import하고 return값에 넣어서 호출
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import unsdatas from '../../datas/UNSDatas'
+import unsdatas from '../../../datas/UNSDatas'
 
 
-import '../../css/components/UnderNewService.css'
+import '../../../css/components/UnderNewService.css'
 
 /* 카테고리 클릭시 만든 페이지로 이동 -> Link to 사용 +app.js에 브라우저 라우트에 링크 path 추가 +Link to 쓸거면 click 이벤트 필수?
     VS  외부 url 연결 -> a href 이용? */
@@ -37,7 +37,7 @@ function UnderNewService() {
 
 
     return ( 
-        <div>
+        <div className='UNSContainer'>
             <ul className='UNS'>
                {
                     unsData && unsData.map(uns =>(

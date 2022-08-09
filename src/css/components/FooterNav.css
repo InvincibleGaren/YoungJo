@@ -1,0 +1,17 @@
+.FooterNav {
+    display : flex;
+    justify-content: space-around;
+    height: 60px;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+    bottom : 0px;
+    width: 100%;
+
+}
+
+.FooterNav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}

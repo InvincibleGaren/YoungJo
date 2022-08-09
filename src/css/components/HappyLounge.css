@@ -8,3 +8,19 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.HappyLounge .HappyLoungeSubTitle{
+    display: flex;
+    justify-content: space-between;
+}
+
+.HappyLounge .SubTitleUi span{
+    font-size: 21px;
+    color: #777;
+}
+
+.HappyLounge .SubTitleUi a{
+    font-size: 20px;
+    color: #777;
+    text-decoration: none;
+}

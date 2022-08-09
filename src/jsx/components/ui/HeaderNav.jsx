@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import navData from '../../../datas/navDatas.json'
+import navData from '../../../datas/HeaderNav.json'
 
-import "../../../css/components/Nav.css"
+import "../../../css/components/HeaderNav.css"
 
-function Nav() {
+function HeaderNav() {
     return ( 
         <nav className='hNav'>
             {
@@ -16,4 +16,4 @@ function Nav() {
     );
 }
 
-export default Nav;
+export default HeaderNav;

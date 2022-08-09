@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import TempResponse from "../../../datas/HappyLoungeData.json"
 
 import { Link } from 'react-router-dom';
 import HappyLoungeItem from "../../components/ui/HappyLoungeItem"
-import Img1 from '../../../img/slider1.jfif'
-import Img2 from '../../../img/slider2.jfif'
-import Img3 from '../../../img/slider3.jfif'
-import Img4 from '../../../img/slider4.jfif'
 
 import "../../../css/components/HappyLounge.css"
-import TitleUi from './TitleUi';
+import TitleUi from './MainTitleUi';
+import SubTitleUi from './SubTitleUi';
 
 function HappyLounge() {
 
@@ -18,20 +15,24 @@ function HappyLounge() {
     const countQuery = "qty=5";
     const url = "http://10.10.10.127:9000/api/happyLoungeItem?"+countQuery
     useEffect(() => {
-        axios.get(url).then(Response => {
-            console.log(Response);
+        axios.get(url, {timeout:1000}).then(Response => {
             setHappyLoungeItem(Response.data)
+        })
+        .catch(error => {
+            setHappyLoungeItem(TempResponse)
+            console.log(TempResponse);
         })
     },[])
 
 
+
     return ( 
         <div className='HappyLounge'>
-            <TitleUi 
-                title="Happy Lounge"
-                spanTxt="당신의 쇼핑이 특별해지는, 매일 오전 9시"
-                url="/"
-            />
+            <TitleUi title="Happy Lounge" />
+            <div className="HappyLoungeSubTitle">
+                <SubTitleUi title="당신의 쇼핑이 특별해지는, 매일 오전 9시"/>
+                <Link to={'/'}>전체보기&gt;</Link>
+            </div>
             <div className='HappyLoungeItemList'>
                 {
                     happyLoungeItem && happyLoungeItem.map((item)=>( 

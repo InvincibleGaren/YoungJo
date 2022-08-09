@@ -1,16 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import ShinsegaeTimeDealItem from "../ui/NewServiceItem"
 import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 
+import TempResponse from "../../../datas/ShinsegaeTimeDealSlideData.json"
 
-import SliderImg1 from '../../../img/slider1.jfif';
-import SliderImg2 from '../../../img/slider2.jfif';
-import SliderImg3 from '../../../img/slider3.jfif';
-import SliderImg4 from '../../../img/slider4.jfif';
-import SliderImg5 from '../../../img/slider5.jfif';
+
 
 
 import 'swiper/css';
@@ -19,17 +17,20 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import '../../../css/components/Slider.css';
+import MainTitleUi from '../ui/MainTitleUi';
+import SubTitleUi from '../ui/SubTitleUi';
 
-function Slider() {
+
+function NewServiceItemSlider() {
 
     const [slideData, setSlideData] = useState([])
     const url = "http://10.10.10.127:9000/api/slide/img"
     useEffect(() => {
-        axios.get(url).then(Response => {
+        axios.get(url, {timeout:1000}).then(Response => {
             setSlideData(Response.data)
         })
         .catch(error => {
-            alert(error);
+            setSlideData(TempResponse)
           })
     },[])
 
@@ -44,18 +45,26 @@ function Slider() {
 
     return ( 
         <Swiper
-            modules={[Autoplay]}
+            modules={[Autoplay, Scrollbar]}
             autoplay={true}
             spaceBetween={0}
             slidesPerView={1}
+            scrollbar={{ draggable: false }}
         >
+            
             {
                 slideData && slideData.map(item=>(
-                    <SwiperSlide key={item.id}><img src={item.url} /></SwiperSlide>
+                    <SwiperSlide key={item.id}>
+                        <Link to="/">
+                            <img src={item.url} />
+                            <MainTitleUi title={item.text1} />
+                            <SubTitleUi title={item.text2} />
+                        </Link>
+                    </SwiperSlide>
                 ))
             }
         </Swiper>
     );
 }
 
-export default Slider;
+export default NewServiceItemSlider;

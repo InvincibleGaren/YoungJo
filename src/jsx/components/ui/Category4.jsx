@@ -6,6 +6,7 @@ import Img2 from '../../../img/slider2.jfif'
 import Img3 from '../../../img/slider3.jfif'
 import Img4 from '../../../img/slider4.jfif'
 
+import TempResponse from '../../../datas/Category.json'
 import "../../../css/components/Category.css"
 
 function Category() {
@@ -15,6 +16,9 @@ function Category() {
         axios.get(url,{}).then(Response => {
             setCategoryData(Response.data)
         })
+        .catch(error => {
+            setCategoryData(TempResponse)
+          })
     },[])
     
     return ( 

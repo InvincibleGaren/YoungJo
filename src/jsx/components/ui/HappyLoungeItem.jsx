@@ -27,9 +27,9 @@ function HappyLoungeItem({product}) {
             </div>
             <div className='HappyLoungeItemText'>
                 <Link to="/">
-                    <div className='text1'>{product.productTitle}</div>
-                    <div className='text2'>{product.title1}</div>
-                    <div className='text3'>{product.title2}</div>
+                    <div className='text1'>{product.text1}</div>
+                    <div className='text2'>{product.text2}</div>
+                    <div className='text3'>{product.text3}</div>
                     <div className='price'><span>{product.price}</span>원~</div>
                     <div className='pick'>
                         <PickBox pickCount={product.pick}/>

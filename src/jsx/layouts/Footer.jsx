@@ -2,6 +2,7 @@ import React from 'react';
 import Footer_img from "../../img/footer.png";
 
 import "../../css/layout/Footer.css"
+
 function Footer() {
     return ( 
         <footer>
@@ -70,6 +71,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
+            
         </footer>
      );
 }

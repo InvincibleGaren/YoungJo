@@ -1,3 +1,6 @@
+.UNSContainer{
+    margin-left: 20px;
+}
 /* 이거 아님 -> css는 import안 쓰고 index.html에 <link rel="stylesheet" href="./assets/css/footer.css"> 쓰면 됨. 
 jsx랑 css연결은 태그들의 같은 클래스명으로 찾아서 적용 */
 /*  mystyle.css에 UNS.css url 추가 
@@ -6,6 +9,7 @@ jsx랑 css연결은 태그들의 같은 클래스명으로 찾아서 적용 */
 .UNS {
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
 } 
 
 /* list랑 img에 클래스네임 안 줘도 됨. 
@@ -19,7 +23,7 @@ jsx랑 css연결은 태그들의 같은 클래스명으로 찾아서 적용 */
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
+    margin-right: 20px;
 } 
 
 .UNS p {
@@ -27,5 +31,5 @@ jsx랑 css연결은 태그들의 같은 클래스명으로 찾아서 적용 */
 }
 
 .UNS img {
-    height: 100px;
+    height: 230px;
 }
