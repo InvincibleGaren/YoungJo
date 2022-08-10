@@ -1,0 +1,45 @@
+.CardPromotionItem{
+    background-color: red;
+    border-radius: 8px;
+    padding: 10px 8px;
+    margin-right: 10px;
+    width: 100px;
+    height: 150px;
+
+}
+
+
+.CardPromotionItem.ssg{
+    background-color: #363635;
+}
+
+.CardPromotionItem.samsung{
+    background-color: #006bff;
+}
+
+
+
+.CardPromotionItem img{
+    height: 30px;
+}
+.CardPromotionItem .CardPromotionItemTop{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+}
+
+.CardPromotionItem .CardPromotionItemTop span{
+    font-size: 30px;
+}
+
+.CardPromotionItem .CardPromotionItemMiddle{
+    font-size: 20px;
+    color: white;
+}
+
+.CardPromotionItem .CardPromotionItemBottom{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}

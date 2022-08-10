@@ -26,6 +26,8 @@
     ,
     {
         "id" : 5,
+        "name" : "최근본",
+        "iconName" : "remove_red_eye",
         "iconUrl" : "https://sitem.ssgcdn.com/77/93/16/item/1000446169377_i1_120.jpg",
         "url" : "/"
     }

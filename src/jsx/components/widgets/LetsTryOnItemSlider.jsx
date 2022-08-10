@@ -2,13 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ShinsegaeTimeDealItem from "../ui/NewServiceItem"
 import { Link } from 'react-router-dom';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-
-import TempResponse from "../../../datas/ShinsegaeTimeDealSlideData.json"
-
-
+import TempResponse from "../../../datas/LetsTryOnItemSlider.json"
 
 
 import 'swiper/css';
@@ -18,13 +14,13 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 
 
-import '../../../css/components/NewServiceItemSlider.css';
+import '../../../css/components/LetsTryOnItemSlider.css';
 
 import MainTitleUi from '../ui/MainTitleUi';
 import SubTitleUi from '../ui/SubTitleUi';
 
 
-function NewServiceItemSlider() {
+function LetsTryOnItemSlider() {
 
     const [slideData, setSlideData] = useState([])
     const url = "http://10.10.10.127:9000/api/slide/img"
@@ -37,29 +33,36 @@ function NewServiceItemSlider() {
           })
     },[])
 
-    // const [slideData, setSlideData] = useState([])
-    // const url = "http://10.10.10.127:9000/api/ctg/main-detail"
-    // useEffect(() => {
-    //     axios.get(url).then(Response => {
-    //         console.log(Response);
-    //         setSlideData(Response.data)
-    //     })
-    // },[])
-
     return ( 
-        <Swiper
+        <Swiper className='LetsTryOnItemSlider'
             modules={[Autoplay, Scrollbar]}
             autoplay={true}
             spaceBetween={0}
             slidesPerView={1}
-            scrollbar={{ draggable: false }}
+            width={970}
         >
-            
             {
                 slideData && slideData.map(item=>(
                     <SwiperSlide key={item.id}>
+                        <div className='Top'>
+                            <div className='Left'>
+                                <Link to="/">
+                                    <img src={item.url} />
+                                </Link>
+                            </div>
+                            <div className='Right'>
+                                <Link to="/">
+                                    <img src={item.url2} />
+                                </Link>
+                                <Link to="/">
+                                    <img src={item.url3} />
+                                </Link>  
+                                <Link to="/">
+                                    <img src={item.url4} />
+                                </Link>  
+                            </div>             
+                        </div>
                         <Link to="/">
-                            <img src={item.url} />
                             <MainTitleUi title={item.text1} />
                             <SubTitleUi title={item.text2} />
                         </Link>
@@ -70,4 +73,4 @@ function NewServiceItemSlider() {
     );
 }
 
-export default NewServiceItemSlider;
+export default LetsTryOnItemSlider;

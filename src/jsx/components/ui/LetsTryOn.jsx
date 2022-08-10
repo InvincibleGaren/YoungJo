@@ -3,13 +3,14 @@ import axios from 'axios';
 import TempResponse from "../../../datas/HappyLoungeData.json"
 
 import { Link } from 'react-router-dom';
-import HappyLoungeItem from "../../components/ui/HappyLoungeItem"
+import HappyLoungeItem from "./HappyLoungeItem"
 
 import "../../../css/components/HappyLounge.css"
 import TitleUi from './MainTitleUi';
 import SubTitleUi from './SubTitleUi';
+import LetsTryOnItemSlider from '../widgets/LetsTryOnItemSlider';
 
-function HappyLounge() {
+function LetsTryOn() {
 
     const [happyLoungeItem, setHappyLoungeItem] = useState([])
     const countQuery = "qty=5";
@@ -27,21 +28,13 @@ function HappyLounge() {
 
     return ( 
         <div className='HappyLounge'>
-            <TitleUi title="Happy Lounge" />
+            <TitleUi title="Let's Try on" />
             <div className="HappyLoungeSubTitle">
-                <SubTitleUi title="당신의 쇼핑이 특별해지는, 매일 오전 9시"/>
-                <Link to={'/'}>전체보기&gt;</Link>
+                <SubTitleUi title="직접 만져보고 입는 것처럼 생동감있는 쇼핑"/>
             </div>
-            <div className='HappyLoungeItemList'>
-                {
-                    happyLoungeItem && happyLoungeItem.map((item)=>( 
-
-                        <HappyLoungeItem product={item}/>
-                    ))
-                }
-            </div>
+            <LetsTryOnItemSlider />
         </div>
      );
 }
 
-export default HappyLounge;
+export default LetsTryOn;

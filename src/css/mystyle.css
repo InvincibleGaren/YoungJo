@@ -2,6 +2,9 @@
 @import url(./layout/Header.css);
 @import url(./layout/HomeMain.css);
 
-
+/* 외부 CSS */
 @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0);
 @import url(https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mcom_component.css?v=20220802);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mcom_global.css?v=20220802);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mcom_layout.css?v=20220802);

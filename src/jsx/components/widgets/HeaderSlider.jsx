@@ -15,7 +15,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
-import '../../../css/components/Slider.css';
+import '../../../css/components/HeaderSlider.css';
 
 
 function HeaderSlider() {
@@ -41,13 +41,12 @@ function HeaderSlider() {
     // },[])
 
     return ( 
-        <Swiper
+        <Swiper className='HeaderSlider'
             modules={[Autoplay]}
             autoplay={true}
             spaceBetween={0}
             slidesPerView={1}
         >
-            
             {
                 slideData && slideData.map(item=>(
                     <SwiperSlide key={item.id}> 

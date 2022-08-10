@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import navData from '../../../datas/FooterNav.json'
-
 import "../../../css/components/FooterNav.css"
 
 function FooterNav() {
@@ -9,7 +8,7 @@ function FooterNav() {
         <nav className='FooterNav'>
             {
                 navData && navData.map(my=>(
-                    <Link to={my.url} key={my.id}>
+                    <Link to="#" key={my.id}>
                         {
                             my.iconName?
                             <span class="material-symbols-outlined">{my.iconName}</span>
@@ -18,8 +17,9 @@ function FooterNav() {
                         }
                         {
                             my.name?
-                            my.name
-                            :""
+                            <div>{my.name}</div>
+                            :
+                            <div>""</div>
                         }
                     </Link>
                 ))

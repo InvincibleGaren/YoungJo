@@ -1,0 +1,29 @@
+.LetsTryOnItemSlider.swiper{
+    overflow: hidden;
+    width: 970px;
+    margin: 0;
+}
+
+
+.LetsTryOnItemSlider .Top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.LetsTryOnItemSlider .Top .Left img{
+    width: 705px;
+}
+
+.LetsTryOnItemSlider .Top .Right{
+    width: 215px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.LetsTryOnItemSlider .Top .Right img{
+    width: 180px;
+    height: 180px;
+}
+
