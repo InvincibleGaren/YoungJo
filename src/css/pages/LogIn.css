@@ -1,0 +1,16 @@
+.login_container {
+    padding: 50px 20px 0 20px;
+}
+
+.cmem_login_chk {
+    margin-bottom: 25px;
+}
+
+.cmem_login_chk input {
+    /* 체크박스 */
+}
+
+/* sns login component */
+.sns_logo {
+    width: 50px;
+}

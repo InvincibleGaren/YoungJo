@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer_img from "../../img/footer.png";
-
+import { Link } from 'react-router-dom';
 import "../../css/layout/Footer.css"
 
 function Footer() {
@@ -31,7 +31,7 @@ function Footer() {
 
             <div className='footer_nav'>
                 <ul>
-                    <li>로그인</li>
+                    <li><Link to="/login">로그인</Link></li>
                     <li>회원가입</li>
                     <li>앱다운로드</li>
                     <li>PC버전</li>

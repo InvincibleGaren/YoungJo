@@ -10,6 +10,7 @@ import {
 import Home from "./jsx/pages/Home";
 import Product from "./jsx/pages/Product";
 import './css/mystyle.css'
+import LogIn from "./jsx/pages/LogIn";
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/product" element={<Product/>} />
+        <Route path="/login" element={<LogIn />} />
       </Routes>
     </BrowserRouter>
   );
