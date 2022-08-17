@@ -6,15 +6,6 @@ import "../../css/layout/Footer.css"
 function Footer() {
     return ( 
         <footer>
-            <hr />
-            <div className='footer_notice'>
-                <p>
-                    <span className='f_notice_box'>공지</span>
-                    &nbsp;[SSG.COM '스타벅스 서머 캐리백' 구매 고객 대상 보상 및 환불 공지]
-                </p>
-                <p className='f_arrow'>&gt;</p>
-            </div>
-
             <div className='footer_customer'>
                 <div className='f_customer_left'>
                     <p><img src={Footer_img} alt="고객센터 이미지"/></p>
@@ -32,7 +23,7 @@ function Footer() {
             <div className='footer_nav'>
                 <ul>
                     <li><Link to="/login">로그인</Link></li>
-                    <li>회원가입</li>
+                    <li><Link to="/join/simplejoin">회원가입</Link></li>
                     <li>앱다운로드</li>
                     <li>PC버전</li>
                 </ul>

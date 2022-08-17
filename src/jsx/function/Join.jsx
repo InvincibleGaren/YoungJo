@@ -5,23 +5,23 @@ import Server from "../../datas/Server.json";
 //postman
 //postman123
 
-function LoginSubmit(event) {
+function Join(event) {
     
     event.preventDefault();
 
-    let loginId = document.getElementById("inp_id").value;
-    let password = document.getElementById("inp_pw").value;
-    const url = Server.baseUrl+"api/login";
-    const data = {loginId, password};
+    let loginId = document.getElementById("mbrLoginId").value;
+    let password = document.getElementById("pwd").value;
+    let email = document.getElementById("email").value;
+    let name = document.getElementById("mem_name").value;
+
+    const url = Server.baseUrl+"api/signUp";
+    const data = {loginId, password ,email, name};
     const config = {timeout:1000};
 
     axios.post(url, data, config)
         .then(LoginResult => { 
-            let jwtdecode = jwt(LoginResult.headers.authentication)
-            alert(jwtdecode.name+"님 환영합니다.");
-            window.history.back();
-            // Document.referrer
-            //sessionStorage
+            alert("회원가입 되었습니다. 로그인해주세요");
+            window.location.href = "/login";
         })
         .catch(error => {
             switch(error.code){
@@ -32,6 +32,10 @@ function LoginSubmit(event) {
             }
             
             switch(error.response.status){
+                case 400:
+                    console.log(error);
+                    alert("필수입력 항목들을 입력해주세요.");
+                    break;
                 case 401:
                     console.log(error);
                     alert(error.response.data.data)
@@ -47,4 +51,4 @@ function LoginSubmit(event) {
         });
 }
 
-export default LoginSubmit;
+export default Join;
