@@ -1,17 +1,9 @@
-/* 이거 아님 -> css는 import안 쓰고 index.html에 <link rel="stylesheet" href="./assets/css/footer.css"> 쓰면 됨. 
-jsx랑 css연결은 태그들의 같은 클래스명으로 찾아서 적용 */
-/*  mystyle.css에 UNS.css url 추가 
--> mystle이 app.js에 import되어있어서 uns.css는 mystyle을 거쳐서 app.js에 담기는 격  */
 
 .UNS {
     display: flex;
     flex-wrap: wrap;
 } 
 
-/* list랑 img에 클래스네임 안 줘도 됨. 
-걍 ul에 클래스네임 주면 
-그 안에 li랑 img 한 종류니까 
-걍 li랑 img라고만 적어도 찾아들어감 */
 
 .UNS li{
     flex: 1 120px;

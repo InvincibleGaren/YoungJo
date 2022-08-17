@@ -8,7 +8,6 @@ function HotBrand() {
 
     useEffect(()=> {
         // axios.get(url).then(hbdatas);
-        // console.log(hbdatas)
         setHBData(hbdatas)
     },[])
 
