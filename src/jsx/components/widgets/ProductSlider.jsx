@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-import productSliderDatas from "../../../datas/ProductSlider.json"
+import productSliderDatas from "../../../datas/ProductSliderDatas.json"
 
 import 'swiper/css';
 import 'swiper/css/navigation';

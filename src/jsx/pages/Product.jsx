@@ -3,8 +3,29 @@ import ProductDetail from '../components/ui/ProductDetail';
 import ProductExtraInfo from '../components/ui/ProductExtraInfo';
 import ProductHeader from '../components/ui/ProductHeader';
 import Review from '../components/ui/Review';
+import productDatas from '../../datas/ProductDatas.json'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Product() {
+
+   const url = "http://121.145.206.143:9000/api/pdtBoard/detail/1";
+   // const url = "http://121.145.206.143:9000//api/pdtBoard/detail/{boardId}";
+
+   const [productData, setProductData] = useState(productDatas);
+
+   useEffect(()=>{
+      // axios.get(url)
+      // .then(Response => {
+      //    console.log(Response.data);
+      //    setProductData(Response.data);
+      // })
+      // .catch(error => {
+      //    setProductData(productDatas);
+      // })
+      setProductData(productDatas);
+   }, [])
+
     return ( 
       <>
          <h1>헤더에 고정된 상품정보</h1>
@@ -46,7 +67,10 @@ function Product() {
             </div>
          </div> */}
 
-         <ProductHeader />
+         {/* {productData && productData.id}  */}
+         {/* {productData.brand} */}
+
+         <ProductHeader productData = {productData} />
          <ProductDetail />
          <Review />
          <ProductExtraInfo />
