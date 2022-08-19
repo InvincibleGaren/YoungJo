@@ -1,15 +1,14 @@
-import React from 'react';
-import ProductDetail from '../components/ui/ProductDetail';
+import React, { useState, useEffect } from 'react';
+import ProductDetailInfo from '../components/ui/ProductDetailInfo';
 import ProductExtraInfo from '../components/ui/ProductExtraInfo';
 import ProductHeader from '../components/ui/ProductHeader';
 import Review from '../components/ui/Review';
 import productDatas from '../../datas/ProductDatas.json'
-import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Product() {
 
-   const url = "http://121.145.206.143:9000/api/pdtBoard/detail/1";
+   // const url = "http://10.10.10.127:9000/api/pdtBoard/detail/1";
    // const url = "http://121.145.206.143:9000//api/pdtBoard/detail/{boardId}";
 
    const [productData, setProductData] = useState(productDatas);
@@ -71,7 +70,7 @@ function Product() {
          {/* {productData.brand} */}
 
          <ProductHeader productData = {productData} />
-         <ProductDetail />
+         <ProductDetailInfo />
          <Review />
          <ProductExtraInfo />
       </>
