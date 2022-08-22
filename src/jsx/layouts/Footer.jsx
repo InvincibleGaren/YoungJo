@@ -2,6 +2,7 @@ import React from 'react';
 import Footer_img from "../../img/footer.png";
 import { Link } from 'react-router-dom';
 import "../../css/layout/Footer.css"
+import Logout from '../function/Logout';
 
 function Footer() {
     return ( 
@@ -22,7 +23,12 @@ function Footer() {
 
             <div className='footer_nav'>
                 <ul>
-                    <li><Link to="/login">로그인</Link></li>
+                    { sessionStorage.getItem("login") ? 
+                        <li><Link to="#" onClick={Logout}>로그아웃</Link></li>
+                        :
+                        <li><Link to="/login">로그인</Link></li>
+                    }
+                    
                     <li><Link to="/join/simplejoin">회원가입</Link></li>
                     <li>앱다운로드</li>
                     <li>PC버전</li>

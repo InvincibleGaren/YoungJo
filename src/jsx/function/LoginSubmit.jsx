@@ -19,9 +19,8 @@ function LoginSubmit(event) {
         .then(LoginResult => { 
             let jwtdecode = jwt(LoginResult.headers.authentication)
             alert(jwtdecode.name+"님 환영합니다.");
-            window.history.back();
-            // Document.referrer
-            //sessionStorage
+            window.location.href = "/"
+            sessionStorage.setItem("login", LoginResult.headers.authentication)
         })
         .catch(error => {
             switch(error.code){

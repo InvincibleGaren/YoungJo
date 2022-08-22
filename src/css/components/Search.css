@@ -25,3 +25,8 @@
 .search .search-left{
     display: flex;
 }
+
+.search .search-icon {
+    position: relative;
+    right: 30px;
+}

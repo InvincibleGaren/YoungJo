@@ -6,6 +6,8 @@ import DownArrowImg from '../../../img/downArrow.png'
 import SSGImg from '../../../img/SSG.png'
 import SSGMallImg from '../../../img/SSGmall.png'
 
+import "../../../css/components/Logo.css"
+
 function Logo() {
     return ( 
         <div className='logo'>
