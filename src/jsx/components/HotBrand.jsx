@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import hbdatas from '../../datas/HotBrandDatas'
+// import hbdatas from '../../datas/HotBrandDatas'
+import axios from 'axios';
 
 function HotBrand() {
 
@@ -7,8 +8,10 @@ function HotBrand() {
     // const url=''
 
     useEffect(()=> {
-        // axios.get(url).then(hbdatas);
-        setHBData(hbdatas)
+        axios.get('http://10.10.10.127:9000/api/mainPage/hotBrand')
+        .then(Reponse => {
+            setHBData(Reponse.data)
+        })       
     },[])
 
     return ( 
@@ -19,7 +22,7 @@ function HotBrand() {
                         <li key = {hb.id}>
                             <div className = "clickable">
                                 <img src = {hb.imgUrl} alt = "img"/>
-                                <p>{hb.name}</p>
+                                <p>{hb.title}</p>
                             </div>
                         </li>
                     ))

@@ -1,7 +1,8 @@
 // UnderNewService.jsx는 App.js에서 import하고 return값에 넣어서 호출
-// import axios from 'axios';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import unsdatas from '../../datas/UNSDatas'
+// import unsdatas from '../../datas/UNSDatas';
+
 
 
 
@@ -11,7 +12,10 @@ function UnderNewService() {
     
 
     useEffect(()=> {
-        setUNSData(unsdatas)
+        axios.get('http://10.10.10.127:9000/api/mainPage/newService/bottom')
+        .then(Response => {
+            setUNSData(Response.data)
+        })
     },[])
     
 
@@ -24,7 +28,7 @@ function UnderNewService() {
                         <li key = {uns.id}>
                             <div className = "clickable">
                                 <img src = {uns.imgUrl} alt = "img"/>
-                                <p>{uns.name}</p>
+                                <p>{uns.title}</p>
                             </div>
                         </li>
                     ))

@@ -15,7 +15,8 @@ import LogIn from "./jsx/pages/LogIn";
 import HotBrand from "./jsx/components/HotBrand";
 import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
 // import Test from "./jsx/Test";
-import MainCate from "./jsx/pages/MainCate";
+// import MainCate from "./jsx/pages/MainCate";
+import CtgL from "./jsx/components/CtgL";
 
 function App() {
   
@@ -31,7 +32,8 @@ function App() {
         <Route path="/UNS" element={<UnderNewService/>} />
         <Route path="/HotBrand" element={<HotBrand/>} />
         <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
-        <Route path="/maincate" element={<MainCate/>}/>
+        {/* <Route path="/maincate" element={<MainCate/>}/> */}
+        <Route path="/CTGL" element={<CtgL/>}/>
       </Routes>
     </BrowserRouter>
     

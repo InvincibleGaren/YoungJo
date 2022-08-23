@@ -8,7 +8,7 @@ function CtgL() {
     const [ctgLData, setCtgL] = useState()
 
     useEffect(()=>{
-        axios.get('http://121.145.206.143:9000/api/ctg/main')
+        axios.get('http://10.10.10.78:9000/api/ctg/main')
         .then(Response => {
             console.log(Response.data)
             setCtgL(Response.data)
@@ -30,7 +30,8 @@ function CtgL() {
                 {
                     ctgLData && ctgLData.map(ctgl1 =>(
                         <div key ={ctgl1.ctgL1.id}>
-                            <p className="ctgltext" onClick={() => handleView(ctgl1.ctgL1.id)}><CtgL1 ctgLL1 = {ctgl1.ctgL1} /></p>
+                            <div className="ctgltext" onClick={() => handleView(ctgl1.ctgL1.id)}><CtgL1 ctgLL1 = {ctgl1.ctgL1} />
+                            </div>
                         </div>
                     ))
                 }
