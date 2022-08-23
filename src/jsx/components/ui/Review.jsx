@@ -7,9 +7,9 @@ function Review() {
         <h3 className="mndtl_sec_tit">고객리뷰</h3>
     </div>
 
-    <div className="mndtl_summary_noti">
+    {/* <div className="mndtl_summary_noti">
 	    <p className="mndtl_summary_tx">등록된 리뷰가 없습니다.</p>
-    </div>
+    </div> */}
 
     <div className="mndtl_cmt_rate">
         <span className="mndtl_star18">
@@ -115,7 +115,7 @@ function Review() {
                     <span className="mndtl_review_type">일반</span>
                     <div className="mndtl_user_info">
                         <span className="mndtl_user_tx">2022.08.14</span>
-                        <span className="mndtl_user_tx">lit*******</span>
+                        <span className="mndtl_user_tx">abo*******</span>
                     </div>
                     {/* <div className="mndtl_cmtsum_figure">
                         <ul className="mndtl_figure_lst"></ul>
@@ -125,7 +125,7 @@ function Review() {
                     </a> */}
                     <a href="#" className="modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1179144919', 1)" target="">
                         <p className="mndtl_cmtsum_desc">
-                            가격도 적당하고 맛도 좋아요
+                            아무리봐도 가품같아요 나이키에서 이런재질의 티를 사본적이없거든요 가품시 200프로 보상해준다고 써있으니 매장직접가서 비교해보려구요
                         </p>
                     </a>
                 </div>
@@ -146,7 +146,7 @@ function Review() {
                         일반</span>
                     <div class="mndtl_user_info">
                         <span class="mndtl_user_tx">2022.07.31</span>
-                        <span class="mndtl_user_tx">loo*******</span>
+                        <span class="mndtl_user_tx">yuu*******</span>
                     </div>
                     <div class="mndtl_cmtsum_figure">
                         <ul class="mndtl_figure_lst">
@@ -155,7 +155,7 @@ function Review() {
                     <a href="#" class="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000030176507', '6004', '6005', '1177827809', 1)" target=""><span class="blind">전체리뷰보기</span></a>
                     <a href="#" class="modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000030176507', '6004', '6005', '1177827809', 1)" target="">
                         <p class="mndtl_cmtsum_desc">
-                            아무리봐도 가품같아요 나이키에서 이런재질의 티를 사본적이없거든요 가품시 200프로 보상해준다고 써있으니 매장직접가서 비교해보려구요
+                            가격도 적당하고 맛도 좋아요
                         </p>
                     </a>
                 </div>
@@ -175,7 +175,7 @@ function Review() {
                     <span class="mndtl_review_type">일반</span>
                     <div class="mndtl_user_info">
                         <span class="mndtl_user_tx">2022.05.27</span>
-                        <span class="mndtl_user_tx">shh*******</span>
+                        <span class="mndtl_user_tx">odk*******</span>
                     </div>
                     <div class="mndtl_cmtsum_figure">
                         <ul class="mndtl_figure_lst">
@@ -200,122 +200,6 @@ function Review() {
                 </div>
                 {/* <a href="#" class="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000030176507', '6004', '6005', '1172481154', 1)" target=""><span class="blind">전체리뷰보기</span></a> */}
 			</li>
-            {/* <li className="mndtl_chart_item">
-                <div className="mndtl_cmtsum">
-                    <div className="mndtl_msg_unit">
-                    <div className="mndtl_msg_bx">
-                        <span className="mndtl_prdopt_name"></span>
-                    </div>
-                    </div>
-                    <span className="mndtl_star12">
-                    <span className="mndtl_star12_per" style="width: 100%"></span>
-                    <span className="blind">별점 5점 중 <em>5</em>점</span>
-                    </span>
-                    <span className="mndtl_review_type">일반</span>
-                    <div className="mndtl_user_info">
-                    <span className="mndtl_user_tx">2022.08.11</span>
-                    <span className="mndtl_user_tx">jun*******</span>
-                    </div>
-                    <div className="mndtl_cmtsum_figure">
-                    <ul className="mndtl_figure_lst">
-                    </ul>
-                    </div>
-                    <a href="#" className="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178916004', 1)" target=""><span className="blind">전체리뷰보기</span></a>
-                    <a href="#" className="modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178916004', 1)" target="">
-                    <p className="mndtl_cmtsum_desc">
-                        달고 맛있어요~ 갑작스런 폭우에 배송에 문제 생길까 걱정했는데 상하지 않았고 좋은 물건으로 잘 받았습니다.
-                    </p>
-                    </a>
-                </div>
-                <a href="#" className="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178916004', 1)" target=""><span className="blind">전체리뷰보기</span></a>
-            </li>
-            <li className="mndtl_chart_item">
-                <div className="mndtl_cmtsum">
-                    <div className="mndtl_msg_unit">
-                    <div className="mndtl_msg_bx">
-                        <span className="mndtl_prdopt_name"></span>
-                    </div>
-                    </div>
-                    <span className="mndtl_star12">
-                    <span className="mndtl_star12_per" style="width: 100%"></span>
-                    <span className="blind">별점 5점 중 <em>5</em>점</span>
-                    </span>
-                    <span className="mndtl_review_type">
-                    일반</span>
-                    <div className="mndtl_user_info">
-                    <span className="mndtl_user_tx">2022.08.10</span>
-                    <span className="mndtl_user_tx">ant*******</span>
-                    </div>
-                    <div className="mndtl_cmtsum_figure">
-                    <ul className="mndtl_figure_lst">
-                        </ul>
-                    </div>
-                    <a href="#" className="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178807868', 1)" target=""><span className="blind">전체리뷰보기</span></a>
-                    <a href="#" className="modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178807868', 1)" target="">
-                            <p className="mndtl_cmtsum_desc">
-                                맛있어요 좋아요 훌륭한</p>
-                        </a>
-                    </div>
-                <a href="#" className="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178807868', 1)" target=""><span className="blind">전체리뷰보기</span></a>
-                </li>
-            <li className="mndtl_chart_item">
-                <div className="mndtl_cmtsum">
-                    <div className="mndtl_msg_unit">
-                    <div className="mndtl_msg_bx">
-                        <span className="mndtl_prdopt_name"></span>
-                    </div>
-                    </div>
-                    <span className="mndtl_star12">
-                    <span className="mndtl_star12_per" style="width: 100%"></span>
-                    <span className="blind">별점 5점 중 <em>5</em>점</span>
-                    </span>
-                    <span className="mndtl_review_type">
-                    일반</span>
-                    <div className="mndtl_user_info">
-                    <span className="mndtl_user_tx">2022.08.08</span>
-                    <span className="mndtl_user_tx">you*******</span>
-                    </div>
-                    <div className="mndtl_cmtsum_figure">
-                    <ul className="mndtl_figure_lst">
-                        </ul>
-                    </div>
-                    <a href="#" className="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178695432', 1)" target=""><span className="blind">전체리뷰보기</span></a>
-                    <a href="#" className="modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178695432', 1)" target="">
-                            <p className="mndtl_cmtsum_desc">
-                                햇고구마라 덜 말라서 그런지 별로 달지는 않아요.</p>
-                        </a>
-                    </div>
-                <a href="#" className="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178695432', 1)" target=""><span className="blind">전체리뷰보기</span></a>
-                </li>
-            <li className="mndtl_chart_item">
-                <div className="mndtl_cmtsum">
-                    <div className="mndtl_msg_unit">
-                    <div className="mndtl_msg_bx">
-                        <span className="mndtl_prdopt_name"></span>
-                    </div>
-                    </div>
-                    <span className="mndtl_star12">
-                    <span className="mndtl_star12_per" style="width: 100%"></span>
-                    <span className="blind">별점 5점 중 <em>5</em>점</span>
-                    </span>
-                    <span className="mndtl_review_type">
-                    일반</span>
-                    <div className="mndtl_user_info">
-                    <span className="mndtl_user_tx">2022.08.08</span>
-                    <span className="mndtl_user_tx">eye*******</span>
-                    </div>
-                    <div className="mndtl_cmtsum_figure">
-                    <ul className="mndtl_figure_lst">
-                        </ul>
-                    </div>
-                    <a href="#" className="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178656896', 1)" target=""><span className="blind">전체리뷰보기</span></a>
-                    <a href="#" className="modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178656896', 1)" target="">
-                            <p className="mndtl_cmtsum_desc">
-                                상품도 배송도 좋습니다~~</p>
-                        </a>
-                    </div>
-                <a href="#" className="modal_all_review modal-fix-open" data-layer-target=".modal_photo_review3" onclick="itemReview.getReviewModalView('1000040597007', '6004', '6005', '1178656896', 1)" target=""><span className="blind">전체리뷰보기</span></a>
-                </li> */}
         </ul>
     </div>
     </>

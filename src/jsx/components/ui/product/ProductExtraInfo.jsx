@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import productExtraInfoDatas from '../../../datas/ProductExtraInfoDatas.json';
+import productExtraInfoDatas from '../../../../datas/ProductExtraInfoDatas.json';
 
 function ProductExtraInfo() {
 
@@ -19,7 +19,7 @@ function ProductExtraInfo() {
                            <li key={extra.id}>
                               <a href="#" target="_parent">
                                  <span><em>{extra.text}</em></span>
-                                 <i className="mndtl_ic_arr"><span className="blind">보러가기</span></i>
+                                 <i className="mndtl_ic_arr"></i>
                               </a>
                            </li>
                         ))

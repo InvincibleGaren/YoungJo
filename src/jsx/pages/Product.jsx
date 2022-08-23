@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import ProductDetailInfo from '../components/ui/ProductDetailInfo';
-import ProductExtraInfo from '../components/ui/ProductExtraInfo';
-import ProductHeader from '../components/ui/ProductHeader';
+import ProductDetailInfo from '../components/ui/product/ProductDetailInfo';
+import ProductExtraInfo from '../components/ui/product/ProductExtraInfo';
+import ProductHeader from '../components/ui/product/ProductHeader';
 import Review from '../components/ui/Review';
 import productDatas from '../../datas/ProductDatas.json'
 import axios from 'axios';
+import ProductBottomButton from '../components/ui/product/ProductBottomButton';
 
 function Product() {
 
-   // const url = "http://10.10.10.127:9000/api/pdtBoard/detail/1";
-   // const url = "http://121.145.206.143:9000//api/pdtBoard/detail/{boardId}";
+   // const url = "http://10.10.10.78:9000/api/pdtBoard/detail/1";
+   // const url = "http://10.10.10.78:9000/api/pdtBoard/detail/{boardId}";
 
    const [productData, setProductData] = useState(productDatas);
 
@@ -27,7 +28,7 @@ function Product() {
 
     return ( 
       <>
-         <h1>헤더에 고정된 상품정보</h1>
+         {/* <h1>헤더에 고정된 상품정보</h1> */}
          {/* <div className="mndtl_header" data-react-tarea-cd="00006_000000027">
             <div className="mndtl_lft">
                <a href="javascript:history.back();" className="mndtl_btn_back clickable" target="_parent">
@@ -66,13 +67,11 @@ function Product() {
             </div>
          </div> */}
 
-         {/* {productData && productData.id}  */}
-         {/* {productData.brand} */}
-
          <ProductHeader productData = {productData} />
-         <ProductDetailInfo />
+         <ProductDetailInfo productData = {productData} />
          <Review />
          <ProductExtraInfo />
+         <ProductBottomButton />
       </>
    );
 }

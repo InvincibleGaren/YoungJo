@@ -1,8 +1,9 @@
 import React from 'react'
+import ProductImgTxt from './ProductImgTxt';
 
-function ProductDetail() {
+function ProductDetail({productData}) {
     return (
-        <>
+      <div>
         <div className='mndtl_sec_bx'></div>
         <div className="mndtl_sec_caution_text mndtl_tx_point">
             <h3 className="mndtl_caution_tit">직거래 유도 주의 안내</h3>
@@ -30,17 +31,9 @@ function ProductDetail() {
                <a href="#" className="mndtl_btn_err clickable" data-react-tarea-dtl-cd="t00060" target="_parent"><span>신고하기</span></a>
             </div>
          </div>
-
-         <div>
-            <h1>상세정보 페이지 ^^~~</h1>
-            <h1>상세정보 페이지 ^^~~</h1>
-            <h1>상세정보 페이지 ^^~~</h1>
-            <h1>상세정보 페이지 ^^~~</h1>
-            <h1>상세정보 페이지 ^^~~</h1>
-            <h1>상세정보 펼쳐보기 ^^~~</h1>
-         </div>
-         <div className='mndtl_sec_bx'></div>
-        </>
+         
+         <ProductImgTxt productData = {productData} />
+      </div>
     );
 }
 

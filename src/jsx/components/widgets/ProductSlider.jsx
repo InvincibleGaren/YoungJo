@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-import productSliderDatas from "../../../datas/ProductSliderDatas.json"
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,33 +11,23 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import '../../../css/components/HeaderSlider.css';
 
-function ProductSlider() {
+function ProductSlider({productData}) {
 
-    const [slideData, setSlideData] = useState([])
-    // const url = "http://10.10.10.127:9000/api/ㅁㅁㅁ/img"
-
+    const [slideData, setSlideData] = useState([]);
     useEffect(() => {
-        setSlideData(productSliderDatas);
-        // axios.get(url, {timeout:1000}).then(Response => {
-        //     setSlideData(Response.data)
-        // })
-        // .catch(error => {
-        //     setSlideData(TempResponse)
-        //   })
+        setSlideData(productData.thumbImgList);
     },[])
 
     return (
         <Swiper className='HeaderSlider'
-            // modules={[Autoplay]}
-            // autoplay={true}
-            spaceBetween={0}
-            slidesPerView={1}
+            spaceBetween = {0}
+            slidesPerView = {1}
         >
         {
             slideData && slideData.map(item => (
-                <SwiperSlide key={item.id}> 
+                <SwiperSlide key={productData.id}> 
                     {/* <Link to="/"> */}
-                        <img src={item.url} />
+                        <img src={item.imgPath} />
                     {/* </Link> */}
                 </SwiperSlide>
             ))
