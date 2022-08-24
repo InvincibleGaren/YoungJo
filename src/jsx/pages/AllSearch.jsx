@@ -1,58 +1,87 @@
 import React, {useState, useEffect} from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import HeaderTop from '../components/ui/HeaderTop';
 import MemberHeader from "../components/ui/MemberHeader";
 import Server from "../../datas/Server.json";
 import axios from "axios";
+import AllSearchItem from '../components/ui/AllSearchItem';
+
+import "../../css/pages/AllSearch.css";
+import SearchFilter from '../components/ui/SearchFilter';
+
 
 function AllSearch() {
-   const [query, setQuery ] = useState();
+   const [URL, setUrl] = useSearchParams();
+   const [itemList, setItemList] = useState();
+   const [query, setQuery] = useState(URL.get('query'));
 
-   const queryReg = /\?query=(.+)/;
-   console.log(window.location.href.match(queryReg)[1]);
-   // setQuery((window.location.href.match(queryReg)[1]));
-   // useEffect(() => {
-   //    if(query)
-   //    {
-   //       const url = Server.baseUrl+"api/search"+"?query="+query;
-   //       const config = {timeout:1000};
-   //       axios.get(url, config)
-   //       .then(LoginResult => { 
-   //          console.log(LoginResult);
-   //       })
-   //       .catch(error => {
-   //          switch(error.code){
-   //             case "ECONNABORTED":
-   //             case "ERR_NETWORK":
-   //                   alert("서버와 연결을 하지 못함\n원인 : "+error.message);
-   //                   return;
-   //          }
-   //          switch(error.response.status){
-   //             case 400:
-   //                   console.log(error);
-   //                   alert("필수입력 항목들을 입력해주세요.");
-   //                   break;
-   //             case 401:
-   //                   console.log(error);
-   //                   alert(error.response.data.data)
-   //                   break;
-   //             case 500:
-   //                   console.log(error);
-   //                   alert(error.response.data.message)
-   //                   break;
-   //             default:
-   //                   alert("알 수 없는 응답. 에러 코드 : "+error.response.status);
-   //                   break;
-   //          }
-   //       });
-   //    }      
-   // }, [query]);
+   useEffect(()=>{
+      const url = Server.baseUrl+"api/search?query="+query;
+      const config = {timeout:1000};
+      query && axios.get(url, config)
+         .then(LoginResult => { 
+            console.log(LoginResult);
+            if(LoginResult.data.boardList.length)
+               setItemList(LoginResult.data.boardList);
+            else
+               setItemList(null);
+         })
+         .catch(error => {
+            switch(error.code){
+               case "ECONNABORTED":
+               case "ERR_NETWORK":
+                    console.log(error);
+                    alert("서버와 연결을 하지 못함\n원인 : "+error.message);
+                    return;
+            }
+            switch(error.response.status){
+               case 400:
+                     console.log(error);
+                     alert("필수입력 항목들을 입력해주세요.");
+                     break;
+               case 401:
+                     console.log(error);
+                     alert(error.response.data.data)
+                     break;
+               case 500:
+                     console.log(error);
+                     alert(error.response.data.message)
+                     break;
+               default:
+                     alert("알 수 없는 응답. 에러 코드 : "+error.response.status);
+                     break;
+            }
+         });
+   }, [query]);
 
+   console.log("itemList : ");
+   console.log(itemList);
    return ( 
         <div className='AllSearch'>
-           <HeaderTop />
-           <div class="cgsearch_none_result" id="mbr_kwd_alert_nolist">
-               <p>최근검색어가 없습니다</p>
+            <HeaderTop setState={setQuery}/>
+            {query ? 
+                itemList ?
+                <div>
+                    <SearchFilter />
+                    <ul id="AllSearchItemList" className="cmitem_grid_lst mnsditem_ty_thmb">
+                    {  
+                        itemList.map((item)=>{
+                            return(
+                                <AllSearchItem Item={item}/>
+                            )
+                        })
+                    }
+                    </ul>
+                </div>
+                :
+                <div class="cgsearch_none_result" id="mbr_kwd_alert_nolist">
+                    <p>‘{query}’ 상품이 없습니다. 단어의 철자나 띄어쓰기가 정확한지 확인해 보세요.</p>
+                </div>
+            :
+            <div class="cgsearch_none_result" id="mbr_kwd_alert_nolist">
+                <p>최근검색어가 없습니다</p>
             </div>
+            }
             <div class="cgsearch_recomm_tag" id="now_hot_all">
                <h3 class="cgsearch_recomm_title">추천태그</h3>
                <div class="cgsearch_recomm_container">
@@ -97,3 +126,6 @@ function AllSearch() {
 }
 
 export default AllSearch;
+
+
+

@@ -4,11 +4,11 @@ import Search from "../Search";
 
 import "../../../css/components/HeaderTop.css"
 
-function HeaderTop() {
+function HeaderTop(props) {
     return ( 
         <div className='HeaderTop'>
             <Logo />
-            <Search />
+            <Search setState={props.setState}/>
         </div>
      );
 }
