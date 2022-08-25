@@ -12,7 +12,7 @@ function UnderNewService() {
     
 
     useEffect(()=> {
-        axios.get('http://10.10.10.127:9000/api/mainPage/newService/bottom')
+        axios.get('http://10.10.10.78:9000/api/mainPage/newService/bottom')
         .then(Response => {
             setUNSData(Response.data)
         })

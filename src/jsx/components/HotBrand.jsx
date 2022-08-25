@@ -8,7 +8,7 @@ function HotBrand() {
     // const url=''
 
     useEffect(()=> {
-        axios.get('http://10.10.10.127:9000/api/mainPage/hotBrand')
+        axios.get('http://10.10.10.78:9000/api/mainPage/hotBrand')
         .then(Reponse => {
             setHBData(Reponse.data)
         })       

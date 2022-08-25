@@ -33,7 +33,7 @@ function App() {
         <Route path="/HotBrand" element={<HotBrand/>} />
         <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
         {/* <Route path="/maincate" element={<MainCate/>}/> */}
-        <Route path="/CTGL" element={<CtgL/>}/>
+        <Route path="/ctgl" element={<CtgL/>}/>
       </Routes>
     </BrowserRouter>
     
