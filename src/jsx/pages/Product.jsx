@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ProductDetailInfo from '../components/ui/Product/ProductDetailInfo';
-import ProductExtraInfo from '../components/ui/Product/ProductExtraInfo';
-import ProductHeader from '../components/ui/Product/ProductHeader';
+import ProductDetailInfo from '../components/ui/product/ProductDetailInfo';
+import ProductExtraInfo from '../components/ui/product/ProductExtraInfo';
+import ProductHeader from '../components/ui/product/ProductHeader';
 import Review from '../components/ui/Review';
-import ProductBottomButton from '../components/ui/Product/ProductBottomButton';
+import ProductBottomButton from '../components/ui/product/ProductBottomButton';
 import { useParams } from 'react-router-dom';
 
 function Product() {
