@@ -13,7 +13,7 @@ function CtgL() {
         axios.get('http://10.10.10.78:9000/api/ctg/main')
         .then(Response => {
             console.log(Response.data)
-            setCtgL(Response.data)
+            setCtgL(Response.data.data)
 
         })
     },[])

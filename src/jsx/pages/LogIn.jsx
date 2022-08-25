@@ -1,19 +1,3 @@
-import React from 'react';
-<<<<<<< HEAD
-
-function LogIn() {
-    return ( 
-        <div>
-            <div>
-                <p>화살표</p>
-                <p>로그인</p>
-            </div>
-            <div>
-                <p>화살표</p>
-            </div>
-         </div>
-     );
-=======
 import MemberHeader from '../components/ui/MemberHeader';
 import RedButton from '../components/ui/RedButton';
 import SNSLogIn from '../components/ui/SNSLogIn';
@@ -74,7 +58,6 @@ function LogIn() {
             <Footer />
         </div>
     );
->>>>>>> yeonju
 }
 
 export default LogIn;

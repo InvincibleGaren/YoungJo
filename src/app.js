@@ -17,9 +17,6 @@ import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
 // import Test from "./jsx/Test";
 // import MainCate from "./jsx/pages/MainCate";
 import CtgL from "./jsx/components/CtgL";
-
-import LogIn from "./jsx/pages/LogIn";
-
 import CategoryMenu from "./jsx/components/ui/CategoryMenu";
 import CartEmpty from "./jsx/components/ui/CartEmpty";
 
@@ -40,17 +37,11 @@ function App() {
         <Route path="/product" element={<Product/>} >
           <Route path=":productId" element={<Product/>} />
         </Route>
-        <Route path="/login" element={<LogIn />} />
-
         <Route path="/categorymenu" element={<CategoryMenu />} />
-        <Route path="/product" element={<Product />} />
         <Route path="/cartempty" element={<CartEmpty />} />
-
         <Route path="/join/simplejoin" element={<SimpleJoin />} />
         <Route path="/join/joinform" element={<JoinForm />} />
         <Route path="/allsearch" element={<AllSearch />} />
-        <Route path="/" element={<Home/>} />
-        <Route path="/product" element={<Product/>} />
         <Route path="/login" element={<LogIn/>} />
         <Route path="/UNS" element={<UnderNewService/>} />
         <Route path="/HotBrand" element={<HotBrand/>} />
