@@ -74,7 +74,7 @@ function JoinForm() {
 
 
 
-
+    //회원가입하기 함수
     const handleSubmit = (e) => {
         e.preventDefault();
         
@@ -138,6 +138,7 @@ function JoinForm() {
                 window.location.href = "/login";
             })
             .catch(error => {
+                console.log(error);
                 switch(error.code){
                     case "ECONNABORTED":
                     case "ERR_NETWORK":
@@ -188,6 +189,7 @@ function JoinForm() {
         }
     }
 
+    //ID 중복체크 함수
     const idOverlapCheck = (e) =>{
         e.preventDefault();
         const IdReg = new RegExp("^[a-zA-Z0-9]{6,20}$");
@@ -201,9 +203,8 @@ function JoinForm() {
         axios.post(url, {loginId : inputData.loginId}, config)
             .then(Result => { 
                 console.log(Result);
-                if(Result.data){
+                if(Result.data.data){
                     alert("이미 사용중인 ID입니다.")
-                    
                 }else{
                     alert("사용가능한 ID입니다.")
                     sessionStorage.setItem("OverlapCheck","true");
