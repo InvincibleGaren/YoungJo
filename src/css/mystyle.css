@@ -1,11 +1,38 @@
 @import url(./common/common.css);
 @import url(./layout/Header.css);
 @import url(./layout/HomeMain.css);
+<<<<<<< HEAD
 @import url(./layout/UnderNewService.css);
 @import url(./layout/HotBrand.css);
 @import url(./layout/DepartmentStoreBestItem.css);
 @import url(./layout/CtgL1.css);
+=======
+@import url(./components/CategoryMenu.css);
+@import url(./pages/Product.css);
+>>>>>>> yeonju
 
-
+/* 외부 CSS */
 @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0);
 @import url(https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css);
+
+
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mcom_component.css?v=20220802);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mcom_global.css?v=20220802);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mcom_layout.css?v=20220802);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/m_layout.css?v=20220802);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/m_com.css?v=20220802);
+
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/m_ssg.css?v=20220802);
+
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/m_ssg.css?v=20220802);
+
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mcom_layout.css?v=20220816);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mcom_global.css?v=20220816);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mcom_component.css?v=20220816);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/ssg_component.css?v=20220816);
+@import url(https://sui.ssgcdn.com/ui/m_sm/css/swiper.css?v=20220816);
+@import url(https://sui.ssgcdn.com/ui/m_sm/css/m_sm.css?v=20220816);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/m_search.css?v=20220816);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/cmunit.css?v=20220816);
+@import url(https://sui.ssgcdn.com/ui/m_ssg/css/mntrip_search.css?v=20220816);
+

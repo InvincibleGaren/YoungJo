@@ -1,0 +1,14 @@
+.Category{
+    display: flex;
+    margin : 40px 0 40px 40px;
+}
+.Category a{
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.Category img{
+    width: 100%;
+    height : 100%;
+}

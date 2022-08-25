@@ -1,0 +1,23 @@
+.HB_container{
+    margin-left: 20px;
+} 
+
+.HB_container .HB {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+} 
+
+
+.HB li{
+    list-style: none !important;  /*글머리 기호 없음으로 설정*/
+    margin-right: 20px;
+} 
+
+.HB p {
+    text-align: center;
+}
+
+.HB img {
+    height: 230px;
+}

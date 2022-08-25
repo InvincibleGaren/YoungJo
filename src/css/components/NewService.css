@@ -1,0 +1,13 @@
+.NewService{
+    margin-left: 20px;
+}
+
+.NewService a{
+    text-decoration: none;
+}
+
+.NewService .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
+    position: relative;
+    left: 0;
+    margin: 20px 0;
+}

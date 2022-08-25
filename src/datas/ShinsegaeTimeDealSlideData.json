@@ -1,0 +1,55 @@
+[
+    {
+        "id" : 1,
+        "name" : "CKJ이월부터 신상까지",
+        "url" : "https://simg.ssgcdn.com/trans.ssg?src=/ssgadp/1m/95/1002136951m.jpg&w=750&t=a4c9124f0e29fede8ceff85475b91ebce3ebca6a",
+        "text1" : "2022 추석 명절",
+        "text2" : "미리 준비하는 올 추석 명절 선물",
+        "discount" : 14,
+        "price": 26573,
+        "listprice" : 30900
+
+    },
+    {
+        "id" : 2,
+        "name" : "8월 쇼핑익스프레스",
+        "url" : "https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202208/2022080521590310742378001337_342.jpg&w=750&t=a600dfd8201d5208a13df5b47f9945c39bcc163a",
+        "text1" : "MONDAY MOON",
+        "text2" : "럭셔리 뷰티부터 다양한 뷰티 컨텐츠까지",
+        "discount" : 14,
+        "price": 26573,
+        "listprice" : 30900
+    },
+    {
+        "id" : 3,
+        "name" : "오늘은 프라다 타임딜+20% 쿠폰",
+        "url" : "https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202208/2022080522030956918205208820_986.jpg&w=750&t=e08fdb3271f0144c9b93b7a437c11111fae2d3db",
+        "text1" : "SSG Luxury",
+        "text2" : "명품의 신세계를 만나다",
+        "discount" : 14,
+        "price": 26573,
+        "listprice" : 30900
+    },
+
+    {
+        "id" : 4,
+        "name" : "메타버쓱 오픈런 한정상품 구매",
+        "url" : "https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202208/2022080521592384479525453062_963.jpg&w=750&t=ee9ddfef909b03a4555f3932c537bb6b4d468a26",
+        "text1" : "2022 추석 명절",
+        "text2" : "미리 준비하는 올 추석 명절 선물",
+        "discount" : 14,
+        "price": 26573,
+        "listprice" : 30900
+    }
+    ,
+    {
+        "id" : 5,
+        "name" : "메타버쓱 재밌는 보물찾기",
+        "url" : "https://simg.ssgcdn.com/trans.ssg?src=/cmpt/banner/202208/2022080521593832127203240820_810.jpg&w=750&t=110dc0eebeaa220de26c3c741ba4aeb6ff3536ee",
+        "text1" : "2022 추석 명절",
+        "text2" : "미리 준비하는 올 추석 명절 선물",
+        "discount" : 14,
+        "price": 26573,
+        "listprice" : 30900
+    }
+]

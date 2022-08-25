@@ -53,6 +53,121 @@ const DSBIData = [
         numOfReview : 2 
         //리뷰 수
 
+<<<<<<< HEAD
+=======
+    },
+    {
+        id : 3,
+        imgUrl : img03,
+        brandName : "네파(NEPA)",
+        name : "남성 3칼라 네파 C-TR 카고 아이스 하프 팬츠 7H31762 시즌마감 최종가" ,
+        salePrice : 21250 ,
+        //정가 아니고 할인 먹힌 판매가
+        salePercent : 15, 
+        //할인율, 숫자? 문자열?, 표시 되있는 것도 있고 없는 것도 있음.
+        star : starimg,
+        asterion : 5.0 ,
+        //별로 매겨지는 점수
+        numOfReview : 2 
+        //리뷰 수
+
+    },
+    {
+        id : 3,
+        imgUrl : img03,
+        brandName : "네파(NEPA)",
+        name : "남성 3칼라 네파 C-TR 카고 아이스 하프 팬츠 7H31762 시즌마감 최종가" ,
+        salePrice : 21250 ,
+        //정가 아니고 할인 먹힌 판매가
+        salePercent : 15, 
+        //할인율, 숫자? 문자열?, 표시 되있는 것도 있고 없는 것도 있음.
+        star : starimg,
+        asterion : 5.0 ,
+        //별로 매겨지는 점수
+        numOfReview : 2 
+        //리뷰 수
+
+    },
+    {
+        id : 3,
+        imgUrl : img03,
+        brandName : "네파(NEPA)",
+        name : "남성 3칼라 네파 C-TR 카고 아이스 하프 팬츠 7H31762 시즌마감 최종가" ,
+        salePrice : 21250 ,
+        //정가 아니고 할인 먹힌 판매가
+        salePercent : 15, 
+        //할인율, 숫자? 문자열?, 표시 되있는 것도 있고 없는 것도 있음.
+        star : starimg,
+        asterion : 5.0 ,
+        //별로 매겨지는 점수
+        numOfReview : 2 
+        //리뷰 수
+
+    },
+    {
+        id : 3,
+        imgUrl : img03,
+        brandName : "네파(NEPA)",
+        name : "남성 3칼라 네파 C-TR 카고 아이스 하프 팬츠 7H31762 시즌마감 최종가" ,
+        salePrice : 21250 ,
+        //정가 아니고 할인 먹힌 판매가
+        salePercent : 15, 
+        //할인율, 숫자? 문자열?, 표시 되있는 것도 있고 없는 것도 있음.
+        star : starimg,
+        asterion : 5.0 ,
+        //별로 매겨지는 점수
+        numOfReview : 2 
+        //리뷰 수
+
+    },
+    {
+        id : 3,
+        imgUrl : img03,
+        brandName : "네파(NEPA)",
+        name : "남성 3칼라 네파 C-TR 카고 아이스 하프 팬츠 7H31762 시즌마감 최종가" ,
+        salePrice : 21250 ,
+        //정가 아니고 할인 먹힌 판매가
+        salePercent : 15, 
+        //할인율, 숫자? 문자열?, 표시 되있는 것도 있고 없는 것도 있음.
+        star : starimg,
+        asterion : 5.0 ,
+        //별로 매겨지는 점수
+        numOfReview : 2 
+        //리뷰 수
+
+    },
+    {
+        id : 3,
+        imgUrl : img03,
+        brandName : "네파(NEPA)",
+        name : "남성 3칼라 네파 C-TR 카고 아이스 하프 팬츠 7H31762 시즌마감 최종가" ,
+        salePrice : 21250 ,
+        //정가 아니고 할인 먹힌 판매가
+        salePercent : 15, 
+        //할인율, 숫자? 문자열?, 표시 되있는 것도 있고 없는 것도 있음.
+        star : starimg,
+        asterion : 5.0 ,
+        //별로 매겨지는 점수
+        numOfReview : 2 
+        //리뷰 수
+
+    },
+    {
+        id : 3,
+        imgUrl : img03,
+        brandName : "네파(NEPA)",
+        name : "남성 3칼라 네파 C-TR 카고 아이스 하프 팬츠 7H31762 시즌마감 최종가" ,
+        salePrice : 21250 ,
+        //정가 아니고 할인 먹힌 판매가
+        salePercent : 15, 
+        //할인율, 숫자? 문자열?, 표시 되있는 것도 있고 없는 것도 있음.
+        star : starimg,
+        asterion : 5.0 ,
+        //별로 매겨지는 점수
+        numOfReview : 2 
+        //리뷰 수
+
+>>>>>>> yeonju
     }
 ]
 

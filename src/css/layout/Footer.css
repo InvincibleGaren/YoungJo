@@ -1,0 +1,109 @@
+footer * {
+    margin: 0;
+    padding: 0;
+}
+
+footer hr {
+    border-top: 1px;
+}
+
+footer ul li {
+    list-style: none;
+    display: inline;
+    text-align: center;
+}
+
+.footer_notice {
+    color: #666666;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.f_notice_box {
+    border: 1px solid #cacaca;
+    border-radius: 3px;
+}
+
+.f_arrow {
+    color: #cacaca;
+    font-weight: bold;
+}
+
+.footer_customer {
+    background-color: #717178;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.f_customer_left {
+    display: flex;
+    padding: 1%;
+    /* 세로 정렬 가운데로 */
+}
+
+.f_customer_left img {
+    width: 60%;
+}
+
+.f_button_container {
+    /* 버튼 오른쪽 정렬 */
+}
+
+.f_button {
+    color: #ffffff;
+    background-color: #66666d;
+    border: 1px solid #606066;
+    padding: 2.5%;
+    text-align: center;
+    margin: 1px;
+}
+
+.footer_nav {
+    background-color: #dbdbe0;
+    color: #565656;
+    padding: 10px;
+}
+
+.footer_nav ul {
+    display: flex;
+}
+
+.footer_nav li {
+    flex: 1;
+}
+
+.footer_info {
+    padding: 10px;
+}
+
+.f_info_element {
+    padding: 1%;
+}
+
+.f_info_element ul {
+    /* display: block; */
+}
+
+.f_info_element ul li { 
+    padding-right: 2%;
+}
+
+.f_info_title {
+    color: #414141;
+    font-size: 15px;
+    margin-bottom: 0.4%;
+}
+
+.f_info_content {
+    color: #888888;
+}
+
+.f_info_red {
+    color: #ff5b59;
+}
+
+.f_copyright {
+    margin-top: 1%;
+}

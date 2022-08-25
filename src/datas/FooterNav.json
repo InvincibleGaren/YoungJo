@@ -1,0 +1,34 @@
+[
+    {
+        "id" : 1,
+        "name" : "카테고리",
+        "iconName" : "menu",
+        "url" : "/"
+    },
+    {
+        "id" : 2,
+        "name" : "통합검색",
+        "iconName" : "search",
+        "url" : "/"
+    },
+    {
+        "id" : 3,
+        "name" : "홈",
+        "iconName" : "home",
+        "url" : "/"
+    },
+    {
+        "id" : 4,
+        "name" : "My",
+        "iconName" : "account_circle",
+        "url" : "/"
+    }
+    ,
+    {
+        "id" : 5,
+        "name" : "최근본",
+        "iconName" : "remove_red_eye",
+        "iconUrl" : "https://sitem.ssgcdn.com/77/93/16/item/1000446169377_i1_120.jpg",
+        "url" : "/"
+    }
+]

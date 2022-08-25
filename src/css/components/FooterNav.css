@@ -1,0 +1,29 @@
+.FooterNav {
+    display : flex;
+    justify-content: space-around;
+    height: 60px;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+    bottom : 0px;
+    z-index: 1;
+    width: 100%;
+
+}
+
+.FooterNav a {
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+}
+
+.FooterNav a span{
+  
+    font-size: 35px;
+}
+
+.FooterNav a div{
+  
+    color: #777;
+}
