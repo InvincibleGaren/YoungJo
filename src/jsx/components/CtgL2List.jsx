@@ -1,20 +1,33 @@
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-function CtgL2List({ctgLL2}) {
+function CtgL2List({cateData, id}) {
 
+    console.log(cateData)
+    console.log(id)
 
+    const [isView, setIsView] = useState(false)
+
+    useEffect(()=>{
+        if(id === cateData.ctgL1.id){
+            setIsView(true)
+        }else{
+            setIsView(false)
+        }
+    },[id])
+ 
     return ( 
         <div>
-                {/* 전체 데이터에서 index가 id-1인 보라 {ctgL1,ctgL2List} 한 덩이 에서 list부분만 왔음
-                근데 리스트 부분안에 ctgL2List:[{},{}] 여러 객체가 있으니 다시 map함수 */}
-                {
-                    ctgLL2.map(ctgll2 =>(
-                        
-                        <div className="ctgl2List">
-                            {ctgll2.name}
-                        </div>    
-                    ))
-                }
+            {
+                isView ? 
+                cateData.ctgL2List.map(data =>(
+                    <div className="ctgl2List">
+                        {data.name}
+                    </div>    
+                ))
+                : ""
+            } 
         </div>
     );
 }
