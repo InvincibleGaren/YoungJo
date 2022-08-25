@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../../../css/components/SearchFilter.css"
 
-function SearchFilter() {
+function SearchFilter(props) {
 
     
     const [sortCheck, setSortCheck] = useState({
@@ -15,7 +15,8 @@ function SearchFilter() {
     })
 
     const sortItemClick = (e) => {
-        e.currentTarget.classList.toggle("active");
+        // e.currentTarget.classList.toggle("active");
+        props.setState({...props.State, sort: "&sort="+e.currentTarget.textContent})
         e.preventDefault();
     }
 

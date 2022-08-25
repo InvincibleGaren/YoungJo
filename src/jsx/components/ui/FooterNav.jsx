@@ -8,7 +8,7 @@ function FooterNav() {
         <nav className='FooterNav'>
             {
                 navData && navData.map(my=>(
-                    <Link to="#" key={my.id}>
+                    <Link to={my.url} key={my.id}>
                         {
                             my.iconName?
                             <span class="material-symbols-outlined">{my.iconName}</span>

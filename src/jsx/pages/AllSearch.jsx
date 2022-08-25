@@ -73,11 +73,11 @@ function AllSearch() {
    console.log(itemList);
    return ( 
         <div className='AllSearch'>
-            <HeaderTop setState={setQuery}/>
+            <HeaderTop State={query} setState={setQuery}/>
             {URL.get('query') ? 
                 itemList ?
                 <div>
-                    <SearchFilter />
+                    <SearchFilter setState={setQuery} />
                     <ul id="AllSearchItemList" className="cmitem_grid_lst mnsditem_ty_thmb">
                     {  
                         itemList.map((item)=>{
