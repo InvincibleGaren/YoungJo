@@ -3,10 +3,27 @@
     visibility: hidden;
 }
 
+/* ProductImgTxt */
+/* .mndtl_tmpl_detail {
+    background-color: aqua;
+    height: 800px;
+    overflow: hidden;
+} */
+
+/* .mndtl_tmpl_detail {
+    height: auto;
+} */
+
 /* ProductExtraInfo */
 .mndtl_etc_cont {
     margin-bottom: 60px;
 }
+
+/* .mndtl_detail_more {
+    background-color:yellowgreen;
+    align-content: center;
+} */
+
 
 /* Review */
 .mndtl_cmt_summary {
@@ -23,10 +40,10 @@
 }
 
 /* ProductBottomButton */
-.optionView {
+/* .optionView {
     display: block;
 }
 
 .optionNonView {
     display: none;
-}
+} */

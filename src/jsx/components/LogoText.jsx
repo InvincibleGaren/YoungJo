@@ -2,8 +2,8 @@ import React from 'react';
 
 function LogoText() {
     return ( 
-        <span class="gnb_logo">
-            <span class="blind">SSG.COM</span>
+        <span className="gnb_logo">
+            <span className="blind">SSG.COM</span>
         </span>
      );
 }

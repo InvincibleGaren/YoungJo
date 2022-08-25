@@ -7,17 +7,17 @@ function ProductDelivery({productData}) {
             <dt>배송정보</dt>
             <dd>
                 <em className="mndtl_info_tit">택배배송 </em>
-                <span class="mndtl_info_parcel"> {productData.courierCompany}
-                    <a href="#" class="mndtl_ic mndtl_ic_qmark_new16 modal-layer-open" data-layer-target=".cdtl_modal_delivcmpny" target="">
-                        <span class="blind">택배사 정보 안내 팝업</span>
+                <span className="mndtl_info_parcel"> {productData.courierCompany}
+                    <a href="#" className="mndtl_ic mndtl_ic_qmark_new16 modal-layer-open" data-layer-target=".cdtl_modal_delivcmpny" target="">
+                        <span className="blind">택배사 정보 안내 팝업</span>
                     </a>
                 </span>
                 <span className="mndtl_info_desc">
                     <span>
-                        제주<em className="ssg_price"> {productData.shippingFeeJeju}</em><span className="ssg_tx">원</span>
+                        제주<em className="ssg_price"> 5,000</em><span className="ssg_tx">원</span>
                     </span>
                     <span>
-                        , 도서산간<em className="ssg_price"> {productData.shippingFeeIsland}</em><span className="ssg_tx">원</span>
+                        , 도서산간<em className="ssg_price"> 7,000</em><span className="ssg_tx">원</span>
                     </span>
                     &nbsp;추가
                     <a href="#" className="mndtl_ic mndtl_ic_qmark_new16 modal-layer-open" data-layer-target=".cdtl_modal_delivfee" target="">

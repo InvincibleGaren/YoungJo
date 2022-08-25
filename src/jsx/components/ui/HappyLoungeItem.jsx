@@ -15,13 +15,13 @@ function HappyLoungeItem({product}) {
             <div className='HappyLoungeItemImg'>
                 <div className='HappyLoungeItemImgLeft'>
                     {
-                        product && <Link to="/" key={product.id}><img src={product.imgUrl1} /></Link>
+                        product && <Link to="/"  ><img src={product.imgUrl1} /></Link>
                     }
                 </div>
                 <div className='HappyLoungeItemImgRight'>
-                    <Link to="/" key={product.id}><img src={product.imgUrl2}/></Link>
-                    <Link to="/" key={product.id}><img src={product.imgUrl3}/></Link>
-                    <Link to="/" key={product.id}><img src={product.imgUrl4}/></Link>
+                    <Link to="/"  ><img src={product.imgUrl2}/></Link>
+                    <Link to="/"  ><img src={product.imgUrl3}/></Link>
+                    <Link to="/"  ><img src={product.imgUrl4}/></Link>
                     <Link to="/"><div className='plus'>+</div></Link>              
                 </div>
             </div>

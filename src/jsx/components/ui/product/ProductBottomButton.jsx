@@ -9,30 +9,30 @@ function ProductBottomButton() {
         setIsView(!isView)
     }, [])
 
-    // const handleView = () => {
-    //     setIsView(!isView)
-    // }
+    const handleView = () => {
+        setIsView();
+    }
 
     return (
         <div className="mndtl_opt_btm _js_mndtl_opt_btm  react-area">
             <div className="opt_btm_bgn">
-                <div className={isView ? "optionView" : "optionNonView"}>
-                    <div className="">
+                <div>
+                    <div>
                         <select className="select" name="" >
-                        <option disabled selected>선택하세요. &#40;모델명&#41;</option>
-                        {/* optionValue1 */}
-                        <option value="01 586666-02">01&#41;586666-02</option>
-                        <option value="01 586666-02">01&#41;586666-02</option>
-                        <option value="01 586666-02">01&#41;586666-02</option>
-                        <option value="01 586666-02">01&#41;586666-02</option>
+                            <option>선택하세요. &#40;모델명&#41;</option>
+                            {/* optionValue1 */}
+                            <option value="01 586666-02">01&#41;586666-02</option>
+                            <option value="01 586666-02">01&#41;586666-02</option>
+                            <option value="01 586666-02">01&#41;586666-02</option>
+                            <option value="01 586666-02">01&#41;586666-02</option>
                         </select>
                     </div>
-                    <div className="">
+                    <div>
                         <select className="select" name="" >
-                        <option disabled selected>선택하세요. &#40;사이즈&#41;</option>
-                        {/* optionValue2 */}
-                        <option value="M_95">M_95</option>
-                        <option value="M_100">M_100</option>
+                            <option>선택하세요. &#40;사이즈&#41;</option>
+                            {/* optionValue2 */}
+                            <option value="M_95">M_95</option>
+                            <option value="M_100">M_100</option>
                         </select>
                     </div>
                 </div>
@@ -55,27 +55,11 @@ function ProductBottomButton() {
                         {/* 구매하기 - 장바구니, 바로구매 */}
                         <li>
                             <a href="#" className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable" target="_parent">
-                                <span className="btn_tx" onClick={()=>setIsView()}>구매하기</span>
+                                <span className="btn_tx">구매하기</span>
                             </a>
-                            
                         </li>
                     </ul>
                 </div>
-
-                {/* <div className="btm_bgn_in dps2" style="display:none;">
-                    <ul className="btm_bgn_bx" id="dps2_buy">
-                        <li data-react-unit-type="item" data-react-unit-id="1000030176507">
-                            <a href="javascript:;" onclick="fn_SaveCart(this, 'cart', 'floating');return false;" className="mndtl_btn type02 clickable" data-react-tarea="상품상세|옵션바|상품_장바구니 담기" data-react-tarea-dtl-cd="t00002" target="_parent">
-                                <span className="btn_tx">장바구니</span>
-                            </a>
-                        </li>
-                        <li data-react-unit-type="text" data-react-unit-text="[{&quot;type&quot;:&quot;tarea_addt_val&quot;,&quot;value&quot;:&quot;바로구매&quot;}]">
-                            <a href="javascript:;" onclick="fn_SaveCart(this, 'payment', 'floating');return false;" className="mndtl_btn type01 clickable" data-react-tarea="상품상세|옵션바|바로구매" data-react-tarea-dtl-cd="t00060" target="_parent">
-                                <span className="btn_tx ssgpay"><i className="ico_txt_ssgpay_btm"><span className="blind">SSGPAY.</span></i> 바로구매</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div> */}
             </div>
         </div>
     )

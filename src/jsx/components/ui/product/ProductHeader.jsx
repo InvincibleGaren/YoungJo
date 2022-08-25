@@ -5,10 +5,11 @@ import ProductInfo from './ProductInfo';
 import ProductPaymentBenefit from './ProductPaymentBenefit';
 
 function ProductHeader({productData}) {
+    console.log(productData)
     return (
         <div>
-            <ProductSlider productData = {productData} />
-            <ProductInfo  productData = {productData} />
+            <ProductSlider thumbImgList = {productData.thumbImgList} />
+            <ProductInfo productData = {productData} />
             <div className="mndtl_info_item">
                 <ProductPaymentBenefit />
                 <ProductDelivery productData = {productData} />

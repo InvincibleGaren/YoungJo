@@ -1,40 +1,21 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
 
-function ProductImgTxt({productData}) {
-
-   const [imgDatas, setImgDatas] = useState();
-   useEffect(()=>{
-      setImgDatas(productData.detailImgList);
-   }, []) 
+function ProductImgTxt({detailImgList}) {
 
    return (
       <div>
-        <div class="mndtl_detail_cont type_1800">
-            <div class="mndtl_detail_area ty_detail">
-               <div class="mndtl_tmpl_detail">
-                  <div class="mndtl_tmpl_html">
+        <div className="mndtl_detail_cont type_1800">
+            <div className="mndtl_detail_area ty_detail">
+               <div className="mndtl_tmpl_detail">
+                  <div className="mndtl_tmpl_html">
                      {
-                        imgDatas && imgDatas.map( data => (
-                           <img key={productData.id} src={data.imgPath} /> 
+                        detailImgList && detailImgList.map( (data, idx) => (
+                           <img src={data.imgPath} alt='상품 상세 이미지' key={idx}/> 
                         ))
                      }
                   </div>
                </div>
             </div>
-
-            <div class="mndtl_detail_more" data-react-unit-type="text" data-react-unit-text="[{&quot;type&quot;:&quot;tarea_addt_val&quot;,&quot;value&quot;:&quot;펼쳐보기&quot;}]">
-               <button type="button" class="mndtl_detail_btnmore clickable" data-react-tarea-dtl-cd="t00060" aria-hidden="true" aria-current="false">
-                  <span class="sr_off">상세정보 펼쳐보기</span>
-                  <span class="sr_on">상세정보 접기</span>
-                  <i class="mndtl_ico_arr"></i>
-               </button>
-            </div>
-
-            {/* <details>
-                <summary>상세정보 펼쳐보기 / 상세정보 접기</summary>
-            </details> */}
         </div>
         <div className='mndtl_sec_bx'></div>
     </div>
