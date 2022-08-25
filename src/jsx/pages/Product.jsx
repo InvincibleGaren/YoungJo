@@ -18,7 +18,7 @@ function Product() {
       axios.get(`http://10.10.10.78:9000/api/pdtBoard/detail/${pathname.productId}`)
       .then(Response => {
          console.log(Response.data);
-         setProductData(Response.data);
+         setProductData(Response.data.data);
       })
       .catch(error => {
          console.log(error)

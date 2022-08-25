@@ -17,9 +17,9 @@ function ProductSlider({thumbImgList}) {
             slidesPerView = {1}
         >
         {
-            thumbImgList && thumbImgList.map((item, idx) => (
-                <SwiperSlide key={idx}> 
-                    <img src={item.imgPath} />
+            thumbImgList && thumbImgList.map((item) => (
+                <SwiperSlide key={item.id}> 
+                    <img src={item.imgPath} alt={item.imgAlt}/>
                 </SwiperSlide>
             ))
         }
