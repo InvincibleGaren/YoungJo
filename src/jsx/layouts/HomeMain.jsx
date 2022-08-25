@@ -10,6 +10,7 @@ import DepartmentStoreBestItem from "../components/ui/DepartmentStoreBestItem"
 import FooterNav from '../components/ui/FooterNav';
 import CardPromotion from '../components/ui/CardPromotion';
 import LetsTryOn from '../components/ui/LetsTryOn';
+import NoticeBar from '../components/ui/NoticeBar';
 
 function HomeMain() {
     return ( 
@@ -23,6 +24,7 @@ function HomeMain() {
             <DepartmentStoreBestItem />
             <CardPromotion />
             <LetsTryOn />
+            <NoticeBar />
             <FooterNav />
         </main>
      );

@@ -1,19 +1,17 @@
 import React from 'react';
+import MemberHeader from '../components/ui/MemberHeader';
+import RedButton from '../components/ui/RedButton';
 import SNSLogIn from '../components/ui/SNSLogIn';
+import Footer from '../layouts/Footer';
+
 import LoginSubmit from "../function/LoginSubmit";
 
 function LogIn() {
     return (  
         <div className="LogIn">
-            <div className="mcom_tit_renew">
-                <h2 className="mcom_tit_txt"><a href="#">로그인</a></h2>
-                <div className="mcom_tit_lft">
-                    <a href="#" className="btn_back"><span className="sp_ctg_icon ctg_icon_back"></span></a>
-                </div>
-            </div>
-            
+            <MemberHeader title={"로그인"} />
 
-            <form method='post' onSubmit={LoginSubmit}>
+            <form onSubmit={LoginSubmit}>
                 <div className='login_container'>
                     <span className="cmem_inp_txt2">
                         {/* 적은 거 삭제 버튼 inp_clear */}
@@ -35,9 +33,7 @@ function LogIn() {
                         </span>
                     </div>
 
-                    <div className="cmem_btn_area">
-                        <button type="submit" className="cmem_btn cmem_btn_orange3">로그인</button>
-                    </div>
+                    <RedButton title={"로그인"} clickCallback={LoginSubmit}/>
 
                     <div className="cmem_login_support">
                         <a href="#">아이디 찾기</a>
@@ -60,6 +56,7 @@ function LogIn() {
                 <input type="hidden" name="snsTypeCd" />
                 <input type="hidden" name="accessToken" />
             </form> */}
+            <Footer />
         </div>
     );
 }
