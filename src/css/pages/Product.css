@@ -1,0 +1,49 @@
+/* ProductPrice */
+.isSamePrice {
+    visibility: hidden;
+}
+
+/* ProductImgTxt */
+/* .mndtl_tmpl_detail {
+    background-color: aqua;
+    height: 800px;
+    overflow: hidden;
+} */
+
+/* .mndtl_tmpl_detail {
+    height: auto;
+} */
+
+/* ProductExtraInfo */
+.mndtl_etc_cont {
+    margin-bottom: 60px;
+}
+
+/* .mndtl_detail_more {
+    background-color:yellowgreen;
+    align-content: center;
+} */
+
+
+/* Review */
+.mndtl_cmt_summary {
+    margin-bottom: 30px;
+}
+
+.mndtl_cmtsum_desc {
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* ProductBottomButton */
+/* .optionView {
+    display: block;
+}
+
+.optionNonView {
+    display: none;
+} */

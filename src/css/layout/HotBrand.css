@@ -1,0 +1,23 @@
+
+.HB {
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+
+.HB li{
+    flex: 1 120px;
+    list-style: none !important;  /*글머리 기호 없음으로 설정*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.HB p {
+    text-align: center;
+}
+
+.HB img {
+    width: 100px;
+}

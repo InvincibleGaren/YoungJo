@@ -1,13 +1,17 @@
-body {
+* {
     margin:0px;
     padding:0px;
    
 }
 
-h1 {
+/* h1{
 
-}
+} */
 
 .container-fluid {
     width: 100%;
+}
+
+.clickable {
+    cursor: pointer;
 }

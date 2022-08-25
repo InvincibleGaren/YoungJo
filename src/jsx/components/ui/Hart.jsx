@@ -6,7 +6,7 @@ import "../../../css/components/Hart.css"
 
 function Hart() {
     return ( 
-        <a href="/" class="Hart">
+        <a href="/" className="Hart">
             <img src={HartImg} />
         </a>    
      );

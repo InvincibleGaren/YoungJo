@@ -6,7 +6,7 @@ import "../../../css/components/Camera.css"
 
 function Camera() {
     return ( 
-        <a href="/" class="camera">
+        <a href="/" className="camera">
             <img src={CameraImg} />
         </a>    
      );

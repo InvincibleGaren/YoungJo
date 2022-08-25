@@ -1,0 +1,122 @@
+{
+    "boardId": 1,
+    "title": "[나이키/푸마外] 22 S/S 반팔티셔츠 라운드넥 기본 로고 남자 여성 주니어 반팔티 63종",
+    "brand": "나이키",
+    "salesSite": "신세계몰",
+    "isEachShippingFee": false,
+    "isPremium": false,
+    "isCrossBorderShipping": false,
+    "isOnlineOnly": false,
+    "shippingFee": 3000,
+    "shippingFreeOver": 50000,
+    "availableDeliveryJeju": true,
+    "availableDeliveryIsland": true,
+    "shippingFeeJeju": 5000,
+    "shippingFeeIsland": 7000,
+    "courierCompany": "우체국택배",
+    "pdtName": "티셔츠",
+    "returnAddress": "(12345)Busan Haeundae 1F",
+    "exchangeShippingFee": 6000,
+    "returnShippingFee": 6000,
+    "premiumExchangeShippingFee": null,
+    "premiumReturnShippingFee": null,
+    "totalReviewQty": null,
+    "totalScore": null,
+    "isSamePrice": false,
+    "minPrice": 11398,
+    "salesVol": null,
+    "deliveryDate": null,
+    "consignmentSellerInfo": {
+        "name": "넥스트젠팩",
+        "consignmentSellerAddress": "(12345)Busan Haeundae 1F",
+        "mailOrderNum": "2015-대구중구-3864"
+    },
+    "ctgL4": {
+        "id": 1,
+        "name": "자켓"
+    },
+    "boardLike": false,
+    "thumbImgList": [
+        {
+            "imgPath": "https://sitem.ssgcdn.com/23/04/22/item/1000045220423_i1_1200.jpg"
+        },
+        {
+            "imgPath": "https://sitem.ssgcdn.com/07/65/17/item/1000030176507_i1_1200.jpg"
+        },
+        {
+            "imgPath": "https://sitem.ssgcdn.com/95/22/82/item/1000438822295_i1_1200.jpg"
+        }
+    ],
+    "detailImgList": [
+        {
+            "imgPath": "https://sstatic.ssgcdn.com/cmpt/edit/202206/02/092022060209470267080105614110_237.jpg"
+        }
+    ],
+    "mainProductList": [
+        {
+            "modelCode": "TEE-NEW JDI SWOOSH",
+            "optionName1": "모델명",
+            "optionValue1": "01)586666-02",
+            "optionName2": "사이즈",
+            "optionValue2": "M_95",
+            "price": 11398,
+            "stock": 99
+        },
+        {
+            "modelCode": "TEE-NEW JDI SWOOSH",
+            "optionName1": "모델명",
+            "optionValue1": "01)586666-02",
+            "optionName2": "사이즈",
+            "optionValue2": "M_100",
+            "price": 11398,
+            "stock": 98
+        },
+        {
+            "modelCode": "TEE-NEW JDI SWOOSH",
+            "optionName1": "모델명",
+            "optionValue1": "01)586666-02",
+            "optionName2": "사이즈",
+            "optionValue2": "M_105",
+            "price": 11398,
+            "stock": 50
+        }
+    ],
+    "productRequiredInfoList": [
+        {
+            "infoTitle": "제품소재",
+            "infoCnt": "겉감- 면100% 안감- 면100%"
+        },
+        {
+            "infoTitle": "색상",
+            "infoCnt": "상세페이지 참고"
+        },
+        {
+            "infoTitle": "치수",
+            "infoCnt": "S, M, L, XL"
+        },
+        {
+            "infoTitle": "세탁방법 및 주의사항",
+            "infoCnt": "땀을 많이 흘렸을 경우 즉시 세탁하십시요. 염소 표백제 및 강력효소세제는 절대사용하지 마십시요. 흰옷과 유색옷은 이염될수 있으므로 구분하여 세탁하십시요. 세탁 전 주의사항은 제품에 붙은 택을 반드시 참고하여 주시기 바랍니다."
+        },
+        {
+            "infoTitle": "제조연월",
+            "infoCnt": "2018-04"
+        },
+        {
+            "infoTitle": "품질보증기준",
+            "infoCnt": "관련 법 및 소비자분쟁해결 규정에 따름"
+        },
+        {
+            "infoTitle": "A/S 책임자와 전화번호",
+            "infoCnt": "(고객센터) BAZIG/1544-8998"
+        },
+        {
+            "infoTitle": "제조사/수입자",
+            "infoCnt": "NIKE/BAZIG(병행수입)"
+        },
+        {
+            "infoTitle": "제조국",
+            "infoCnt": "상세설명참조"
+        }
+    ]
+}

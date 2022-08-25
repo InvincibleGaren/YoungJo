@@ -2,8 +2,8 @@ import React from 'react';
 
 function MallListButton() {
     return ( 
-        <span class="btn_label ty_off">
-            <span class="blind">몰 목록 펼치기</span>
+        <span className="btn_label ty_off">
+            <span className="blind">몰 목록 펼치기</span>
         </span>
      );
 }

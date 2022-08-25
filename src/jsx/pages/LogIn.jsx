@@ -1,4 +1,3 @@
-import React from 'react';
 import MemberHeader from '../components/ui/MemberHeader';
 import RedButton from '../components/ui/RedButton';
 import SNSLogIn from '../components/ui/SNSLogIn';

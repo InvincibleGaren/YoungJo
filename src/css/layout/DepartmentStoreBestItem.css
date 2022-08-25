@@ -1,0 +1,68 @@
+
+.DSBI {
+    display: flex;
+    
+} 
+
+
+.DSBI li{
+    
+    list-style: none !important;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+} 
+
+.priceimg {
+    width: 150px;
+}
+
+.brandname{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.textlimit{
+
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+}
+
+.salepp{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.saleprice {
+    font-weight: bold;
+}
+
+.salepercent {
+    color: red;
+}
+
+.starreview{
+    display: flex;
+    vertical-align: middle;
+    width: 150px;
+}
+
+.starreview img {
+    width: 17px;
+   
+}
+
+.DSBI p {
+    text-align: center;
+    width: 150px;
+}
+
