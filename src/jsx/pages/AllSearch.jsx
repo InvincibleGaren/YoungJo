@@ -13,12 +13,28 @@ import SearchFilter from '../components/ui/SearchFilter';
 function AllSearch() {
    const [URL, setUrl] = useSearchParams();
    const [itemList, setItemList] = useState();
-   const [query, setQuery] = useState(URL.get('query'));
+   // const [query, setQuery] = useState(URL.get('query'));
+   // const [query, setQuery] = useState(URL.get('query'));
+
+   const [query, setQuery] = useState({
+      query : "?query="+URL.get('query'),
+      page : "&page="+URL.get('page'),
+      limit : "&limit="+URL.get('limit'),
+      sort : "&sort="+URL.get('sort'),
+      minPrice : "&minPrice="+URL.get('minPrice'),
+      maxPrice : "&maxPrice="+URL.get('maxPrice')
+    });
+
+   window.addEventListener('scroll', (e)=>{
+      console.log(e);
+   });
 
    useEffect(()=>{
-      const url = Server.baseUrl+"api/search?query="+query;
+      const url = Server.baseUrl+"api/search"+query.query+query.page+query.limit+query.sort+query.minPrice+query.maxPrice;
+      // const url = Server.baseUrl+"api/search?"+query.query+query.page;
+      console.log(url)
       const config = {timeout:1000};
-      query && axios.get(url, config)
+      URL.get('query') && axios.get(url, config)
          .then(LoginResult => { 
             console.log(LoginResult);
             if(LoginResult.data.boardList.length)
@@ -53,16 +69,15 @@ function AllSearch() {
             }
          });
    }, [query]);
-
    console.log("itemList : ");
    console.log(itemList);
    return ( 
         <div className='AllSearch'>
-            <HeaderTop setState={setQuery}/>
-            {query ? 
+            <HeaderTop State={query} setState={setQuery}/>
+            {URL.get('query') ? 
                 itemList ?
                 <div>
-                    <SearchFilter />
+                    <SearchFilter setState={setQuery} />
                     <ul id="AllSearchItemList" className="cmitem_grid_lst mnsditem_ty_thmb">
                     {  
                         itemList.map((item)=>{
@@ -75,7 +90,7 @@ function AllSearch() {
                 </div>
                 :
                 <div class="cgsearch_none_result" id="mbr_kwd_alert_nolist">
-                    <p>‘{query}’ 상품이 없습니다. 단어의 철자나 띄어쓰기가 정확한지 확인해 보세요.</p>
+                    <p>‘{URL.get('query')}’ 상품이 없습니다. 단어의 철자나 띄어쓰기가 정확한지 확인해 보세요.</p>
                 </div>
             :
             <div class="cgsearch_none_result" id="mbr_kwd_alert_nolist">
