@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MemberHeader from '../components/ui/MemberHeader';
 import RedButton from '../components/ui/RedButton';
 import Join from '../function/Join';
@@ -9,7 +9,6 @@ import axios from "axios";
 import DaumPostcode from 'react-daum-postcode';
 
 import "../../css/pages/JoinForm.css"
-import { useEffect } from 'react';
 
 // function inputCheck(){
 //     let InputEls = document.querySelectorAll("input");
@@ -68,7 +67,11 @@ function JoinForm() {
     const [AddressDetail, setAddressDetail] = useState(false);
     const [passwordConfirm, setPasswordConfirm] = useState("");
 
-    sessionStorage.setItem("OverlapCheck","false");
+    useEffect(()=>{
+        sessionStorage.setItem("OverlapCheck","false");
+    }, []
+    )
+    
 
     
 

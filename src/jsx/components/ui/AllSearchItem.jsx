@@ -69,7 +69,7 @@ function AllSearchItem({Item}) {
                                 </div>
                                 <div className="mnsditem_review_num">
                                     <span className="blind">상품평 개수</span>
-                                    2,436건
+                                    {Item.totalReviewQty}건
                                 </div>
                             </div>
                             <div className="mnsditem_taglist">
