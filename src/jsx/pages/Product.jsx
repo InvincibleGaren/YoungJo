@@ -6,6 +6,8 @@ import ProductHeader from '../components/ui/product/ProductHeader';
 import Review from '../components/ui/Review';
 import ProductBottomButton from '../components/ui/product/ProductBottomButton';
 import { useParams } from 'react-router-dom';
+import Header from '../layouts/Header';
+import Footer from '../layouts/Footer';
 
 function Product() {
    const [productData, setProductData] = useState();
@@ -23,6 +25,7 @@ function Product() {
       .catch(error => {
          console.log(error)
       })
+
    }, [])
 
     return ( 
@@ -30,12 +33,14 @@ function Product() {
          {
             productData &&
                <div>
+                  <Header />
                   <ProductHeader productData = {productData} />
                   <ProductDetailInfo productData = {productData} />
                   <Review />
                   <ProductExtraInfo />
                   <ProductBottomButton productData = {productData} />
-            </div>
+                  <Footer />
+               </div>
          }
       </>
    );

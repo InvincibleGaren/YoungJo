@@ -4,15 +4,15 @@
 }
 
 /* ProductImgTxt */
-/* .mndtl_tmpl_detail {
+.mndtl_tmpl_detail {
     background-color: aqua;
     height: 800px;
     overflow: hidden;
-} */
+}
 
-/* .mndtl_tmpl_detail {
+.mndtl_tmpl_detail_auto {
     height: auto;
-} */
+}
 
 /* ProductExtraInfo */
 .mndtl_etc_cont {

@@ -33,7 +33,7 @@ function ProductInfo({productData}) {
               </div>
           </div>
         </div>
-       </div>
+      </div>
       <SmileClubBanner />
       <ProductInfoReview />
     </div>

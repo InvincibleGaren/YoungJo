@@ -6,6 +6,7 @@ import "../../../css/components/AllSearchItem.css"
 function AllSearchItem({Item}) {
 
     console.log(Item)
+    
     return ( 
         <li id="AllSearchItem" classNameName="cmitem_grid_item" data-react-comm-type="srchwd" data-react-comm-id="소고기" data-react-srch-rsv-div-cd="10" data-react-tarea-cd="00001_000000010" data-observable-unit="false" data-react-salestr-no="" data-react-site-no="">
             <div className="mnsditem_unit" data-react-unit-type="item" data-observable-item="true" data-react-unit-id="1000052597055" data-react-unit-inx="0" data-react-mdl-info="" data-react-advert-yn="N" data-react-advert-bid-id="" data-react-advert-tgt-id="" data-react-advert-bilng-type-cd="" data-react-advert-kind-cd="" data-react-advert-extens-tery-div-cd="" data-react-advert-advert-acct-grp-id="" data-react-unit-text="">

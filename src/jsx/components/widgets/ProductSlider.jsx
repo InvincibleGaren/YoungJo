@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -8,9 +8,7 @@ import 'swiper/css/autoplay';
 import '../../../css/components/HeaderSlider.css';
 
 function ProductSlider({thumbImgList}) {
-
     console.log(thumbImgList)
-
     return (
         <Swiper className='HeaderSlider'
             spaceBetween = {0}

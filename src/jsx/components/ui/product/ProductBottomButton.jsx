@@ -1,26 +1,13 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
 
-function ProductBottomButton() {
-
-    const[isView, setIsView] = useState(false);
-
-    useEffect(()=>{
-        setIsView(!isView)
-    }, [])
-
-    const handleView = () => {
-        setIsView();
-    }
-
+function ProductBottomButton({productData}) {
     return (
-        <div className="mndtl_opt_btm _js_mndtl_opt_btm  react-area">
+        <div className="mndtl_opt_btm _js_mndtl_opt_btm">
             <div className="opt_btm_bgn">
                 <div>
                     <div>
                         <select className="select" name="" >
                             <option>선택하세요. &#40;모델명&#41;</option>
-                            {/* optionValue1 */}
                             <option value="01 586666-02">01&#41;586666-02</option>
                             <option value="01 586666-02">01&#41;586666-02</option>
                             <option value="01 586666-02">01&#41;586666-02</option>
@@ -30,7 +17,6 @@ function ProductBottomButton() {
                     <div>
                         <select className="select" name="" >
                             <option>선택하세요. &#40;사이즈&#41;</option>
-                            {/* optionValue2 */}
                             <option value="M_95">M_95</option>
                             <option value="M_100">M_100</option>
                         </select>
@@ -51,7 +37,6 @@ function ProductBottomButton() {
                                 </button>
                             </span>
                         </li>
-
                         {/* 구매하기 - 장바구니, 바로구매 */}
                         <li>
                             <a href="#" className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable" target="_parent">
