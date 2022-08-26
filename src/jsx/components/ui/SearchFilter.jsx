@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import "../../../css/components/SearchFilter.css"
 
 function SearchFilter(props) {
-
+    const url = "/allsearch";
     
+
     const [sortCheck, setSortCheck] = useState({
         visible: false,
         selected : "추천순",
@@ -16,8 +17,10 @@ function SearchFilter(props) {
 
     const sortItemClick = (e) => {
         // e.currentTarget.classList.toggle("active");
-        props.setState({...props.State, sort: "&sort="+e.currentTarget.textContent})
-        e.preventDefault();
+        console.log(props.State);
+        console.log(e.currentTarget.textContent);
+        props.setState({...props.State, sort: `&sort=${e.currentTarget.textContent}`})
+     
     }
 
     return (  
@@ -58,15 +61,31 @@ function SearchFilter(props) {
                         sortCheck.visible && 
                             <ul class="mn_layer">
                                 <li onClickCapture={sortItemClick}>
-                                    <Link to="#" class="clickable"> 추천순</Link>
-                                        <button onclick="alert('추천순 상품의 판매량과 정확도 등을 점수화하여 정렬하며, 광고상품의 경우 별도 기준으로 상단에 정렬됩니다.');" class="btn_info"><span class="blind">추천순 설명 보기</span></button>                                
+                                    <Link to={url+props.State.query+props.State.page+props.State.limit+props.State.sort+
+                                                props.State.minPrice+props.State.maxPrice} 
+                                        class="clickable">추천순</Link>
+                                        <button onclick="alert('추천순 상품의 판매량과 정확도 등을 점수화하여 정렬하며, 광고상품의 경우 별도 기준으로 상단에 정렬됩니다.');" class="btn_info"><span class="blind"></span></button>                                
                                 </li>
-                                <li class="active"><Link title="sale" to="#" class="clickable" data-info="sale">판매량순</Link></li>
-                                <li><a title="prcasc" href="#" class="clickable" data-info="prcasc">낮은가격순</a></li>
-                                <li><a title="prcdsc" href="#" class="clickable" data-info="prcdsc">높은가격순</a></li>
-                                <li><a title="dcrt" href="#" class="clickable" data-info="dcrt">할인율순</a></li>
+                                <li onClickCapture={sortItemClick} class="active">
+                                    <Link to={url+props.State.query+props.State.page+props.State.limit+props.State.sort+
+                                                props.State.minPrice+props.State.maxPrice} title="sale" class="clickable" data-info="sale">판매순</Link></li>
+                                <li onClickCapture={sortItemClick} class="active">
+                                    <Link to={url+props.State.query+props.State.page+props.State.limit+props.State.sort+
+                                                props.State.minPrice+props.State.maxPrice} title="sale" class="clickable" data-info="sale">낮은가격</Link></li>
+                                <li onClickCapture={sortItemClick} class="active">
+                                    <Link to={url+props.State.query+props.State.page+props.State.limit+props.State.sort+
+                                                props.State.minPrice+props.State.maxPrice} title="sale" class="clickable" data-info="sale">높은가격</Link></li>
+                                <li onClickCapture={sortItemClick} class="active">
+                                    <Link to={url+props.State.query+props.State.page+props.State.limit+props.State.sort+
+                                                props.State.minPrice+props.State.maxPrice} title="sale" class="clickable" data-info="sale">신상품순</Link></li>
+                                <li onClickCapture={sortItemClick} class="active">
+                                    <Link to={url+props.State.query+props.State.page+props.State.limit+props.State.sort+
+                                                props.State.minPrice+props.State.maxPrice} title="sale" class="clickable" data-info="sale">리뷰많은순</Link></li>
+
+                                {/* <li><a title="prcasc" href="#" class="clickable" data-info="prcasc">낮은가격</a></li>
+                                <li><a title="prcdsc" href="#" class="clickable" data-info="prcdsc">높은가격</a></li>
                                 <li><a title="regdt" href="#" class="clickable" data-info="regdt">신상품순</a></li>
-                                <li><a title="cnt" href="#" class="clickable" data-info="cnt">리뷰많은순</a></li>
+                                <li><a title="cnt" href="#" class="clickable" data-info="cnt">리뷰많은순</a></li> */}
                             </ul>
                     }
 

@@ -8,6 +8,7 @@ import AllSearchItem from '../components/ui/AllSearchItem';
 
 import "../../css/pages/AllSearch.css";
 import SearchFilter from '../components/ui/SearchFilter';
+import { useRef } from 'react';
 
 
 function AllSearch() {
@@ -22,15 +23,29 @@ function AllSearch() {
       limit : "&limit="+URL.get('limit'),
       sort : "&sort="+URL.get('sort'),
       minPrice : "&minPrice="+URL.get('minPrice'),
-      maxPrice : "&maxPrice="+URL.get('maxPrice')
+      maxPrice : "&maxPrice="+URL.get('maxPrice'),
+
+      pageNumber : Number(URL.get('page')),
+      limitCount : Number(URL.get('limit'))
     });
 
-   window.addEventListener('scroll', (e)=>{
-      console.log(e);
-   });
+
+
+   const handleScroll = (e) => {
+      if(e.target.documentElement.scrollHeight < e.target.documentElement.scrollTop+1000){
+         query.limitCount = query.limitCount+1;
+         setQuery({...query, limit: "&limit="+(query.limitCount)})
+      }
+   }
+   useEffect(()=>{
+      window.addEventListener('scroll', handleScroll);
+   },[])
 
    useEffect(()=>{
+      
+      
       const url = Server.baseUrl+"api/search"+query.query+query.page+query.limit+query.sort+query.minPrice+query.maxPrice;
+      
       // const url = Server.baseUrl+"api/search?"+query.query+query.page;
       console.log(url)
       const config = {timeout:1000};
@@ -73,11 +88,11 @@ function AllSearch() {
    console.log(itemList);
    return ( 
         <div className='AllSearch'>
-            <HeaderTop State={query} setState={setQuery}/>
+            <HeaderTop setState={setQuery}/>
             {URL.get('query') ? 
                 itemList ?
                 <div>
-                    <SearchFilter setState={setQuery} />
+                    <SearchFilter State={query} setState={setQuery} />
                     <ul id="AllSearchItemList" className="cmitem_grid_lst mnsditem_ty_thmb">
                     {  
                         itemList.map((item)=>{

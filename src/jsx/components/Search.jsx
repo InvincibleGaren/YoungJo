@@ -19,10 +19,10 @@ function Search(props) {
     const [query, setQuery] = useState({
       query : "?query=",
       page : "&page=1",
-      limit : "&limit=40",
+      limit : "&limit=20",
       sort : "&sort=추천순",
-      minPrice : "&minPrice=10",
-      maxPrice : "&maxPrice=100000000"
+      minPrice : "&minPrice=1",
+      maxPrice : "&maxPrice=200000000"
     });
     const [itemlist, setItemlist] = useState();
     const linkElement = useRef(null);
