@@ -1,10 +1,16 @@
 import React from "react";
+
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-import './css/mystyle.css'
+
+//css
+import './css/mystyle.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import Home from "./jsx/pages/Home";
 import Product from "./jsx/pages/Product";
 import UnderNewService from "./jsx/components/UnderNewService";

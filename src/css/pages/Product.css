@@ -5,13 +5,21 @@
 
 /* ProductImgTxt */
 .mndtl_tmpl_detail {
-    background-color: aqua;
-    height: 800px;
+    height: 300px;
     overflow: hidden;
 }
 
-.mndtl_tmpl_detail_auto {
-    height: auto;
+.auto {
+    height: auto !important;
+}
+
+.detail_button{
+    padding: 5%;
+    text-align: center;
+}
+
+.isNonView {
+    display : none;
 }
 
 /* ProductExtraInfo */

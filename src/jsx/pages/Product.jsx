@@ -17,7 +17,8 @@ function Product() {
 
    useEffect(()=>{
       console.log(pathname)
-      axios.get(`http://10.10.10.78:9000/api/pdtBoard/detail/${pathname.productId}`)
+      // axios.get(`http://10.10.10.78:9000/api/pdtBoard/detail/${pathname.productId}`)
+      axios.get(`http://localhost:9000/api/pdtBoard/detail/${pathname.productId}`)
       .then(Response => {
          console.log(Response.data);
          setProductData(Response.data.data);
@@ -25,7 +26,6 @@ function Product() {
       .catch(error => {
          console.log(error)
       })
-
    }, [])
 
     return ( 
@@ -33,12 +33,17 @@ function Product() {
          {
             productData &&
                <div>
-                  <Header />
+                  {/* <Header /> */}
                   <ProductHeader productData = {productData} />
                   <ProductDetailInfo productData = {productData} />
                   <Review />
                   <ProductExtraInfo />
-                  <ProductBottomButton productData = {productData} />
+                  <ProductBottomButton 
+                     boardId = {pathname.productId}
+                     option1List = {productData.option1List} 
+                     optionName1 = {productData.optionName1}
+                     optionName2 = {productData.optionName2}
+                  />
                   <Footer />
                </div>
          }

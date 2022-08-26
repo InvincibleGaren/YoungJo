@@ -1,26 +1,55 @@
+import axios from 'axios';
 import React from 'react'
+import { useState } from 'react';
+import Form from 'react-bootstrap/Form';
 
-function ProductBottomButton({productData}) {
+function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
+
+    console.log(option1List)
+
+    const [opttion2List, setOption2List] = useState();
+
+    const handleSelectFirstOption = (e) => {
+        console.log(e.target.value)
+        axios.get(`http://localhost:9000/api/pdtBoard/detail/option2/${boardId}/${e.target.value}`).then(Response => {
+            setOption2List(Response.data.data)
+            console.log(Response.data)
+        }).catch(Error => {
+            console.log(Error)
+        })
+    }
+
+    const handleSelectSecondOption = (e) => {
+        console.log(e.target.value)
+    }
+
     return (
         <div className="mndtl_opt_btm _js_mndtl_opt_btm">
             <div className="opt_btm_bgn">
                 <div>
                     <div>
-                        <select className="select" name="" >
-                            <option>선택하세요. &#40;모델명&#41;</option>
-                            <option value="01 586666-02">01&#41;586666-02</option>
-                            <option value="01 586666-02">01&#41;586666-02</option>
-                            <option value="01 586666-02">01&#41;586666-02</option>
-                            <option value="01 586666-02">01&#41;586666-02</option>
-                        </select>
+                        <Form.Select  aria-label="Default select example" onChange={handleSelectFirstOption}>
+                            <option>선택하세요. &#40;{optionName1}&#41;</option>
+                            {
+                                option1List.map((item, idx) => (
+                                    <option value={item.optValue}>{item.optValue}</option>
+                                ))
+                            }
+                        </Form.Select>
                     </div>
-                    <div>
-                        <select className="select" name="" >
-                            <option>선택하세요. &#40;사이즈&#41;</option>
-                            <option value="M_95">M_95</option>
-                            <option value="M_100">M_100</option>
-                        </select>
-                    </div>
+                    {
+                        opttion2List && 
+                        <div>
+                            <Form.Select  aria-label="Default select example" onChange={handleSelectSecondOption}>
+                                <option>선택하세요. &#40;{optionName2}&#41;</option>
+                                {
+                                    opttion2List.map((item, idx) => (
+                                        <option value={item.opt2Value}>{item.opt2Value}</option>
+                                    ))
+                                }
+                            </Form.Select>
+                        </div>
+                    }
                 </div>
 
                 <div className="btm_bgn_in dps1">
