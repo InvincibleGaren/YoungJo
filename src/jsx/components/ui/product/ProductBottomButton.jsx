@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import Server from '../../../../datas/Server.json';
 
 function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
 
@@ -12,8 +13,8 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
     const handleSelectFirstOption = (e) => {
         console.log(e.target.value);
 
-        axios.get(`http://121.145.206.143:9000/api/pdtBoard/detail/option2/${boardId}/${e.target.value}`).then(Response => {
-        // axios.get(`http://localhost:9000/api/pdtBoard/detail/option2/${boardId}/${e.target.value}`).then(Response => {
+        axios.get(`${Server.baseUrl}api/pdtBoard/detail/opt2/${boardId}/${e.target.value}`).then(Response => {
+        // axios.get(`http://localhost:9000/api/pdtBoard/detail/opt2/${boardId}/${e.target.value}`).then(Response => {
             setOption2List(Response.data.data);
             console.log(Response.data);
         }).catch(Error => {
@@ -28,31 +29,28 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
     return (
         <div className="mndtl_opt_btm _js_mndtl_opt_btm">
             <div className="opt_btm_bgn">
-                <div>
+                <form>
                     <div>
-                        <Form.Select  aria-label="Default select example" onChange={handleSelectFirstOption}>
+                        <Form.Select id="option1" onChange={handleSelectFirstOption}>
                             <option>선택하세요. &#40;{optionName1}&#41;</option>
                             {
-                                option1List.map((item) => (
+                                option1List.map(item => (
                                     <option key={item.id} value={item.optValue}>{item.optValue}</option>
                                 ))
                             }
                         </Form.Select>
                     </div>
-                    {
-                        option2List && 
-                        <div>
-                            <Form.Select  aria-label="Default select example" onChange={handleSelectSecondOption}>
-                                <option>선택하세요. &#40;{optionName2}&#41;</option>
-                                {
-                                    option2List.map((item) => (
-                                        <option key={item.id} value={item.opt2Value}>{item.opt2Value}-{item.price}</option>
-                                    ))
-                                }n
-                            </Form.Select>
-                        </div>
-                    }
-                </div>
+                    <div>
+                        <Form.Select id="option2" onChange={handleSelectSecondOption}>
+                            <option>선택하세요. &#40;{optionName2}&#41;</option>
+                            {
+                                option2List && option2List.map((data) => (
+                                    <option key={data.pdtId} value={data.opt2Value}>{data.opt2Value} &#40;남은 수량 : {data.stock}개, {(data.price).toLocaleString()}원&#41;</option>
+                                ))
+                            }
+                        </Form.Select>
+                    </div>
+                </form>
 
                 <div className="btm_bgn_in dps1">
                     <ul className="btm_bgn_bx type_other1">

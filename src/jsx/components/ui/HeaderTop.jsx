@@ -3,12 +3,15 @@ import Logo from "./Logo";
 import Search from "../Search";
 
 import "../../../css/components/HeaderTop.css"
+import Cart from './Cart';
+import { Link } from 'react-router-dom';
 
 function HeaderTop(props) {
     return ( 
         <div className='HeaderTop'>
             <Logo />
             <Search setQueryState={props.setQueryState} setUrlState={props.setUrlState}/>
+            <Cart />
         </div>
      );
 }

@@ -19,11 +19,8 @@ function Product() {
    useEffect(()=>{
       console.log(pathname)
 
-      // axios.get(`http://121.145.206.143:9000/api/pdtBoard/detail/${pathname.productId}`)
       // axios.get(`http://localhost:9000/api/pdtBoard/detail/${pathname.productId}`)
-
       axios.get(`${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`)
-
       .then(Response => {
          console.log(Response.data);
          setProductData(Response.data.data);

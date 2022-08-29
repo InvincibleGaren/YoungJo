@@ -10,7 +10,6 @@ import {
 import './css/mystyle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 import Home from "./jsx/pages/Home";
 import Product from "./jsx/pages/Product";
 import UnderNewService from "./jsx/components/UnderNewService";
@@ -19,7 +18,8 @@ import HotBrand from "./jsx/components/HotBrand";
 import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
 import CtgL from "./jsx/components/CtgL";
 import CategoryMenu from "./jsx/components/ui/CategoryMenu";
-import CartEmpty from "./jsx/components/ui/CartEmpty";
+import CartEmpty from "./jsx/components/ui/Cart/CartEmpty";
+import Cart from "./jsx/components/ui/Cart/Cart"
 import SimpleJoin from "./jsx/pages/SimpleJoin";
 import JoinForm from "./jsx/pages/JoinForm";
 import ScrollToTop from "./jsx/function/ScrollTop";
@@ -35,7 +35,6 @@ function App() {
           <Route path=":productId" element={<Product/>} />
         </Route>
         <Route path="/categorymenu" element={<CategoryMenu />} />
-        <Route path="/cartempty" element={<CartEmpty />} />
         <Route path="/join/simplejoin" element={<SimpleJoin />} />
         <Route path="/join/joinform" element={<JoinForm />} />
         <Route path="/allsearch" element={<AllSearch />} />
@@ -44,6 +43,9 @@ function App() {
         <Route path="/HotBrand" element={<HotBrand/>} />
         <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
         <Route path="/ctgl" element={<CtgL/>}/>
+
+        <Route path="/cart" element={<Cart/>} />
+        <Route path="/cartempty" element={<CartEmpty/>} />
       </Routes>
     </BrowserRouter>
   );
