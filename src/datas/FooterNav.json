@@ -3,13 +3,13 @@
         "id" : 1,
         "name" : "카테고리",
         "iconName" : "menu",
-        "url" : "/"
+        "url" : "/ctgl"
     },
     {
         "id" : 2,
         "name" : "통합검색",
         "iconName" : "search",
-        "url" : "/"
+        "url" : "/allsearch?query="
     },
     {
         "id" : 3,

@@ -4,8 +4,12 @@ import "../../../css/components/SearchFilter.css"
 
 function SearchFilter(props) {
 
-    
+    const [URL, setUrl ] = useState(
+        `/AllSearch?query=${props.QueryState.query}&page=${props.QueryState.page}&limit=${props.QueryState.limit}&sort=${props.QueryState.sort}&minPrice=${props.QueryState.minPrice}&maxPrice=${props.QueryState.maxPrice}`
+      );
     const [sortCheck, setSortCheck] = useState({
+        // url : url+props.State.query+props.State.page
+        //        +props.State.limit+props.State.sort+props.State.minPrice+props.State.maxPrice,
         visible: false,
         selected : "추천순",
     })
@@ -14,18 +18,42 @@ function SearchFilter(props) {
         visible: false
     })
 
-    const sortItemClick = (e) => {
-        // e.currentTarget.classList.toggle("active");
-        props.setState({...props.State, sort: "&sort="+e.currentTarget.textContent})
-        e.preventDefault();
-    }
+    const [sortState, setSortState] = useState({
+        recommended : "active",
+        sales : "",
+        lowPrice : "",
+        highPrice : "",
+        NewProduct : "",
+        reviews : "",
+    })
 
+    const sortItemClick = (e, name) => {
+        e.preventDefault();
+        // const url = `/AllSearch?query=${props.QueryState.query}&page=${props.QueryState.page}&limit=${props.QueryState.limit}&sort=${e.currentTarget.textContent}&minPrice=${props.QueryState.minPrice}&maxPrice=${props.QueryState.maxPrice}`
+        props.setUrlState({...props.QueryState, sort: e.currentTarget.textContent});
+        setSortCheck({visible : false, selected:e.currentTarget.textContent})
+        setSortState({
+            recommended : "",
+            sales : "",
+            lowPrice : "",
+            highPrice : "",
+            NewProduct : "",
+            reviews : "",            
+            [name] : "active"
+        })
+        // e.currentTarget.classList.toggle("active");
+        // props.setQueryState({...props.QueryState, sort: `&sort=${e.currentTarget.textContent}`})
+        // setSortCheck({...sortCheck, visible:false})
+    }   
+    useEffect(()=>{
+
+    }, [sortCheck])
     return (  
         <ul id="SearchFilter" className="m_ncatetbl">
             <li class="view_td" data-areaid="view">
                 <div class="posr">
                     <a href="javascript:void(0)" id="_btn_view_type_toggle" class="btn_t">
-                    <span class="sp_view ico_thmb">이미지형</span>
+                        <span class="sp_view ico_thmb">이미지형</span>
                     </a>
                 </div>
             </li>
@@ -57,16 +85,26 @@ function SearchFilter(props) {
                     {
                         sortCheck.visible && 
                             <ul class="mn_layer">
-                                <li onClickCapture={sortItemClick}>
-                                    <Link to="#" class="clickable"> 추천순</Link>
-                                        <button onclick="alert('추천순 상품의 판매량과 정확도 등을 점수화하여 정렬하며, 광고상품의 경우 별도 기준으로 상단에 정렬됩니다.');" class="btn_info"><span class="blind">추천순 설명 보기</span></button>                                
+                                <li onClickCapture={(e) => sortItemClick(e, "recommended")} name="recommended" class={sortState.recommended}>
+                                    <Link to="#"
+                                        class="clickable">추천순</Link>
+                                        <button onclick="alert('추천순 상품의 판매량과 정확도 등을 점수화하여 정렬하며, 광고상품의 경우 별도 기준으로 상단에 정렬됩니다.');" class="btn_info"><span class="blind"></span></button>                                
                                 </li>
-                                <li class="active"><Link title="sale" to="#" class="clickable" data-info="sale">판매량순</Link></li>
-                                <li><a title="prcasc" href="#" class="clickable" data-info="prcasc">낮은가격순</a></li>
-                                <li><a title="prcdsc" href="#" class="clickable" data-info="prcdsc">높은가격순</a></li>
-                                <li><a title="dcrt" href="#" class="clickable" data-info="dcrt">할인율순</a></li>
+                                <li onClickCapture={(e) => sortItemClick(e, "sales")} name="sales" class={sortState.sales}>
+                                    <Link to="#" title="sale" class="clickable" data-info="sale">판매순</Link></li>
+                                <li onClickCapture={(e) => sortItemClick(e, "lowPrice")} name="lowPrice" class={sortState.lowPrice}>
+                                    <Link to="#" title="sale" class="clickable" data-info="sale">낮은가격</Link></li>
+                                <li onClickCapture={(e) => sortItemClick(e, "highPrice")} name="highPrice" class={sortState.highPrice}>
+                                    <Link to="#" title="sale" class="clickable" data-info="sale">높은가격</Link></li>
+                                <li onClickCapture={(e) => sortItemClick(e, "NewProduct")} name="NewProduct" class={sortState.NewProduct}>
+                                    <Link to="#" title="sale" class="clickable" data-info="sale">신상품순</Link></li>
+                                <li onClickCapture={(e) => sortItemClick(e, "reviews")} name="reviews" class={sortState.reviews}>
+                                    <Link to="#" title="sale" class="clickable" data-info="sale">리뷰많은순</Link></li>
+
+                                {/* <li><a title="prcasc" href="#" class="clickable" data-info="prcasc">낮은가격</a></li>
+                                <li><a title="prcdsc" href="#" class="clickable" data-info="prcdsc">높은가격</a></li>
                                 <li><a title="regdt" href="#" class="clickable" data-info="regdt">신상품순</a></li>
-                                <li><a title="cnt" href="#" class="clickable" data-info="cnt">리뷰많은순</a></li>
+                                <li><a title="cnt" href="#" class="clickable" data-info="cnt">리뷰많은순</a></li> */}
                             </ul>
                     }
 

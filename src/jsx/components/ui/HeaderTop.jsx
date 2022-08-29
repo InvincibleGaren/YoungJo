@@ -8,7 +8,7 @@ function HeaderTop(props) {
     return ( 
         <div className='HeaderTop'>
             <Logo />
-            <Search setState={props.setState}/>
+            <Search setQueryState={props.setQueryState} setUrlState={props.setUrlState}/>
         </div>
      );
 }

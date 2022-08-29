@@ -8,33 +8,42 @@ import AllSearchItem from '../components/ui/AllSearchItem';
 
 import "../../css/pages/AllSearch.css";
 import SearchFilter from '../components/ui/SearchFilter';
+import { useRef } from 'react';
+import { useInView } from "react-intersection-observer"
 
 
 function AllSearch() {
    const [URL, setUrl] = useSearchParams();
    const [itemList, setItemList] = useState();
-   // const [query, setQuery] = useState(URL.get('query'));
-   // const [query, setQuery] = useState(URL.get('query'));
+   const [scrollref, inView] = useInView()
 
    const [query, setQuery] = useState({
-      query : "?query="+URL.get('query'),
-      page : "&page="+URL.get('page'),
-      limit : "&limit="+URL.get('limit'),
-      sort : "&sort="+URL.get('sort'),
-      minPrice : "&minPrice="+URL.get('minPrice'),
-      maxPrice : "&maxPrice="+URL.get('maxPrice')
+      query : URL.get('query') === "null" ? null:URL.get('query'),
+      page : URL.get('page'),
+      limit : URL.get('limit'),
+      sort : URL.get('sort'),
+      minPrice : URL.get('minPrice'),
+      maxPrice : URL.get('maxPrice'),
     });
 
-   window.addEventListener('scroll', (e)=>{
-      console.log(e);
-   });
+  
+   useEffect(() => {
+      // 스크롤 기준 요소가 화면에 보이면
+      if(inView){
+         console.log(2);
+         query.limit = Number(query.limit)+2;
+         setUrl({...query, limit: query.limit});
+         // setQuery({...query, limit: query.limit});
+      }
+    }, [inView])
 
    useEffect(()=>{
-      const url = Server.baseUrl+"api/search"+query.query+query.page+query.limit+query.sort+query.minPrice+query.maxPrice;
-      // const url = Server.baseUrl+"api/search?"+query.query+query.page;
-      console.log(url)
+      
+      const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
       const config = {timeout:1000};
-      URL.get('query') && axios.get(url, config)
+      // setUrl({...query, limit: query.limit});
+      console.log("통신 쿼리");
+      query.query==="" || axios.get(url, config)
          .then(LoginResult => { 
             console.log(LoginResult);
             if(LoginResult.data.boardList.length)
@@ -69,15 +78,27 @@ function AllSearch() {
             }
          });
    }, [query]);
+
+   useEffect(() => {
+      setQuery({
+         query : URL.get('query') === "null" ? null:URL.get('query'),
+         page : URL.get('page'),
+         limit : URL.get('limit'),
+         sort : URL.get('sort'),
+         minPrice : URL.get('minPrice'),
+         maxPrice : URL.get('maxPrice'),
+       });
+   }, [URL]);
+
    console.log("itemList : ");
    console.log(itemList);
    return ( 
         <div className='AllSearch'>
-            <HeaderTop State={query} setState={setQuery}/>
+            <HeaderTop setQueryState={setQuery} setUrlState={setUrl}/>
             {URL.get('query') ? 
                 itemList ?
                 <div>
-                    <SearchFilter setState={setQuery} />
+                    <SearchFilter QueryState={query} setUrlState={setUrl} setQueryState={setQuery}/>
                     <ul id="AllSearchItemList" className="cmitem_grid_lst mnsditem_ty_thmb">
                     {  
                         itemList.map((item)=>{
@@ -97,7 +118,7 @@ function AllSearch() {
                 <p>최근검색어가 없습니다</p>
             </div>
             }
-            <div class="cgsearch_recomm_tag" id="now_hot_all">
+            <div class="cgsearch_recomm_tag" id="now_hot_all" ref={scrollref}>
                <h3 class="cgsearch_recomm_title">추천태그</h3>
                <div class="cgsearch_recomm_container">
                   <ul class="cgsearch_recomm_lst" id="now_hot_list">

@@ -8,6 +8,7 @@ import ProductBottomButton from '../components/ui/product/ProductBottomButton';
 import { useParams } from 'react-router-dom';
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
+import Server from "../../datas/Server.json";
 
 function Product() {
    const [productData, setProductData] = useState();
@@ -17,8 +18,12 @@ function Product() {
 
    useEffect(()=>{
       console.log(pathname)
-      axios.get(`http://121.145.206.143:9000/api/pdtBoard/detail/${pathname.productId}`)
+
+      // axios.get(`http://121.145.206.143:9000/api/pdtBoard/detail/${pathname.productId}`)
       // axios.get(`http://localhost:9000/api/pdtBoard/detail/${pathname.productId}`)
+
+      axios.get(`${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`)
+
       .then(Response => {
          console.log(Response.data);
          setProductData(Response.data.data);
