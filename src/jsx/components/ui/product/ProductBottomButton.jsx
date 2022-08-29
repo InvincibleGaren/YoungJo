@@ -5,17 +5,19 @@ import Form from 'react-bootstrap/Form';
 
 function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
 
-    console.log(option1List)
+    console.log(option1List);
 
-    const [opttion2List, setOption2List] = useState();
+    const [option2List, setOption2List] = useState();
 
     const handleSelectFirstOption = (e) => {
-        console.log(e.target.value)
-        axios.get(`http://localhost:9000/api/pdtBoard/detail/option2/${boardId}/${e.target.value}`).then(Response => {
-            setOption2List(Response.data.data)
-            console.log(Response.data)
+        console.log(e.target.value);
+
+        axios.get(`http://121.145.206.143:9000/api/pdtBoard/detail/option2/${boardId}/${e.target.value}`).then(Response => {
+        // axios.get(`http://localhost:9000/api/pdtBoard/detail/option2/${boardId}/${e.target.value}`).then(Response => {
+            setOption2List(Response.data.data);
+            console.log(Response.data);
         }).catch(Error => {
-            console.log(Error)
+            console.log(Error);
         })
     }
 
@@ -31,22 +33,22 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
                         <Form.Select  aria-label="Default select example" onChange={handleSelectFirstOption}>
                             <option>선택하세요. &#40;{optionName1}&#41;</option>
                             {
-                                option1List.map((item, idx) => (
-                                    <option value={item.optValue}>{item.optValue}</option>
+                                option1List.map((item) => (
+                                    <option key={item.id} value={item.optValue}>{item.optValue}</option>
                                 ))
                             }
                         </Form.Select>
                     </div>
                     {
-                        opttion2List && 
+                        option2List && 
                         <div>
                             <Form.Select  aria-label="Default select example" onChange={handleSelectSecondOption}>
                                 <option>선택하세요. &#40;{optionName2}&#41;</option>
                                 {
-                                    opttion2List.map((item, idx) => (
-                                        <option value={item.opt2Value}>{item.opt2Value}</option>
+                                    option2List.map((item) => (
+                                        <option key={item.id} value={item.opt2Value}>{item.opt2Value}-{item.price}</option>
                                     ))
-                                }
+                                }n
                             </Form.Select>
                         </div>
                     }
@@ -76,7 +78,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default ProductBottomButton
+export default ProductBottomButton;
