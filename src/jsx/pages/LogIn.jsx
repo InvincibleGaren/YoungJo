@@ -15,7 +15,7 @@ function LogIn() {
                     <span className="cmem_inp_txt2">
                         {/* 적은 거 삭제 버튼 inp_clear */}
                         {/* <label for="inp_id"><span className="blind">아이디</span></label> */}
-                        <input type="text" id="inp_id" name="mbrLoginId" placeholder="아이디" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="50" />
+                        <input type="text" id="inp_id" name="mbrLoginId" placeholder="아이디" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" maxLength="50" />
                         <button type="button" className="inp_clear"><span className="sp_cmem_login cmem_ico_clear"></span></button>
                     </span>
                     <span className="cmem_inp_txt2">
@@ -27,8 +27,8 @@ function LogIn() {
                     <div className="cmem_login_chk">
                         <span className="cmem_inp_chk type3">
                             {/* 체크박스 고쳐야함 */}
-                            <input type="checkbox" id="keep_id" name="chk_log" value="Y" checked="false" />
-                            <label for="keep_id">아이디 저장</label>
+                            <input type="checkbox" id="keep_id" name="chk_log" value="Y" defaultChecked={false}/>
+                            <label htmlFor="keep_id">아이디 저장</label>
                         </span>
                     </div>
 

@@ -41,6 +41,7 @@ function AllSearch() {
       console.log("통신 쿼리");
       const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
       const token = sessionStorage.getItem("login") || null;
+      console.log(`토큰 : ${token}`);
       const config = {timeout:1000, headers:{authentication: token}};
 
       // setUrl({...query, limit: query.limit});
@@ -113,48 +114,48 @@ function AllSearch() {
                     </ul>
                 </div>
                 :
-                <div class="cgsearch_none_result" id="mbr_kwd_alert_nolist">
+                <div className="cgsearch_none_result" id="mbr_kwd_alert_nolist">
                     <p>‘{URL.get('query')}’ 상품이 없습니다. 단어의 철자나 띄어쓰기가 정확한지 확인해 보세요.</p>
                 </div>
             :
-            <div class="cgsearch_none_result" id="mbr_kwd_alert_nolist">
+            <div className="cgsearch_none_result" id="mbr_kwd_alert_nolist">
                 <p>최근검색어가 없습니다</p>
             </div>
             }
-            <div class="cgsearch_recomm_tag" id="now_hot_all" ref={scrollref}>
-               <h3 class="cgsearch_recomm_title">추천태그</h3>
-               <div class="cgsearch_recomm_container">
-                  <ul class="cgsearch_recomm_lst" id="now_hot_list">
+            <div className="cgsearch_recomm_tag" id="now_hot_all" ref={scrollref}>
+               <h3 className="cgsearch_recomm_title">추천태그</h3>
+               <div className="cgsearch_recomm_container">
+                  <ul className="cgsearch_recomm_lst" id="now_hot_list">
                      <li>
                         <a href="http://m.ssg.com/search.ssg?target=all&amp;query=%23아이반찬">
-                           <span class="cgsearch_recomm_img">
+                           <span className="cgsearch_recomm_img">
                               <img src="//sui.ssgcdn.com/cmpt/banner/202208/2022081916023935695532002653_178.PNG" alt="" />
                            </span>
-                           <span class="cgsearch_recomm_txt">#아이반찬 고민이라면</span>
+                           <span className="cgsearch_recomm_txt">#아이반찬 고민이라면</span>
                         </a>
                      </li>
                      <li>
                         <a href="http://m.ssg.com/search.ssg?target=all&amp;query=%23에어프라이어용">
-                           <span class="cgsearch_recomm_img">
+                           <span className="cgsearch_recomm_img">
                               <img src="//sui.ssgcdn.com/cmpt/banner/202208/2022081916033609100455262045_726.PNG" alt="" />
                            </span>
-                           <span class="cgsearch_recomm_txt">#음식다넣어 다재다능해</span>
+                           <span className="cgsearch_recomm_txt">#음식다넣어 다재다능해</span>
                         </a>
                      </li>
                      <li>
                         <a href="http://m.ssg.com/search.ssg?target=all&amp;query=%23건강식품">
-                           <span class="cgsearch_recomm_img">
+                           <span className="cgsearch_recomm_img">
                               <img src="//sui.ssgcdn.com/cmpt/banner/202208/2022081916041381689255960035_175.PNG" alt="" />
                            </span>
-                           <span class="cgsearch_recomm_txt">#지칠수록 건강관리</span>
+                           <span className="cgsearch_recomm_txt">#지칠수록 건강관리</span>
                         </a>
                      </li>
                      <li>
                         <a href="http://m.ssg.com/search.ssg?target=all&amp;query=%23간편식품">
-                           <span class="cgsearch_recomm_img">
+                           <span className="cgsearch_recomm_img">
                               <img src="//sui.ssgcdn.com/cmpt/banner/202208/2022081916043790403963142396_539.PNG" alt="" />
                            </span>
-                           <span class="cgsearch_recomm_txt">#간편한데 맛도좋아</span>
+                           <span className="cgsearch_recomm_txt">#간편한데 맛도좋아</span>
                         </a>
                      </li>
                   </ul>

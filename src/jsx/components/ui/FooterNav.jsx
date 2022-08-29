@@ -11,7 +11,7 @@ function FooterNav() {
                     <Link to={my.url} key={my.id}>
                         {
                             my.iconName?
-                            <span class="material-symbols-outlined">{my.iconName}</span>
+                            <span className="material-symbols-outlined">{my.iconName}</span>
                             :
                             <img src={my.iconUrl}></img>
                         }

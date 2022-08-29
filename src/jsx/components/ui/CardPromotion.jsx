@@ -20,7 +20,7 @@ function CardPromotion() {
             <div className='CardPromotionItemList'>
                 {
                     promotionData && promotionData.map(Item =>(
-                        <CardPromotionItem item={Item} />
+                        <CardPromotionItem item={Item} key={Item.id}/>
                     ))
                 }
             </div>
