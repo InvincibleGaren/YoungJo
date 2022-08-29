@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import categoryMenuDatas from '../../../datas/CategoryMenuDatas.json';
-import CategoryMenuUnder from './CategoryMenuUnder';
-import axios from 'axios';
+import Server from "../../../datas/Server.json";
+
+
 
 function CategoryMenu() {
 
     const [cateMenu, setCateMenu] = useState([]);
-    const url = "http://10.10.10.127:9000/api/ctg/detail/menu/ctgL레벨/아이디"
-    // for(i=0; i<10; i++){
-    //     const url = `http://10.10.10.127:9000/api/ctg/detail/menu/ctgL${i}/${j}`
-    // }
+    const url = `${Server.baseUrl}api/ctg/detail/menu/ctgL레벨/아이디`
     useEffect(()=>{
         setCateMenu(categoryMenuDatas);
-        // axios
-        //     .get(url) .then(Response => {
-        //         console.log(Response);
-        //         setCateMenu(Response.data);
-        //     })
     },[])
 
     return (  

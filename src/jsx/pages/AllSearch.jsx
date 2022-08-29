@@ -90,8 +90,8 @@ function AllSearch() {
        });
    }, [URL]);
 
-   console.log("itemList : ");
-   console.log(itemList);
+   // console.log("itemList : ");
+   // console.log(itemList);
    return ( 
         <div className='AllSearch'>
             <HeaderTop setQueryState={setQuery} setUrlState={setUrl}/>

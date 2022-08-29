@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function CtgL2List({cateData, id}) {
 
@@ -16,17 +16,25 @@ function CtgL2List({cateData, id}) {
             setIsView(false)
         }
     },[id])
- 
+
     return ( 
+
         <div>
             {
                 isView ? 
-                cateData.ctgL2List.map(data =>(
                     <div className="ctgl2List">
-                        {data.name}
+                        <Link to={`/productList?categoryLevel=1&ctglId=${cateData.ctgL1.id}`}>상품전체보기</Link>
+                    </div>   
+                : ""
+            }
+            {
+                isView ? 
+                cateData.ctgL2List.map(data =>(
+                    <div className="ctgl2List" key={data.id}>
+                        <Link to={`/productList?categoryLevel=2&ctglId=${data.id}`}>{data.name}</Link>
                     </div>    
                 ))
-                : ""
+                : ""   
             } 
         </div>
     );

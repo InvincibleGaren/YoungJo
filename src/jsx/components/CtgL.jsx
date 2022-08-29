@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import CtgL1 from './CtgL1';
 import CtgL2List from './CtgL2List';
+import Server from "../../datas/Server.json";
+import CtgL1 from './CtgL1';
 
 function CtgL() {
 
@@ -10,7 +11,7 @@ function CtgL() {
     const [subViewId, setSubViewId] = useState(0)
 
     useEffect(()=>{
-        axios.get('http://localhost:9000/api/ctg/main')
+        axios.get(`${Server.baseUrl}api/ctg/main`)
         .then(Response => {
             console.log(Response.data)
             setCtgL(Response.data.data)

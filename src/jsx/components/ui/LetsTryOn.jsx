@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TempResponse from "../../../datas/HappyLoungeData.json"
 
-import { Link } from 'react-router-dom';
-import HappyLoungeItem from "./HappyLoungeItem"
-
 import "../../../css/components/HappyLounge.css"
 import TitleUi from './MainTitleUi';
 import SubTitleUi from './SubTitleUi';
 import LetsTryOnItemSlider from '../widgets/LetsTryOnItemSlider';
+import Server from "../../../datas/Server.json";
+
 
 function LetsTryOn() {
 
     const [happyLoungeItem, setHappyLoungeItem] = useState([])
     const countQuery = "qty=5";
-    const url = "http://10.10.10.127:9000/api/happyLoungeItem?"+countQuery
+    
     useEffect(() => {
+        const url = `${Server.baseUrl}api/happyLoungeItem?`+countQuery
         axios.get(url, {timeout:1000}).then(Response => {
             setHappyLoungeItem(Response.data)
         })
         .catch(error => {
-            setHappyLoungeItem(TempResponse)
+            setHappyLoungeItem(TempResponse)    
         })
     },[])
 
