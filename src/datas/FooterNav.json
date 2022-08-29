@@ -3,7 +3,7 @@
         "id" : 1,
         "name" : "카테고리",
         "iconName" : "menu",
-        "url" : "/"
+        "url" : "/ctgl"
     },
     {
         "id" : 2,

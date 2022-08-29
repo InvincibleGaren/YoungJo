@@ -10,7 +10,7 @@ function CtgL() {
     const [subViewId, setSubViewId] = useState(0)
 
     useEffect(()=>{
-        axios.get('http://10.10.10.78:9000/api/ctg/main')
+        axios.get('http://localhost:9000/api/ctg/main')
         .then(Response => {
             console.log(Response.data)
             setCtgL(Response.data.data)
@@ -25,7 +25,7 @@ function CtgL() {
     }
 
     return ( 
-        <div className= "clickable" >
+        <div className= "clickable category">
             <div className="ctgl">
                 {
                     ctgLData && ctgLData.map(ctgl1 =>(

@@ -14,9 +14,6 @@ import UnderNewService from "./jsx/components/UnderNewService";
 import LogIn from "./jsx/pages/LogIn";
 import HotBrand from "./jsx/components/HotBrand";
 import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
-// import Test from "./jsx/Test";
-// import MainCate from "./jsx/pages/MainCate";
-import CtgL from "./jsx/components/CtgL";
 import CategoryMenu from "./jsx/components/ui/CategoryMenu";
 import CartEmpty from "./jsx/components/ui/CartEmpty";
 
@@ -24,6 +21,7 @@ import SimpleJoin from "./jsx/pages/SimpleJoin";
 import JoinForm from "./jsx/pages/JoinForm";
 import ScrollToTop from "./jsx/function/ScrollTop";
 import AllSearch from "./jsx/pages/AllSearch";
+import MainCate from "./jsx/pages/MainCate";
 
 
 
@@ -46,7 +44,7 @@ function App() {
         <Route path="/UNS" element={<UnderNewService/>} />
         <Route path="/HotBrand" element={<HotBrand/>} />
         <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
-        <Route path="/ctgl" element={<CtgL/>}/>
+        <Route path="/cate" element={<MainCate/>}/>
       </Routes>
     </BrowserRouter>
     
