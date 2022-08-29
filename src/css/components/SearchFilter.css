@@ -1,0 +1,30 @@
+#SearchFilter{
+    border-top: 1px solid #e2e5e8;
+    border-bottom: 1px solid #e2e5e8;
+}
+#SearchFilter .in{
+    border-left: none;
+}
+
+#SearchFilter .in:after {
+    content: "";
+    width: 1px;
+    height: 22px;
+    background: #eaeaea;
+    position: absolute;
+    left: -2px;
+    top: 22px;
+    margin-top: -11px;
+}
+
+#SearchFilter #_btn_view_type_toggle {
+    padding: 15px 10px 10px 20px;
+}
+
+#SearchFilter .mn_layer{
+    display: block;
+}
+
+#SearchFilter .m_ds_pos{
+    display: block;
+}

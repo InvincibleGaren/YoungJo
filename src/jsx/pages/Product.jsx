@@ -6,6 +6,7 @@ import ProductHeader from '../components/ui/product/ProductHeader';
 import Review from '../components/ui/Review';
 import ProductBottomButton from '../components/ui/product/ProductBottomButton';
 import { useParams } from 'react-router-dom';
+import Server from "../../datas/Server.json";
 
 function Product() {
    const [productData, setProductData] = useState();
@@ -15,7 +16,7 @@ function Product() {
 
    useEffect(()=>{
       console.log(pathname)
-      axios.get(`http://10.10.10.78:9000/api/pdtBoard/detail/${pathname.productId}`)
+      axios.get(`${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`)
       .then(Response => {
          console.log(Response.data);
          setProductData(Response.data.data);
