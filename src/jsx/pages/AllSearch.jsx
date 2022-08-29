@@ -15,7 +15,8 @@ import { useInView } from "react-intersection-observer"
 function AllSearch() {
    const [URL, setUrl] = useSearchParams();
    const [itemList, setItemList] = useState();
-   const [scrollref, inView] = useInView()
+   const [likeCheck, setLikeCheck] = useState(false);
+   const [scrollref, inView] = useInView();
 
    const [query, setQuery] = useState({
       query : URL.get('query') === "null" ? null:URL.get('query'),
@@ -30,7 +31,6 @@ function AllSearch() {
    useEffect(() => {
       // 스크롤 기준 요소가 화면에 보이면
       if(inView){
-         console.log(2);
          query.limit = Number(query.limit)+2;
          setUrl({...query, limit: query.limit});
          // setQuery({...query, limit: query.limit});
@@ -38,20 +38,23 @@ function AllSearch() {
     }, [inView])
 
    useEffect(()=>{
-      
-      const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
-      const config = {timeout:1000};
-      // setUrl({...query, limit: query.limit});
       console.log("통신 쿼리");
+      const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
+      const token = sessionStorage.getItem("login") || null;
+      const config = {timeout:1000, headers:{authentication: token}};
+
+      // setUrl({...query, limit: query.limit});
+      
       query.query==="" || axios.get(url, config)
          .then(LoginResult => { 
             console.log(LoginResult);
-            if(LoginResult.data.boardList.length)
+            if(LoginResult.data.boardList?.length)
                setItemList(LoginResult.data.boardList);
             else
                setItemList(null);
          })
          .catch(error => {
+            console.log(error);
             switch(error.code){
                case "ECONNABORTED":
                case "ERR_NETWORK":
@@ -77,7 +80,7 @@ function AllSearch() {
                      break;
             }
          });
-   }, [query]);
+   }, [query, likeCheck]);
 
    useEffect(() => {
       setQuery({
@@ -103,7 +106,7 @@ function AllSearch() {
                     {  
                         itemList.map((item)=>{
                             return(
-                                <AllSearchItem Item={item}/>
+                                <AllSearchItem Item={item} LikeCheckState={likeCheck} setLikeCheckState={setLikeCheck}/>
                             )
                         })
                     }
