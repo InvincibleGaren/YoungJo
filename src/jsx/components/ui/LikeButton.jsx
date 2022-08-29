@@ -5,10 +5,10 @@ import Server from "../../../datas/Server.json";
 import "../../../css/components/LikeButton.css";
 
 function LikeButton(props) {
+    
     const [LikeState, setLikeState] = useState();
 
     useEffect(()=>{
-        console.log("AAAAAAAAAAa")
         if(props.Item.boardLike)
         {
             setLikeState("cmlike_btn _js_cmlike_btn clickable on");
@@ -28,8 +28,6 @@ function LikeButton(props) {
                console.log(LoginResult);
                if(LoginResult.data.data){
                     props.setLikeCheckState(!props.LikeCheckState);
-                    console.log("성공");
-                    console.log(props.QueryState);
                }else{
                     alert("관심 상품 등록 실패");
                }

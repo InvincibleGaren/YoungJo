@@ -12,15 +12,16 @@
 .HappyLounge .HappyLoungeSubTitle{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .HappyLounge .SubTitleUi span{
-    font-size: 21px;
+    font-size: 1rem;
     color: #777;
 }
 
-.HappyLounge .SubTitleUi a{
-    font-size: 20px;
+.HappyLounge .HappyLoungeSubTitle a{
+    font-size: 1rem;
     color: #777;
     text-decoration: none;
 }

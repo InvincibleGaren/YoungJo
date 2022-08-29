@@ -8,9 +8,6 @@ import 'swiper/css/autoplay';
 import '../../../css/components/HeaderSlider.css';
 
 function ProductSlider({thumbImgList}) {
-
-    console.log(thumbImgList)
-
     return (
         <Swiper className='HeaderSlider'
             spaceBetween = {0}

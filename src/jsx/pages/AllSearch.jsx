@@ -40,7 +40,7 @@ function AllSearch() {
    useEffect(()=>{
       console.log("통신 쿼리");
       const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
-      const token = sessionStorage.getItem("login") || null;
+      const token = sessionStorage.getItem("login");
       console.log(`토큰 : ${token}`);
       const config = {timeout:1000, headers:{authentication: token}};
 

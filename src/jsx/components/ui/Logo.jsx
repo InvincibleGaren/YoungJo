@@ -12,12 +12,8 @@ function Logo() {
     return ( 
         <div className='logo'>
             <h1>
-                <Link to="/" className='logo-left'>
-                    <img src={SSGImg} />
-                </Link>
-                <Link to="/" className='logo-right'>
-                    <img src={SSGMallImg} />
-                </Link>
+                <Link to="/" className='logo-left' />
+                <Link to="/" className='logo-right' />
             </h1>
             <Link to="/"><img src={DownArrowImg} width={16} height={16}/></Link>
         </div>

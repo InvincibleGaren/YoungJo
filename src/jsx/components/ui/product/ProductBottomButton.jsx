@@ -1,9 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import LikeButton from '../LikeButton';
 
-function ProductBottomButton() {
+function ProductBottomButton(props) {
 
     const[isView, setIsView] = useState(false);
+    
 
     useEffect(()=>{
         setIsView(!isView)
@@ -12,6 +14,9 @@ function ProductBottomButton() {
     const handleView = () => {
         setIsView();
     }
+
+    console.log("props.productData");
+    console.log(props.productData);
 
     return (
         <div className="mndtl_opt_btm _js_mndtl_opt_btm  react-area">
@@ -39,16 +44,18 @@ function ProductBottomButton() {
 
                 <div className="btm_bgn_in dps1">
                     <ul className="btm_bgn_bx type_other1">
+                        
                         {/* 하트 - 로그인정보 */}
                         <li className="ty_like" data-react-unit-type="item">
                             <span className="cmlike _js_cmlike interestIt clickable">
-                                <button className="cmlike_btn _js_cmlike_btn enp_mobon_wish">
+                                <LikeButton Item={props.productData} LikeCheckState={props.LikeCheckState} setLikeCheckState={props.setLikeCheckState} />
+                                {/* <button className="cmlike_btn _js_cmlike_btn enp_mobon_wish">
                                     <span className="cmlike_ico">
                                         <i className="cmlike_primary_l"></i>
                                         <span className="sr_off"><span className="blind">관심상품 취소</span></span>
                                         <span className="sr_on"><span className="blind">관심상품 등록</span></span>
                                     </span>
-                                </button>
+                                </button> */}
                             </span>
                         </li>
 
