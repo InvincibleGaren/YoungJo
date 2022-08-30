@@ -49,16 +49,7 @@ function Search(props) {
 
     //검색 버튼 클릭시 
     const SearchSubmit = (e) =>{
-
-      //내용물 업데이트
-      if(props.setQueryState)
-      {
-        console.log("search-query");
-        // props.setQueryState(query)
         props.setUrlState(URL);
-      }
-
-        
     }
 
     return ( 
