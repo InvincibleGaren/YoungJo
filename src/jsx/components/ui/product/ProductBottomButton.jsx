@@ -1,57 +1,73 @@
+import axios from 'axios';
 import React from 'react'
 import { useState, useEffect } from 'react';
+import Form from 'react-bootstrap/Form';
+import Server from '../../../../datas/Server.json';
+import LikeButton from '../LikeButton';
 
-function ProductBottomButton() {
+function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
+// function ProductBottomButton(props) {
+
+    console.log(option1List);
 
     const[isView, setIsView] = useState(false);
 
-    useEffect(()=>{
-        setIsView(!isView)
-    }, [])
+    const [option2List, setOption2List] = useState();
 
-    const handleView = () => {
-        setIsView();
+    const handleSelectFirstOption = (e) => {
+        console.log(e.target.value);
+
+        axios.get(`${Server.baseUrl}api/pdtBoard/detail/opt2/${boardId}/${e.target.value}`).then(Response => {
+        // axios.get(`http://localhost:9000/api/pdtBoard/detail/opt2/${boardId}/${e.target.value}`).then(Response => {
+            setOption2List(Response.data.data);
+            console.log(Response.data);
+        }).catch(Error => {
+            console.log(Error);
+        })
     }
 
+    const handleSelectSecondOption = (e) => {
+        console.log(e.target.value)
+    }
+
+    console.log("props.productData");
+    console.log(props.productData);
+
     return (
-        <div className="mndtl_opt_btm _js_mndtl_opt_btm  react-area">
+        <div className="mndtl_opt_btm _js_mndtl_opt_btm">
             <div className="opt_btm_bgn">
-                <div>
+                <form>
                     <div>
-                        <select className="select" name="" >
-                            <option>선택하세요. &#40;모델명&#41;</option>
-                            {/* optionValue1 */}
-                            <option value="01 586666-02">01&#41;586666-02</option>
-                            <option value="01 586666-02">01&#41;586666-02</option>
-                            <option value="01 586666-02">01&#41;586666-02</option>
-                            <option value="01 586666-02">01&#41;586666-02</option>
-                        </select>
+                        <Form.Select id="option1" onChange={handleSelectFirstOption}>
+                            <option>선택하세요. &#40;{optionName1}&#41;</option>
+                            {
+                                option1List.map(item => (
+                                    <option key={item.id} value={item.optValue}>{item.optValue}</option>
+                                ))
+                            }
+                        </Form.Select>
                     </div>
                     <div>
-                        <select className="select" name="" >
-                            <option>선택하세요. &#40;사이즈&#41;</option>
-                            {/* optionValue2 */}
-                            <option value="M_95">M_95</option>
-                            <option value="M_100">M_100</option>
-                        </select>
+                        <Form.Select id="option2" onChange={handleSelectSecondOption}>
+                            <option>선택하세요. &#40;{optionName2}&#41;</option>
+                            {
+                                option2List && option2List.map((data) => (
+                                    <option key={data.pdtId} value={data.opt2Value}>{data.opt2Value} &#40;남은 수량 : {data.stock}개, {(data.price).toLocaleString()}원&#41;</option>
+                                ))
+                            }
+                        </Form.Select>
                     </div>
-                </div>
+                </form>
 
                 <div className="btm_bgn_in dps1">
                     <ul className="btm_bgn_bx type_other1">
+                        
                         {/* 하트 - 로그인정보 */}
                         <li className="ty_like" data-react-unit-type="item">
                             <span className="cmlike _js_cmlike interestIt clickable">
-                                <button className="cmlike_btn _js_cmlike_btn enp_mobon_wish">
-                                    <span className="cmlike_ico">
-                                        <i className="cmlike_primary_l"></i>
-                                        <span className="sr_off"><span className="blind">관심상품 취소</span></span>
-                                        <span className="sr_on"><span className="blind">관심상품 등록</span></span>
-                                    </span>
-                                </button>
+                                {/* <LikeButton Item={props.productData} LikeCheckState={props.LikeCheckState} setLikeCheckState={props.setLikeCheckState} /> */}
                             </span>
                         </li>
-
                         {/* 구매하기 - 장바구니, 바로구매 */}
                         <li>
                             <a href="#" className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable" target="_parent">
@@ -62,7 +78,7 @@ function ProductBottomButton() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default ProductBottomButton
+export default ProductBottomButton;

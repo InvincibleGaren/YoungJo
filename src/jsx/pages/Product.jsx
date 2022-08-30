@@ -6,17 +6,22 @@ import ProductHeader from '../components/ui/product/ProductHeader';
 import Review from '../components/ui/Review';
 import ProductBottomButton from '../components/ui/product/ProductBottomButton';
 import { useParams } from 'react-router-dom';
+import Header from '../layouts/Header';
+import Footer from '../layouts/Footer';
 import Server from "../../datas/Server.json";
 
 function Product() {
    const [productData, setProductData] = useState();
+   const [likeCheck, setLikeCheck] = useState(false);
 
    const pathname = useParams();
    console.log(pathname.productId)
 
    useEffect(()=>{
       console.log(pathname)
-      axios.get(`${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`)
+
+      const url = `${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`;
+      axios.get(url)
       .then(Response => {
          console.log(Response.data);
          setProductData(Response.data.data);
@@ -24,19 +29,31 @@ function Product() {
       .catch(error => {
          console.log(error)
       })
-   }, [])
+   }, [likeCheck])
 
     return ( 
       <>
          {
             productData &&
                <div>
+                  {/* <Header /> */}
                   <ProductHeader productData = {productData} />
                   <ProductDetailInfo productData = {productData} />
                   <Review />
                   <ProductExtraInfo />
-                  <ProductBottomButton productData = {productData} />
-            </div>
+{/* <<<<<<< HEAD */}
+                  <ProductBottomButton 
+                     boardId = {pathname.productId}
+                     option1List = {productData.option1List} 
+                     optionName1 = {productData.optionName1}
+                     optionName2 = {productData.optionName2}
+                  />
+                  <Footer />
+               </div>
+// =======
+                  // <ProductBottomButton productData = {productData} LikeCheckState = {likeCheck} setLikeCheckState = {setLikeCheck}/>
+//             </div>
+// >>>>>>> main
          }
       </>
    );

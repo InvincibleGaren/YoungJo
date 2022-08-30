@@ -54,7 +54,6 @@ function Search(props) {
       if(props.setQueryState)
       {
         console.log("search-query");
-        console.log(query);
         // props.setQueryState(query)
         props.setUrlState(URL);
       }
@@ -70,7 +69,7 @@ function Search(props) {
           to={URL} 
           onClick={SearchSubmit}>
             <img  src={SearchImg} alt="검색"/></Link>
-        <Cart />
+        {/* <Cart /> */}
       </div>
     );
 }

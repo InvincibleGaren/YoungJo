@@ -26,14 +26,14 @@ function ProductInfo({productData}) {
             <div className="mndtl_prd_price">
               <div className="mndtl_prd_newpr">
                   <div className="new_price">
-                      <em className="ssg_price">{productData.minPrice}</em>
+                      <em className="ssg_price">{(productData.minPrice).toLocaleString()}</em>
                       <span className="ssg_tx">원</span>
                       <span className={ productData.isSamePrice ? "isSamePrice":"cm_tx_opt"}>~</span>
                   </div>
               </div>
           </div>
         </div>
-       </div>
+      </div>
       <SmileClubBanner />
       <ProductInfoReview />
     </div>

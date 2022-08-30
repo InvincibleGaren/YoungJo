@@ -8,8 +8,6 @@ import "../../../css/components/HappyLoungeItem.css"
 import PickBox from './PickBox';
 
 function HappyLoungeItem({product}) {
-
-    console.log(product);
     return ( 
         <div className='HappyLoungeItem'>
             <div className='HappyLoungeItemImg'>
@@ -31,14 +29,14 @@ function HappyLoungeItem({product}) {
                     <div className='text2'>{product.text2}</div>
                     <div className='text3'>{product.text3}</div>
                     <div className='price'><span>{product.price}</span>원~</div>
-                    <div className='pick'>
-                        <PickBox pickCount={product.pick}/>
-                        <div className='pick-right'>
-                            <Hart />
-                            <Cart />
-                        </div>
-                    </div>
                 </Link>
+                <div className='pick'>
+                    <PickBox pickCount={product.pick}/>
+                    <div className='pick-right'>
+                        <Hart />
+                        <Cart />
+                    </div>
+                </div>
             </div>
         </div>
      );

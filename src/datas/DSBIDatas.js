@@ -1,7 +1,7 @@
 const img01 = "https://sitem.ssgcdn.com/86/41/09/item/1000333094186_i1_500.jpg"
 const img02 = "https://sitem.ssgcdn.com/39/56/17/item/1000355175639_i1_500.jpg"
 const img03 = "https://sitem.ssgcdn.com/62/87/43/item/1000062438762_i1_500.jpg"
-const starimg = "https://cdn.icon-icons.com/icons2/562/PNG/512/favourite-star_icon-icons.com_53994.png"
+const starimg = "data:image/svg+xml, %3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg' fill='rgb%280%2C0%2C0%29'%3E%3Cpath d='M8 12.86L12.944 16l-1.312-5.92L16 6.097l-5.752-.514L8 0 5.752 5.583 0 6.097l4.368 3.983L3.056 16z' fill-rule='evenodd'/%3E%3C/svg%3E"
 
 const DSBIData = [
     

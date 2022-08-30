@@ -39,7 +39,7 @@ function HappyLounge() {
                 {
                     happyLoungeItem && happyLoungeItem.map((item)=>( 
 
-                        <HappyLoungeItem product={item}/>
+                        <HappyLoungeItem product={item} key={item.id}/>
                     ))
                 }
             </div>

@@ -51,7 +51,7 @@ function NewServiceItemSlider() {
             {
                 slideData && slideData.map(item=>(
                     <SwiperSlide key={item.id}>
-                        <Link to="/">
+                        <Link to="/" className='SliderItem'>
                             <img src={item.url} />
                             <MainTitleUi title={item.text1} />
                             <SubTitleUi title={item.text2} />

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import "../../../css/components/AllSearchItem.css"
+import LikeButton from './LikeButton';
 
-function AllSearchItem({Item}) {
+function AllSearchItem(props) {
     return ( 
         <li id="AllSearchItem" classNameName="cmitem_grid_item" data-react-comm-type="srchwd" data-react-comm-id="소고기" data-react-srch-rsv-div-cd="10" data-react-tarea-cd="00001_000000010" data-observable-unit="false" data-react-salestr-no="" data-react-site-no="">
             <div className="mnsditem_unit" data-react-unit-type="item" data-observable-item="true" data-react-unit-id="1000052597055" data-react-unit-inx="0" data-react-mdl-info="" data-react-advert-yn="N" data-react-advert-bid-id="" data-react-advert-tgt-id="" data-react-advert-bilng-type-cd="" data-react-advert-kind-cd="" data-react-advert-extens-tery-div-cd="" data-react-advert-advert-acct-grp-id="" data-react-unit-text="">
@@ -12,9 +12,9 @@ function AllSearchItem({Item}) {
                 </div>
                 <div className="mnsditem_goods " data-unittype="item" data-advertacctid="" data-advertbidid="" data-adtgtid="1000052597055" data-adidx="1" data-advertbilngtypecd="" data-advertkindcd="" data-advertextensterydivcd="" data-prioradvertacctgrpid="">
                     <div className="mnsditem_thmb">
-                        <Link to={`/product/${Item.boardId}`} className="mnsditem_thmb_link clickable">
+                        <Link to={`/product/${props.Item.boardId}`} className="mnsditem_thmb_link clickable">
                             <div className="mnsditem_thmb_imgbx">
-                                <img src={Item.mainImgUrl} data-src="//sitem.ssgcdn.com/55/70/59/item/1000052597055_i1_500.jpg" alt="2022년 추석 LA갈비 외 인기 축산선물 세트 모음전" onerror="this.src='https://simg.ssgcdn.com/trans.ssg?src=/ui/ssg/img/common/img_ready_500x500.jpg&amp;w=500&amp;h=500&amp;t=1ec79c3423d0d0bb5cfce1a84b8605496eddb340'" className="ssg_lazy mnsditem_thmb_img loaded" data-ll-status="loaded" />
+                                <img src={props.Item.mainImgUrl} data-src="//sitem.ssgcdn.com/55/70/59/item/1000052597055_i1_500.jpg" alt="2022년 추석 LA갈비 외 인기 축산선물 세트 모음전" onerror="this.src='https://simg.ssgcdn.com/trans.ssg?src=/ui/ssg/img/common/img_ready_500x500.jpg&amp;w=500&amp;h=500&amp;t=1ec79c3423d0d0bb5cfce1a84b8605496eddb340'" className="ssg_lazy mnsditem_thmb_img loaded" data-ll-status="loaded" />
                             </div>
                         </Link>
                         <div className="mnsditem_btn_like">
@@ -29,13 +29,7 @@ function AllSearchItem({Item}) {
                                 <input type="hidden" name="notiImgPath" value="//sitem.ssgcdn.com/55/70/59/item/1000052597055_i1_500.jpg" />
                                 <input type="hidden" name="checked" value="N" />
                                 <input type="hidden" name="useForcedSsgYn" value="N" />
-                                <button className="cmlike_btn _js_cmlike_btn clickable" data-position="clip" data-react-tarea-dtl-cd="t00003">
-                                    <span className="cmlike_ico">
-                                        <i className="cmlike_primary_m"></i>
-                                        <span className="sr_off"><span className="blind">관심상품 취소</span></span>
-                                        <span className="sr_on"><span className="blind">관심상품 등록</span></span>
-                                    </span>
-                                </button>
+                                <LikeButton Item={props.Item} LikeCheckState={props.LikeCheckState} setLikeCheckState={props.setLikeCheckState}/>
                             </span>
                         </div>
                     </div>
@@ -44,16 +38,16 @@ function AllSearchItem({Item}) {
                             <a href="https://m-shinsegaemall.ssg.com/item/dealItemView.ssg?itemId=1000052597055&amp;siteNo=6004&amp;salestrNo=6005&amp;tlidSrchWd=소고기&amp;srchPgNo=1&amp;src_area=slist" className="mnsditem_maininfo_link">
                                 <div className="mnsditem_tit">
                                     <span className="cm_mall_text">
-                                        <i className="sm">{Item.salesSite}</i>
+                                        <i className="sm">{props.Item.salesSite}</i>
                                     </span>
-                                    <span className="mnsditem_goods_brand">{Item.brand}</span>
-                                    <span className="mnsditem_goods_tit">{Item.title}</span>
+                                    <span className="mnsditem_goods_brand">{props.Item.brand}</span>
+                                    <span className="mnsditem_goods_tit">{props.Item.title}</span>
                                 </div>
                                 <div className="mnsditem_pricewrap">
                                     <div className="mnsditem_price_row mnsditem_ty_newpr">
                                         <div className="new_price">
                                             <span className="blind">판매가격</span>
-                                            <em className="ssg_price">{Item.minPrice}</em>
+                                            <em className="ssg_price">{props.Item.minPrice}</em>
                                             <span className="ssg_tx">원<span className="cm_tx_opt">~</span></span>
                                         </div>
                                     </div>
@@ -69,7 +63,7 @@ function AllSearchItem({Item}) {
                                 </div>
                                 <div className="mnsditem_review_num">
                                     <span className="blind">상품평 개수</span>
-                                    {Item.totalReviewQty}건
+                                    {props.Item.totalReviewQty}건
                                 </div>
                             </div>
                             <div className="mnsditem_taglist">

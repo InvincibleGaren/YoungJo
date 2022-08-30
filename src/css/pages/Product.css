@@ -4,15 +4,23 @@
 }
 
 /* ProductImgTxt */
-/* .mndtl_tmpl_detail {
-    background-color: aqua;
-    height: 800px;
+.mndtl_tmpl_detail {
+    height: 300px;
     overflow: hidden;
-} */
+}
 
-/* .mndtl_tmpl_detail {
-    height: auto;
-} */
+.auto {
+    height: auto !important;
+}
+
+.detail_button{
+    padding: 5%;
+    text-align: center;
+}
+
+.isNonView {
+    display : none;
+}
 
 /* ProductExtraInfo */
 .mndtl_etc_cont {

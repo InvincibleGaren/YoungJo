@@ -39,7 +39,6 @@ function LetsTryOnItemSlider() {
             autoplay={true}
             spaceBetween={0}
             slidesPerView={1}
-            width={970}
         >
             {
                 slideData && slideData.map(item=>(

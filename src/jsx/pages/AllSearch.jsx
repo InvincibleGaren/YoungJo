@@ -15,7 +15,8 @@ import { useInView } from "react-intersection-observer"
 function AllSearch() {
    const [URL, setUrl] = useSearchParams();
    const [itemList, setItemList] = useState();
-   const [scrollref, inView] = useInView()
+   const [likeCheck, setLikeCheck] = useState(false);
+   const [scrollref, inView] = useInView();
 
    const [query, setQuery] = useState({
       query : URL.get('query') === "null" ? null:URL.get('query'),
@@ -30,7 +31,6 @@ function AllSearch() {
    useEffect(() => {
       // 스크롤 기준 요소가 화면에 보이면
       if(inView){
-         console.log(2);
          query.limit = Number(query.limit)+2;
          setUrl({...query, limit: query.limit});
          // setQuery({...query, limit: query.limit});
@@ -38,20 +38,24 @@ function AllSearch() {
     }, [inView])
 
    useEffect(()=>{
-      
-      const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
-      const config = {timeout:1000};
-      // setUrl({...query, limit: query.limit});
       console.log("통신 쿼리");
+      const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
+      const token = sessionStorage.getItem("login");
+      console.log(`토큰 : ${token}`);
+      const config = {timeout:1000, headers:{authentication: token}};
+
+      // setUrl({...query, limit: query.limit});
+      
       query.query==="" || axios.get(url, config)
          .then(LoginResult => { 
             console.log(LoginResult);
-            if(LoginResult.data.boardList.length)
+            if(LoginResult.data.boardList?.length)
                setItemList(LoginResult.data.boardList);
             else
                setItemList(null);
          })
          .catch(error => {
+            console.log(error);
             switch(error.code){
                case "ECONNABORTED":
                case "ERR_NETWORK":
@@ -77,7 +81,7 @@ function AllSearch() {
                      break;
             }
          });
-   }, [query]);
+   }, [query, likeCheck]);
 
    useEffect(() => {
       setQuery({
@@ -103,55 +107,55 @@ function AllSearch() {
                     {  
                         itemList.map((item)=>{
                             return(
-                                <AllSearchItem Item={item}/>
+                                <AllSearchItem Item={item} LikeCheckState={likeCheck} setLikeCheckState={setLikeCheck}/>
                             )
                         })
                     }
                     </ul>
                 </div>
                 :
-                <div class="cgsearch_none_result" id="mbr_kwd_alert_nolist">
+                <div className="cgsearch_none_result" id="mbr_kwd_alert_nolist">
                     <p>‘{URL.get('query')}’ 상품이 없습니다. 단어의 철자나 띄어쓰기가 정확한지 확인해 보세요.</p>
                 </div>
             :
-            <div class="cgsearch_none_result" id="mbr_kwd_alert_nolist">
+            <div className="cgsearch_none_result" id="mbr_kwd_alert_nolist">
                 <p>최근검색어가 없습니다</p>
             </div>
             }
-            <div class="cgsearch_recomm_tag" id="now_hot_all" ref={scrollref}>
-               <h3 class="cgsearch_recomm_title">추천태그</h3>
-               <div class="cgsearch_recomm_container">
-                  <ul class="cgsearch_recomm_lst" id="now_hot_list">
+            <div className="cgsearch_recomm_tag" id="now_hot_all" ref={scrollref}>
+               <h3 className="cgsearch_recomm_title">추천태그</h3>
+               <div className="cgsearch_recomm_container">
+                  <ul className="cgsearch_recomm_lst" id="now_hot_list">
                      <li>
                         <a href="http://m.ssg.com/search.ssg?target=all&amp;query=%23아이반찬">
-                           <span class="cgsearch_recomm_img">
+                           <span className="cgsearch_recomm_img">
                               <img src="//sui.ssgcdn.com/cmpt/banner/202208/2022081916023935695532002653_178.PNG" alt="" />
                            </span>
-                           <span class="cgsearch_recomm_txt">#아이반찬 고민이라면</span>
+                           <span className="cgsearch_recomm_txt">#아이반찬 고민이라면</span>
                         </a>
                      </li>
                      <li>
                         <a href="http://m.ssg.com/search.ssg?target=all&amp;query=%23에어프라이어용">
-                           <span class="cgsearch_recomm_img">
+                           <span className="cgsearch_recomm_img">
                               <img src="//sui.ssgcdn.com/cmpt/banner/202208/2022081916033609100455262045_726.PNG" alt="" />
                            </span>
-                           <span class="cgsearch_recomm_txt">#음식다넣어 다재다능해</span>
+                           <span className="cgsearch_recomm_txt">#음식다넣어 다재다능해</span>
                         </a>
                      </li>
                      <li>
                         <a href="http://m.ssg.com/search.ssg?target=all&amp;query=%23건강식품">
-                           <span class="cgsearch_recomm_img">
+                           <span className="cgsearch_recomm_img">
                               <img src="//sui.ssgcdn.com/cmpt/banner/202208/2022081916041381689255960035_175.PNG" alt="" />
                            </span>
-                           <span class="cgsearch_recomm_txt">#지칠수록 건강관리</span>
+                           <span className="cgsearch_recomm_txt">#지칠수록 건강관리</span>
                         </a>
                      </li>
                      <li>
                         <a href="http://m.ssg.com/search.ssg?target=all&amp;query=%23간편식품">
-                           <span class="cgsearch_recomm_img">
+                           <span className="cgsearch_recomm_img">
                               <img src="//sui.ssgcdn.com/cmpt/banner/202208/2022081916043790403963142396_539.PNG" alt="" />
                            </span>
-                           <span class="cgsearch_recomm_txt">#간편한데 맛도좋아</span>
+                           <span className="cgsearch_recomm_txt">#간편한데 맛도좋아</span>
                         </a>
                      </li>
                   </ul>

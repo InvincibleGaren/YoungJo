@@ -5,12 +5,13 @@ function CartEmpty() {
         <>
             <div className="mcom_tit_renew ty_top">
 				<h2 className="mcom_tit_txt">장바구니</h2>
-
-                {/* <!-- 클레임 배송조회 팝업 호출시 아래 버튼 노출안함(default 노출) --> */}
                 <div className="mcom_tit_lft">
-                    <a href="javascript:;" className="btn_back" onClick=""><span className="sp_ctg_icon ctg_icon_back orderInfoTracking" data-tracking-cd="00014_000000094_t00060" data-tracking-value="뒤로가기"><span className="blind">이전 페이지</span></span></a>
+                    <a href="javascript:;" className="btn_back" onClick="">
+                        <span className="sp_ctg_icon ctg_icon_back orderInfoTracking" data-tracking-cd="00014_000000094_t00060" data-tracking-value="뒤로가기">
+                            <span className="blind">이전 페이지</span>
+                        </span>
+                    </a>
                 </div>
-                {/* <!-- 클레임 배송조회 팝업 호출시 아래 버튼 노출안함(default 노출) --> */}
                 <div className="mcom_tit_rgt">
                     <div className="btn_cate btn_search">
                         <button type="button">
@@ -27,7 +28,7 @@ function CartEmpty() {
 
             {/* 검색누르면 뜨는 거 */}
             <div className="m_srharea m_srhprev">
-                {/* <fieldset> */}
+                <fieldset>
                     <div className="m_head_srh">
                         <div className="m_head_inparea2">
                             <div className="addr_ipbx">
@@ -43,10 +44,11 @@ function CartEmpty() {
                             <button className="mcom_b_def" type="button"><span className="inp_ico_srch"><span className="blind">검색</span></span></button>
                         </div>
                     </div>
-                {/* </fieldset> */}
+                </fieldset>
             </div>
 
-            <div className="mnodr_nodata">
+            {/* 로그인 O */}
+            {/* <div className="mnodr_nodata">
 		    	<i className="mnodr_ic ic_basket"></i>
 		        <p className="mnodr_tx_tit">장바구니에 담긴 상품이 없습니다.</p>
 		        <p className="mnodr_tx_desc">로그인을 하시면 담긴 상품이 있는지 바로 확인하실 수 있습니다!</p>
@@ -55,10 +57,53 @@ function CartEmpty() {
                         <span className="mnodr_btn_tx">로그인하기</span>
                     </button>
                 </div>
+		    </div> */}
+            {/* 로그인 X */}
+            <div>
+                <ul className="mnodr_tab" id="cartTab">
+                    <li className="on">
+                        <a href="#" className="cartTracking">
+                        <span className="mnodr_tab_tx">일반배송(0)</span></a>
+                    </li>
+                    <li>
+                        <a href="#" className="cartTracking">
+                        <span className="mnodr_tab_tx">정기배송(0)</span></a>
+                    </li>
+                    <li className="new">
+                        <a href="#" className="mnodr_bn mnodr_cartshare_banner layer_filter2">
+                            <span className="mnodr_tab_tx">함께장보기(0)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div className="mnodr_info2">
+                <div className="mnodr_info2_header">
+                    <div className="mnodr_info2_row">
+                        <i className="icon ty_sm icon_location" aria-hidden="true"></i>
+                        <h3 className="mnodr_info2_tit">이름</h3>
+                        <span className="mnodr_info2_subtit">기본배송지</span>
+                    </div>
+                    <p className="mnodr_info2_desc"><span className="blind">배송지 주소</span>[우편번호] 주소</p>
+                    <p className="mnodr_info2_desc mnodr_tx_point" id="delicoText"></p>
+                </div>
+                <div className="mnodr_info2_contents">
+                    <div className="mnodr_info2_btnarea">
+                        <button className="mnodr_info2_btn cartTracking" type="button" name="btnReqMultShpp">
+                            여러곳으로 한방에
+                        </button>
+                        <button type="button" id="changeAddressBtn" className="mnodr_info2_btn layer_filter cartTracking">
+                            배송지 변경
+                        </button>
+                        <a className="modal-fix-open"></a>
+                    </div>
+                </div>
+            </div>
+            <div className="mnodr_nodata">
+		    	<p className="mnodr_tx_tit">장바구니에 담긴 상품이 없습니다.</p>
+		        <div className="mnodr_btn_area ty_mgtop"></div>
 		    </div>
 
             <div className="mnodr_thickhr"></div>
-
             <div className="mnodr_form_sec">
                 <h3 className="mnodr_form_tit"><strong>장바구니 상품안내</strong></h3>
                 <ul className="mnodr_bullst ty2">
