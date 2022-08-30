@@ -10,8 +10,11 @@ function HeaderTop(props) {
     return ( 
         <div className='HeaderTop'>
             <Logo />
-            <Search setQueryState={props.setQueryState} setUrlState={props.setUrlState}/>
-            <Cart />
+            <div className='HeaderRight'>
+                <Search setQueryState={props.setQueryState} setUrlState={props.setUrlState}/>
+                <Cart />
+            </div>
+
         </div>
      );
 }

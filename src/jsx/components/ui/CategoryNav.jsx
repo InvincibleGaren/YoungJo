@@ -3,16 +3,17 @@ import axios from 'axios';
 import TempResponse from "../../../datas/CategoryNav.json"
 
 import { Link } from 'react-router-dom';
-import HappyLoungeItem from "../../components/ui/HappyLoungeItem"
-
 import "../../../css/components/CategoryNav.css"
+import Server from "../../../datas/Server.json";
+
 
 function CategoryNav() {
 
     const [categoryNav, setcategoryNav] = useState([])
     const countQuery = "qty=5";
-    const url = "http://10.10.10.127:9000/api/happyLoungeItem?"+countQuery
+    
     useEffect(() => {
+        const url = `${Server.baseUrl}api/happyLoungeItem?`+countQuery
         axios.get(url, {timeout:1000}).then(Response => {
             setcategoryNav(Response.data)
         })

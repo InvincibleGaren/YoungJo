@@ -22,12 +22,13 @@ import '../../../css/components/NewServiceItemSlider.css';
 
 import MainTitleUi from '../ui/MainTitleUi';
 import SubTitleUi from '../ui/SubTitleUi';
+import Server from "../../../datas/Server.json";
 
 
 function NewServiceItemSlider() {
 
     const [slideData, setSlideData] = useState([])
-    const url = "http://10.10.10.127:9000/api/slide/img"
+    const url = `${Server.baseUrl}api/slide/img`
     useEffect(() => {
         axios.get(url, {timeout:1000}).then(Response => {
             setSlideData(Response.data)
@@ -37,14 +38,6 @@ function NewServiceItemSlider() {
           })
     },[])
 
-    // const [slideData, setSlideData] = useState([])
-    // const url = "http://10.10.10.127:9000/api/ctg/main-detail"
-    // useEffect(() => {
-    //     axios.get(url).then(Response => {
-    //         console.log(Response);
-    //         setSlideData(Response.data)
-    //     })
-    // },[])
 
     return ( 
         <Swiper

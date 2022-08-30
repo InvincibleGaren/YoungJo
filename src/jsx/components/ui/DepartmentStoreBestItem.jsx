@@ -1,7 +1,8 @@
-import React, { startTransition, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TitleUi from './MainTitleUi';
 import CategoryNav from "../../components/ui/CategoryNav";
+import Server from "../../../datas/Server.json";
 
 
 import dsbidatas from "../../../datas/DSBIDatas";
@@ -10,9 +11,10 @@ import "../../../css/components/DepartmentStoreBestItem.css"
 function DepartmentStoreBestItem() {
 
     const[dsbiData, setDSBIData ] = useState([])
-    const url = "http://10.10.10.127:9000/api/category/img"
 
     useEffect(()=> {
+        const url = `${Server.baseUrl}api/category/img`
+
         axios.get(url,{timeout:1000}).then(Response => {
             setDSBIData(Response.data)
         })
@@ -50,7 +52,6 @@ function DepartmentStoreBestItem() {
                         </li>
                     ))
                 }
-            
             </ul>
             
         </div>

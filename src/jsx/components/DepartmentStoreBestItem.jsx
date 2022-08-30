@@ -22,8 +22,8 @@ function DepartmentStoreBestItem() {
                                 <img className='priceimg' src = {dsbi.imgUrl} alt = "img"/>
                                 <p className='brandname'>{dsbi.brandName}</p>
                                 <p className = "textlimit">{dsbi.name}</p>
-                                <p className='salepp'><div className='saleprice'>{dsbi.salePrice}원 </div> <div className='salepercent'>{dsbi.salePercent}%</div></p>
-                                <p className='starreview'><p className='star'><img src= {dsbi.star}/>{dsbi.asterion}</p> <p className='review'>{dsbi.numOfReview}건</p></p>
+                                <div className='salepp'><div className='saleprice'>{dsbi.salePrice}원 </div> <div className='salepercent'>{dsbi.salePercent}%</div></div>
+                                <div className='starreview'><p className='star'><img src= {dsbi.star}/>{dsbi.asterion}</p> <p className='review'>{dsbi.numOfReview}건</p></div>
                                 </div>
                         </li>
                     ))

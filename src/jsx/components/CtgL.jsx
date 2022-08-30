@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import CtgL1 from './CtgL1';
 import CtgL2List from './CtgL2List';
+import CtgL1 from './CtgL1';
+
 import Server from "../../datas/Server.json"
 function CtgL() {
 
@@ -10,9 +11,10 @@ function CtgL() {
     const [subViewId, setSubViewId] = useState(0)
 
     useEffect(()=>{
+
         const url = `${Server.baseUrl}api/ctg/main`;
         axios.get(url)
-        .then(Response => {
+            .then(Response => {
             console.log(Response.data)
             setCtgL(Response.data.data)
 
@@ -26,7 +28,7 @@ function CtgL() {
     }
 
     return ( 
-        <div className= "clickable" >
+        <div className= "clickable category">
             <div className="ctgl">
                 {
                     ctgLData && ctgLData.map(ctgl1 =>(

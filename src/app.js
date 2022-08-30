@@ -25,6 +25,8 @@ import JoinForm from "./jsx/pages/JoinForm";
 import ScrollToTop from "./jsx/function/ScrollTop";
 import AllSearch from "./jsx/pages/AllSearch";
 import Cart from "./jsx/components/ui/Cart";
+import MainCate from "./jsx/pages/MainCate";
+import ProductListView from "./jsx/pages/ProductListView";
 
 function App() {
   return (
@@ -35,6 +37,7 @@ function App() {
         <Route path="/product" element={<Product/>} >
           <Route path=":productId" element={<Product/>} />
         </Route>
+        <Route path="/productList" element={<ProductListView />} />
         <Route path="/categorymenu" element={<CategoryMenu />} />
         <Route path="/join/simplejoin" element={<SimpleJoin />} />
         <Route path="/join/joinform" element={<JoinForm />} />
@@ -43,8 +46,8 @@ function App() {
         <Route path="/UNS" element={<UnderNewService/>} />
         <Route path="/HotBrand" element={<HotBrand/>} />
         <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
+        <Route path="/cate" element={<MainCate/>}/>
         <Route path="/ctgl" element={<CtgL/>}/>
-
         <Route path="/cart" element={<Cart />} />
         <Route path="/cartnonempty" element={<CartNonEmpty/>} />
         <Route path="/cartempty" element={<CartEmpty/>} />

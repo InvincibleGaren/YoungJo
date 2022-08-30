@@ -2,6 +2,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 // import unsdatas from '../../datas/UNSDatas';
+import Server from "../../datas/Server.json";
+
 
 
 
@@ -12,7 +14,7 @@ function UnderNewService() {
     
 
     useEffect(()=> {
-        axios.get('http://10.10.10.78:9000/api/mainPage/newService/bottom')
+        axios.get(`${Server.baseUrl}api/mainPage/newService/bottom`)
         .then(Response => {
             setUNSData(Response.data)
         })

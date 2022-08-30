@@ -30,7 +30,11 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
         console.log(e.target.value)
     }
 
+<<<<<<< HEAD
     // console.log("props.productData");
+=======
+    console.log("props.productData");
+>>>>>>> main
     // console.log(props.productData);
 
     return (

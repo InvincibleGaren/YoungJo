@@ -1,0 +1,11 @@
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.ctgl{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}

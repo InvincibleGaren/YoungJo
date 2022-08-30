@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import hbdatas from '../../../datas/HotBrandDatas';
 import axios from "axios";
 import TitleUi from "./MainTitleUi";
+import Server from "../../../datas/Server.json";
+
 
 import "../../../css/components/HotBrand.css";
 
 function HotBrand() {
 
     const [hbData, setHBData] = useState([]);
-    const url = "http://10.10.10.127:9000/api/slide/img";
+    const url = `${Server.baseUrl}api/slide/img`;
 
     useEffect(() => {
         axios.get(url, {timeout:1000}).then(Response => {
