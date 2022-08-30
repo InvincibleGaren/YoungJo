@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Cart() {
+function CartNonEmpty() {
   return (
     <>
     {/* 로그인 안했을때만 */}
@@ -25,11 +25,11 @@ function Cart() {
             <div className="mnodr_control_group">
                 <span className="mnodr_chk">
                     <input type="checkbox" id="chk_all" name="btChekAll" className="blind cartTracking" />
-                    <label for="chk_all">
+                    <label htmlFor="chk_all">
                         <span className="blind">모든상품전체선택</span>
                     </label>
                 </span>
-                <label for="chk_all" className="mnodr_control_tx">
+                <label htmlFor="chk_all" className="mnodr_control_tx">
                     <span className="df">전체</span>
                     <span className="sm">전체</span>
                 </label>
@@ -48,14 +48,14 @@ function Cart() {
         
         <div id="_acdo_parcel" name="progress_20" className="mnodr_acdo v2 ty_parcel progress_20 addOrdTab addOrd_">
             <div className="mnodr_acdo_header">
-                <label for="_unit_test_morning_group" className="mnodr_acdo_grplabel"></label>
+                <label htmlFor="_unit_test_morning_group" className="mnodr_acdo_grplabel"></label>
                 <span className="mnodr_chk ty_group">
                     <input type="checkbox" className="blind codr_inp_chk cartTracking" name="btChekShppGrp" id="20" />
-                    <label for="20"><span className="blind">택배배송상품전체선택</span></label>
+                    <label htmlFor="20"><span className="blind">택배배송상품전체선택</span></label>
                 </span>
                 <div className="mnodr_acdo_titwrap">
                     <div className="mnodr_acdo_titarea">
-                        <label for="20">
+                        <label htmlFor="20">
                             <span className="blind">택배배송상품전체선택</span>
                             <h3 className="mnodr_acdo_tit">택배배송</h3>
                         </label>
@@ -69,7 +69,7 @@ function Cart() {
                         <div className="mnodr_unit_thmb">
                             <span className="mnodr_chk">
                                 <input type="checkbox" className="blind cartTracking" id="chk_order_5145007481" name="cbCartId" value="5145007481" />
-                                <label for="chk_order_5145007481"><span className="blind">상품선택</span></label>
+                                <label htmlFor="chk_order_5145007481"><span className="blind">상품선택</span></label>
                             </span>
                             <span className="mnodr_unit_img" aria-hidden="true">
                                 <img src="https://sitem.ssgcdn.com/11/02/36/item/1000048360211_i1_140.jpg" alt="나이키 의류 반팔 티셔츠 반바지 23종 모음" id="img5145007481" width="75" height="75" /></span>
@@ -233,7 +233,7 @@ function Cart() {
         </div>
     </div>
     </>
-  )
+  );
 }
 
-export default Cart
+export default CartNonEmpty;

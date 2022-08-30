@@ -6,7 +6,10 @@ import "../../../css/components/Cart.css"
 
 function Cart() {
     return ( 
-        <Link to="/" className='Cart'><img src={CartImg} alt="카트"/></Link>
+        
+        <Link to="/cartempty" className='Cart'><img src={CartImg} alt="카트"/></Link>
+
+        
      );
 }
 

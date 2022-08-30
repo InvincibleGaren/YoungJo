@@ -19,11 +19,12 @@ import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
 import CtgL from "./jsx/components/CtgL";
 import CategoryMenu from "./jsx/components/ui/CategoryMenu";
 import CartEmpty from "./jsx/components/ui/Cart/CartEmpty";
-import Cart from "./jsx/components/ui/Cart/Cart"
+import CartNonEmpty from "./jsx/components/ui/Cart/CartNonEmpty"
 import SimpleJoin from "./jsx/pages/SimpleJoin";
 import JoinForm from "./jsx/pages/JoinForm";
 import ScrollToTop from "./jsx/function/ScrollTop";
 import AllSearch from "./jsx/pages/AllSearch";
+import Cart from "./jsx/components/ui/Cart";
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
         <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
         <Route path="/ctgl" element={<CtgL/>}/>
 
-        <Route path="/cart" element={<Cart/>} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/cartnonempty" element={<CartNonEmpty/>} />
         <Route path="/cartempty" element={<CartEmpty/>} />
       </Routes>
     </BrowserRouter>

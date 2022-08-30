@@ -3,6 +3,7 @@ import React from 'react';
 function CartEmpty() {
     return (  
         <>
+            {/* 카트헤더 */}
             <div className="mcom_tit_renew ty_top">
 				<h2 className="mcom_tit_txt">장바구니</h2>
                 <div className="mcom_tit_lft">
@@ -25,7 +26,6 @@ function CartEmpty() {
                     </div>
                 </div>
             </div>
-
             {/* 검색누르면 뜨는 거 */}
             <div className="m_srharea m_srhprev">
                 <fieldset>
@@ -103,6 +103,7 @@ function CartEmpty() {
 		        <div className="mnodr_btn_area ty_mgtop"></div>
 		    </div>
 
+            {/* 카트푸터 */}
             <div className="mnodr_thickhr"></div>
             <div className="mnodr_form_sec">
                 <h3 className="mnodr_form_tit"><strong>장바구니 상품안내</strong></h3>
