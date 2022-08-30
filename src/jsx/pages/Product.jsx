@@ -38,7 +38,7 @@ function Product() {
    console.log(productData);
 
     return ( 
-      <>
+      <div className='Product'>
          {
             productData &&
                <div>
@@ -57,11 +57,8 @@ function Product() {
                   />
                   <Footer />
                </div>
-                  // <ProductBottomButton productData = {productData} LikeCheckState = {likeCheck} setLikeCheckState = {setLikeCheck}/>
-//             </div>
-// >>>>>>> main
          }
-      </>
+      </div>
    );
 }
 
