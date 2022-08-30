@@ -15,13 +15,14 @@ function Product() {
    const [likeCheck, setLikeCheck] = useState(false);
 
    const pathname = useParams();
-   console.log(pathname.productId)
 
    useEffect(()=>{
-      console.log(pathname)
 
       const url = `${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`;
-      axios.get(url)
+      const token = sessionStorage.getItem("login");
+      const config = {timeout:1000, headers:{authentication: token}}
+      
+      axios.get(url, config)
       .then(Response => {
          console.log(Response.data);
          setProductData(Response.data.data);
@@ -30,6 +31,11 @@ function Product() {
          console.log(error)
       })
    }, [likeCheck])
+
+   console.log("패스네임")
+   console.log(pathname)
+   console.log("프로덕트데이타")
+   console.log(productData);
 
     return ( 
       <>
@@ -45,6 +51,9 @@ function Product() {
                      option1List = {productData.option1List} 
                      optionName1 = {productData.optionName1}
                      optionName2 = {productData.optionName2}
+                     productData = {productData} 
+                     LikeCheckState = {likeCheck} 
+                     setLikeCheckState = {setLikeCheck}
                   />
                   <Footer />
                </div>

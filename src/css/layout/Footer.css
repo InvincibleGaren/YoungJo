@@ -70,10 +70,15 @@ footer ul li {
     display: flex;
 }
 
-.footer_nav li {
+.footer_nav ul li {
     flex: 1;
 }
 
+
+.footer_nav ul li a{
+    color: #565656;
+    text-decoration: none;
+}
 .footer_info {
     padding: 10px;
 }

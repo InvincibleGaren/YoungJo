@@ -5,7 +5,9 @@ import Form from 'react-bootstrap/Form';
 import Server from '../../../../datas/Server.json';
 import LikeButton from '../LikeButton';
 
-function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
+import "../../../../css/components/ProductBottomButton.css"
+
+function ProductBottomButton({option1List, optionName1, optionName2, boardId, productData, LikeCheckState, setLikeCheckState}) {
 // function ProductBottomButton(props) {
 
     console.log(option1List);
@@ -30,15 +32,11 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
         console.log(e.target.value)
     }
 
-<<<<<<< HEAD
-    // console.log("props.productData");
-=======
     console.log("props.productData");
->>>>>>> main
     // console.log(props.productData);
 
     return (
-        <div className="mndtl_opt_btm _js_mndtl_opt_btm">
+        <div className="ProductBottomButton mndtl_opt_btm _js_mndtl_opt_btm">
             <div className="opt_btm_bgn">
                 <form>
                     <div>
@@ -65,11 +63,10 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
 
                 <div className="btm_bgn_in dps1">
                     <ul className="btm_bgn_bx type_other1">
-                        
                         {/* 하트 - 로그인정보 */}
                         <li className="ty_like" data-react-unit-type="item">
                             <span className="cmlike _js_cmlike interestIt clickable">
-                                {/* <LikeButton Item={props.productData} LikeCheckState={props.LikeCheckState} setLikeCheckState={props.setLikeCheckState} /> */}
+                                <LikeButton Item={productData} LikeCheckState={LikeCheckState} setLikeCheckState={setLikeCheckState} />
                             </span>
                         </li>
                         {/* 구매하기 - 장바구니, 바로구매 */}
