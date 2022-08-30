@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
-import Server from '../../../../datas/Server.json';
+import Server from '../../../../datas/Server.js';
 import LikeButton from '../LikeButton';
 
 function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
@@ -30,12 +30,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
         console.log(e.target.value)
     }
 
-<<<<<<< HEAD
-    // console.log("props.productData");
-=======
     console.log("props.productData");
->>>>>>> main
-    // console.log(props.productData);
 
     return (
         <div className="mndtl_opt_btm _js_mndtl_opt_btm">

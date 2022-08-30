@@ -18,7 +18,7 @@ import '../../../css/components/LetsTryOnItemSlider.css';
 
 import MainTitleUi from '../ui/MainTitleUi';
 import SubTitleUi from '../ui/SubTitleUi';
-import Server from "../../../datas/Server.json";
+import Server from "../../../datas/Server.js";
 
 function LetsTryOnItemSlider() {
 

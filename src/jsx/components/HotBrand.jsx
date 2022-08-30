@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import hbdatas from '../../datas/HotBrandDatas'
 import axios from 'axios';
-import Server from "../../datas/Server.json";
+import Server from "../../datas/Server.js";
 
 
 function HotBrand() {

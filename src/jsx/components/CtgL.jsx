@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import CtgL2List from './CtgL2List';
 import CtgL1 from './CtgL1';
 
-import Server from "../../datas/Server.json"
+import Server from "../../datas/Server.js"
 function CtgL() {
 
     const [ctgLData, setCtgL] = useState()

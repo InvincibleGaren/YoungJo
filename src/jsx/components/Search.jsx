@@ -1,7 +1,7 @@
 import React, {useState, useRef} from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import axios from "axios";
-import Server from "../../datas/Server.json";
+import Server from "../../datas/Server.js";
 import SearchImg from '../../img/search.png';
 import Cart from '../components/ui/Cart';
 

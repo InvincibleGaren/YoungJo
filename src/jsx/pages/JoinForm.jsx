@@ -4,7 +4,7 @@ import MemberHeader from '../components/ui/MemberHeader';
 import RedButton from '../components/ui/RedButton';
 import Join from '../function/Join';
 import Footer from '../layouts/Footer';
-import Server from "../../datas/Server.json";
+import Server from "../../datas/Server.js";
 import axios from "axios";
 import DaumPostcode from 'react-daum-postcode';
 
