@@ -23,6 +23,7 @@ function LoginSubmit(event) {
             sessionStorage.setItem("login", LoginResult.headers.authentication)
         })
         .catch(error => {
+            console.log(error);
             switch(error.code){
                 case "ECONNABORTED":
                 case "ERR_NETWORK":
@@ -30,17 +31,12 @@ function LoginSubmit(event) {
                     return;
             }
             
-            switch(error.response.status){
-                case 401:
-                    console.log(error);
-                    alert(error.response.data.data)
-                    break;
-                case 500:
-                    console.log(error);
-                    alert(error.response.data.message)
+            switch(error.response.data.errorCode){
+                case 4:
+                    alert("아이디 또는 패스워드가 틀렸습니다.");
                     break;
                 default:
-                    alert("알 수 없는 응답. 에러 코드 : "+error.response.status);
+                    alert("알 수 없는 응답. 에러 코드 : "+error.response.data.errorCode);
                     break;
             }
         });

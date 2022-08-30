@@ -3,6 +3,7 @@
 }
 .DSBI {
     display: flex;
+    flex-wrap: wrap;
     /* flex-wrap: wrap; */
     /*없애니 화면 줄여도 담 줄로 안 넘어감*/
 } 

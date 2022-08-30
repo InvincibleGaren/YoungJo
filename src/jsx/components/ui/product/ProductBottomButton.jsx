@@ -1,12 +1,16 @@
 import axios from 'axios';
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Server from '../../../../datas/Server.json';
+import LikeButton from '../LikeButton';
 
 function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
+// function ProductBottomButton(props) {
 
     console.log(option1List);
+
+    const[isView, setIsView] = useState(false);
 
     const [option2List, setOption2List] = useState();
 
@@ -25,6 +29,9 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
     const handleSelectSecondOption = (e) => {
         console.log(e.target.value)
     }
+
+    console.log("props.productData");
+    console.log(props.productData);
 
     return (
         <div className="mndtl_opt_btm _js_mndtl_opt_btm">
@@ -54,16 +61,11 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
 
                 <div className="btm_bgn_in dps1">
                     <ul className="btm_bgn_bx type_other1">
+                        
                         {/* 하트 - 로그인정보 */}
                         <li className="ty_like" data-react-unit-type="item">
                             <span className="cmlike _js_cmlike interestIt clickable">
-                                <button className="cmlike_btn _js_cmlike_btn enp_mobon_wish">
-                                    <span className="cmlike_ico">
-                                        <i className="cmlike_primary_l"></i>
-                                        <span className="sr_off"><span className="blind">관심상품 취소</span></span>
-                                        <span className="sr_on"><span className="blind">관심상품 등록</span></span>
-                                    </span>
-                                </button>
+                                {/* <LikeButton Item={props.productData} LikeCheckState={props.LikeCheckState} setLikeCheckState={props.setLikeCheckState} /> */}
                             </span>
                         </li>
                         {/* 구매하기 - 장바구니, 바로구매 */}

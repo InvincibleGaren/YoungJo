@@ -54,7 +54,6 @@ function Search(props) {
       if(props.setQueryState)
       {
         console.log("search-query");
-        console.log(query);
         // props.setQueryState(query)
         props.setUrlState(URL);
       }

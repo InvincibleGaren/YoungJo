@@ -21,7 +21,7 @@
 
 .HappyLoungeItem .HappyLoungeItemImgLeft a{
     display: block;
-    height: 780px;
+    height: 578px;
 }
 
 .HappyLoungeItem .HappyLoungeItemImgLeft img{
@@ -30,7 +30,7 @@
 }
 
 .HappyLoungeItem .HappyLoungeItemImgRight a{
-    height: 183.7px;
+    height: 133.5px;
     display: block;
     background-color: rgba(0,0,0,0.3);
     text-decoration: none;

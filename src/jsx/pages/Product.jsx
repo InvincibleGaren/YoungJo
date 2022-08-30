@@ -12,6 +12,7 @@ import Server from "../../datas/Server.json";
 
 function Product() {
    const [productData, setProductData] = useState();
+   const [likeCheck, setLikeCheck] = useState(false);
 
    const pathname = useParams();
    console.log(pathname.productId)
@@ -19,8 +20,8 @@ function Product() {
    useEffect(()=>{
       console.log(pathname)
 
-      // axios.get(`http://localhost:9000/api/pdtBoard/detail/${pathname.productId}`)
-      axios.get(`${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`)
+      const url = `${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`;
+      axios.get(url)
       .then(Response => {
          console.log(Response.data);
          setProductData(Response.data.data);
@@ -28,7 +29,7 @@ function Product() {
       .catch(error => {
          console.log(error)
       })
-   }, [])
+   }, [likeCheck])
 
     return ( 
       <>
@@ -40,6 +41,7 @@ function Product() {
                   <ProductDetailInfo productData = {productData} />
                   <Review />
                   <ProductExtraInfo />
+{/* <<<<<<< HEAD */}
                   <ProductBottomButton 
                      boardId = {pathname.productId}
                      option1List = {productData.option1List} 
@@ -48,6 +50,10 @@ function Product() {
                   />
                   <Footer />
                </div>
+// =======
+                  // <ProductBottomButton productData = {productData} LikeCheckState = {likeCheck} setLikeCheckState = {setLikeCheck}/>
+//             </div>
+// >>>>>>> main
          }
       </>
    );
