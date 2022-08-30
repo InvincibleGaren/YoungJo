@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TitleUi from './MainTitleUi';
 import CategoryNav from "../../components/ui/CategoryNav";
-import Server from "../../../datas/Server.json";
+import Server from "../../../datas/Server.js";
 
 
 import dsbidatas from "../../../datas/DSBIDatas";

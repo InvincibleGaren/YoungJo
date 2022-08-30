@@ -6,13 +6,15 @@ import "../../../css/components/Cart.css"
 
 function Cart() {
     return ( 
-        
-        <Link to="/cartempty" className='Cart'><img src={CartImg} alt="카트"/></Link>
-
-        
+        <div>
+            { 
+                sessionStorage.getItem("login") ? 
+                <Link to="/cartlogin" className='Cart'><img src={CartImg} alt="카트"/></Link>
+                :
+                <Link to="/cartnotlogin" className='Cart'><img src={CartImg} alt="카트"/></Link>
+            }
+        </div>
      );
 }
 
 export default Cart;
-
-

@@ -8,7 +8,7 @@ import ProductBottomButton from '../components/ui/product/ProductBottomButton';
 import { useParams } from 'react-router-dom';
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
-import Server from "../../datas/Server.json";
+import Server from "../../datas/Server.js";
 import HeaderTop from '../components/ui/HeaderTop';
 
 function Product() {

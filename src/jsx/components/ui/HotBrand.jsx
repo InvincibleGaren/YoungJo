@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import hbdatas from '../../../datas/HotBrandDatas';
 import axios from "axios";
 import TitleUi from "./MainTitleUi";
-import Server from "../../../datas/Server.json";
+import Server from "../../../datas/Server.js";
 
 
 import "../../../css/components/HotBrand.css";

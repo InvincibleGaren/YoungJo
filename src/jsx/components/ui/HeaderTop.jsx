@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from "./Logo";
 import Search from "../Search";
+import CartImg from '../../../img/cart.png';
 
 import "../../../css/components/HeaderTop.css"
 import Cart from './Cart';
@@ -14,7 +15,6 @@ function HeaderTop(props) {
                 <Search setQueryState={props.setQueryState} setUrlState={props.setUrlState}/>
                 <Cart />
             </div>
-
         </div>
      );
 }

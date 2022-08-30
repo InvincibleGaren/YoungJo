@@ -4,7 +4,7 @@ import TempResponse from "../../../datas/CategoryNav.json"
 
 import { Link } from 'react-router-dom';
 import "../../../css/components/CategoryNav.css"
-import Server from "../../../datas/Server.json";
+import Server from "../../../datas/Server.js";
 
 
 function CategoryNav() {

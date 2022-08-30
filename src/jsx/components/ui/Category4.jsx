@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import Server from "../../../datas/Server.json"
+import Server from "../../../datas/Server.js"
 
 import TempResponse from '../../../datas/Category.json'
 import "../../../css/components/Category.css"

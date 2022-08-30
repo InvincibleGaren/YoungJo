@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import HeaderTop from '../components/ui/HeaderTop';
 import MemberHeader from "../components/ui/MemberHeader";
-import Server from "../../datas/Server.json";
+import Server from "../../datas/Server.js";
 import axios from "axios";
 import AllSearchItem from '../components/ui/AllSearchItem';
 

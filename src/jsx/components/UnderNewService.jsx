@@ -2,7 +2,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 // import unsdatas from '../../datas/UNSDatas';
-import Server from "../../datas/Server.json";
+import Server from "../../datas/Server.js";
 
 
 

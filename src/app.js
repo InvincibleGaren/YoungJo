@@ -18,8 +18,6 @@ import HotBrand from "./jsx/components/HotBrand";
 import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
 import CtgL from "./jsx/components/CtgL";
 import CategoryMenu from "./jsx/components/ui/CategoryMenu";
-import CartEmpty from "./jsx/components/ui/Cart/CartEmpty";
-import CartNonEmpty from "./jsx/components/ui/Cart/CartNonEmpty"
 import SimpleJoin from "./jsx/pages/SimpleJoin";
 import JoinForm from "./jsx/pages/JoinForm";
 import ScrollToTop from "./jsx/function/ScrollTop";
@@ -27,6 +25,8 @@ import AllSearch from "./jsx/pages/AllSearch";
 import Cart from "./jsx/components/ui/Cart";
 import MainCate from "./jsx/pages/MainCate";
 import ProductListView from "./jsx/pages/ProductListView";
+import CartLogIn from "./jsx/components/ui/Cart/CartLogIn";
+import CartNotLogIn from "./jsx/components/ui/Cart/CartNotLogIn";
 
 function App() {
   return (
@@ -49,8 +49,8 @@ function App() {
         <Route path="/cate" element={<MainCate/>}/>
         <Route path="/ctgl" element={<CtgL/>}/>
         <Route path="/cart" element={<Cart />} />
-        <Route path="/cartnonempty" element={<CartNonEmpty/>} />
-        <Route path="/cartempty" element={<CartEmpty/>} />
+        <Route path="/cartlogin" element={<CartLogIn />} />
+        <Route path="/cartnotlogin" element={<CartNotLogIn />} />
       </Routes>
     </BrowserRouter>
   );

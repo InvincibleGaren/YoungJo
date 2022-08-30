@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
-import Server from '../../../../datas/Server.json';
+import Server from '../../../../datas/Server.js';
 import LikeButton from '../LikeButton';
 
 import "../../../../css/components/ProductBottomButton.css"

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { useSearchParams } from 'react-router-dom'
 
-import Server from '../../datas/Server.json';
+import Server from '../../datas/Server.js';
 import AllSearchItem from '../components/ui/AllSearchItem';
 
 function ProductListView() {

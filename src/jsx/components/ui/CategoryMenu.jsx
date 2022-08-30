@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import categoryMenuDatas from '../../../datas/CategoryMenuDatas.json';
-import Server from "../../../datas/Server.json";
+import Server from "../../../datas/Server.js";
 
 
 
