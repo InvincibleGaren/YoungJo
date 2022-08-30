@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Server from "../../../datas/Server.json";
+import Server from "../../../datas/Server.js";
 
 import "../../../css/components/LikeButton.css";
 

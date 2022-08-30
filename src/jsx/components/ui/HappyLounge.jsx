@@ -8,7 +8,7 @@ import HappyLoungeItem from "../../components/ui/HappyLoungeItem"
 import "../../../css/components/HappyLounge.css"
 import TitleUi from './MainTitleUi';
 import SubTitleUi from './SubTitleUi';
-import Server from "../../../datas/Server.json";
+import Server from "../../../datas/Server.js";
 
 function HappyLounge() {
 

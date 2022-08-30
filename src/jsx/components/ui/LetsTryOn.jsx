@@ -6,7 +6,7 @@ import "../../../css/components/HappyLounge.css"
 import TitleUi from './MainTitleUi';
 import SubTitleUi from './SubTitleUi';
 import LetsTryOnItemSlider from '../widgets/LetsTryOnItemSlider';
-import Server from "../../../datas/Server.json";
+import Server from "../../../datas/Server.js";
 
 
 function LetsTryOn() {
