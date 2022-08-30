@@ -5,6 +5,11 @@
     height: 100%;
 }
 
+.logo h1{
+    display: flex;
+    align-items: center;
+}
+
 .logo .logo-left{
     display: block;
     width: 45px;

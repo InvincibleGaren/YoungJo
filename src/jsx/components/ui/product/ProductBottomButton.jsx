@@ -31,7 +31,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId}) {
     }
 
     console.log("props.productData");
-    console.log(props.productData);
+    // console.log(props.productData);
 
     return (
         <div className="mndtl_opt_btm _js_mndtl_opt_btm">
