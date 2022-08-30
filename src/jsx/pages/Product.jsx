@@ -36,12 +36,10 @@ function Product() {
          {
             productData &&
                <div>
-                  {/* <Header /> */}
                   <ProductHeader productData = {productData} />
                   <ProductDetailInfo productData = {productData} />
                   <Review />
                   <ProductExtraInfo />
-{/* <<<<<<< HEAD */}
                   <ProductBottomButton 
                      boardId = {pathname.productId}
                      option1List = {productData.option1List} 
@@ -50,7 +48,6 @@ function Product() {
                   />
                   <Footer />
                </div>
-// =======
                   // <ProductBottomButton productData = {productData} LikeCheckState = {likeCheck} setLikeCheckState = {setLikeCheck}/>
 //             </div>
 // >>>>>>> main
