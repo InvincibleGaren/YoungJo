@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import categoryMenuDatas from '../../../datas/CategoryMenuDatas.json';
+// import categoryMenuDatas from '../../../datas/CategoryMenuDatas.json';
 import Server from "../../../datas/Server.js";
 import axios from 'axios';
 import { Link, useSearchParams } from 'react-router-dom'
@@ -13,24 +13,41 @@ function CategoryMenu() {
     console.log("categoryId",searchParams.get('ctglId'))
     console.log("categoryLevel",searchParams.get('categoryLevel'))
 
+    const cateLevel = searchParams.get('categoryLevel');
+    console.log(cateLevel)
     const [cateMenu, setCateMenu] = useState();
-    // const url = `${Server.baseUrl}api/ctg/menu${searchParams.get('categoryLevel')}/${searchParams.get('ctglId')}`
-    const [cateSubMenu, setCateSubMenu] = useState()
+    const url = `${Server.baseUrl}api/ctg/menu${cateLevel}/${searchParams.get('ctglId')}`
+    const [cateSubMenu, setCateSubMenu] = useState();
+
 
     const handleView = (id)=> {
         console.log(id)
-        console.log(cateMenu[id].ctgL3List)
-        setCateSubMenu(cateMenu[id].ctgL3List)
+        if(cateLevel === '2') {
+            setCateSubMenu(cateMenu[id].ctgL3List)
+        } else if (cateLevel === '3') {
+            setCateSubMenu(cateMenu[id].ctgL4List)
+        }
     }
 
     useEffect(()=>{
-        axios.get(`${Server.baseUrl}api/ctg/menu${searchParams.get('categoryLevel')}/${searchParams.get('ctglId')}`)
+        console.log(url)
+        axios.get(url)
         .then(Response => {
             console.log(Response.data.data)
             setCateMenu(Response.data.data)
-            setCateSubMenu(Response.data.data[searchParams.get('ctglId')].ctgL3List)
+            if(cateLevel==='2'){
+                console.log(2)
+                console.log(Response.data.data[searchParams.get('ctglId')].ctgL3List)
+                // setCateSubMenu(Response.data.data[searchParams.get('ctglId')].ctgL3List)
+            }else if(cateLevel==='3'){
+                console.log(3)
+                console.log(Response.data.data[searchParams.get('ctglId')].ctgL4List)
+                setCateSubMenu(Response.data.data[searchParams.get('ctglId')].ctgL4List)
+            }
+
+            // setCheckedMenuId(Number(searchParams.get('ctglId')))
         })
-    },[])
+    },[url, searchParams])
 
     return (  
         <div id="m_top_catelist" className="m_catelst_wrap_v2">
@@ -41,8 +58,23 @@ function CategoryMenu() {
                             {
                                 cateMenu && cateMenu.map(cate => (
                                     <li className="cmctg_item" >
-                                        <div className={ cate.listIndex+1 === Number(searchParams.get('ctglId')) ? "clickable cmctg_lnk on" : "clickable cmctg_lnk"} onClick={() => handleView(cate.listIndex)}>
-                                            <span className="cmctg_txt">{cate.ctgL2.name}</span>
+                                        <div className={ cate.listIndex+1 === Number(searchParams.get('ctglId')) ?
+                                            "clickable cmctg_lnk on" : "clickable cmctg_lnk"} 
+                                            onClick={() => handleView(cate.listIndex)}>
+                                            <span className="cmctg_txt">
+                                               {
+                                                cateLevel === '2' ? 
+                                                <Link to={`/productList?categoryLevel=${cateLevel}&ctglId=${cate.ctgL2.id}`}>
+                                                    {cate.ctgL2.name}
+                                                </Link> 
+                                                :
+                                                cateLevel === '3' ?
+                                                <Link to={`/productList?categoryLevel=${cateLevel}&ctglId=${cate.ctgL3.id}`}>
+                                                    {cate.ctgL3.name}
+                                                </Link>
+                                                : ""
+                                               }
+                                            </span>
                                         </div>
                                     </li> 
                                 ))
@@ -55,9 +87,9 @@ function CategoryMenu() {
            <div className="m_catelst">    
                 <ul className="lst_cate">
                     {
-                        cateSubMenu && cateSubMenu.map(item=>(
+                        cateSubMenu && cateSubMenu.map(cate=>(
                             <li>
-                                <Link to ="/"><span>{item.name}</span></Link>
+                                <Link to = {`/productList?categoryLevel=${Number(cateLevel)+1}&ctglId=${cate.id}`}><span>{cate.name}</span></Link>
                             </li>
                         ))
                     }
