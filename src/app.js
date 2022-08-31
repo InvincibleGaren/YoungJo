@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import {LoginState} from './jsx/globalState/LoginState';
 import {SetLoginState} from './jsx/globalState/SetLoginState';
 
-
 import {
   BrowserRouter,
   Routes,

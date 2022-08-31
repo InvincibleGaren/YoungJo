@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Server from "../../../../datas/Server.js";
 
-function CartItem({cartItem, setCartDatas}) {
+function CartItem({cartItem, setTotalPrice}) {
 
     const [productQty, setProductQty] = useState(cartItem.pdtQty);
     const access_token = sessionStorage.getItem("login");

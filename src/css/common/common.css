@@ -4,6 +4,14 @@
    
 }
 
+a {
+    text-decoration: none !important;
+}
+a:hover {
+    
+}
+
+
 .container-fluid {
     width: 100%;
 }

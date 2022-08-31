@@ -42,7 +42,7 @@ function CartLogIn() {
     return (  
         <>
             {/* 카트헤더 */}
-            <div class="reveal-left-header reveal-right-header mnodr_head_fix">
+            <div className="reveal-left-header reveal-right-header mnodr_head_fix">
                 <div className="mcom_tit_renew ty_top">
                     <h2 className="mcom_tit_txt">장바구니</h2>
                     <div className="mcom_tit_lft">
@@ -180,7 +180,7 @@ function CartLogIn() {
                             </div>
                             {
                                 cartDatas && cartDatas.map(item => (
-                                    <CartItem key={item.pdtId} cartItem = {item} />
+                                    <CartItem key={item.pdtId} cartItem = {item} setTotalPrice={setTotalPrice} />
                                 ))
                             }
                         </div>
