@@ -51,6 +51,9 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/cartlogin" element={<CartLogIn />} />
         <Route path="/cartnotlogin" element={<CartNotLogIn />} />
+        <Route path="/cartnonempty" element={<CartNonEmpty/>} />
+        <Route path="/cartempty" element={<CartEmpty/>} />
+        <Route path="/catemenu" element={<CategoryMenu/>}/>
       </Routes>
     </BrowserRouter>
   );
