@@ -48,12 +48,10 @@ function App() {
         <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
         <Route path="/cate" element={<MainCate/>}/>
         <Route path="/ctgl" element={<CtgL/>}/>
+        <Route path="/catemenu" element={<CategoryMenu/>}/>
         <Route path="/cart" element={<Cart />} />
         <Route path="/cartlogin" element={<CartLogIn />} />
         <Route path="/cartnotlogin" element={<CartNotLogIn />} />
-        <Route path="/cartnonempty" element={<CartNonEmpty/>} />
-        <Route path="/cartempty" element={<CartEmpty/>} />
-        <Route path="/catemenu" element={<CategoryMenu/>}/>
       </Routes>
     </BrowserRouter>
   );

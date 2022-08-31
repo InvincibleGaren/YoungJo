@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function CartNotLogIn() {
   return (
@@ -21,8 +22,9 @@ function CartNotLogIn() {
                     </button>
                 </div>
                 <div className="btn_cate btn_home">
-                <a id="headerHomeBtn" href="#">
-                    <span className="sp_ctg_icon ctg_icon_home"><span className="blind">홈</span></span></a>
+                <Link to={"/"} id="headerHomeBtn">
+                    <span className="sp_ctg_icon ctg_icon_home"><span className="blind">홈</span></span>
+                </Link>
                 </div>
             </div>
         </div>
