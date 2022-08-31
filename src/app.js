@@ -1,4 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
+import {LoginState} from './jsx/globalState/LoginState';
+import {SetLoginState} from './jsx/globalState/SetLoginState';
+
 
 import {
   BrowserRouter,
@@ -29,33 +32,39 @@ import CartLogIn from "./jsx/components/ui/Cart/CartLogIn";
 import CartNotLogIn from "./jsx/components/ui/Cart/CartNotLogIn";
 
 function App() {
+  const [login, setLogin] = useState(sessionStorage.getItem("login") ? "true": "false");
+
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/product" element={<Product/>} >
-          <Route path=":productId" element={<Product/>} />
-        </Route>
-        <Route path="/productList" element={<ProductListView />} />
-        <Route path="/categorymenu" element={<CategoryMenu />} />
-        <Route path="/join/simplejoin" element={<SimpleJoin />} />
-        <Route path="/join/joinform" element={<JoinForm />} />
-        <Route path="/allsearch" element={<AllSearch />} />
-        <Route path="/login" element={<LogIn/>} />
-        <Route path="/UNS" element={<UnderNewService/>} />
-        <Route path="/HotBrand" element={<HotBrand/>} />
-        <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
-        <Route path="/cate" element={<MainCate/>}/>
-        <Route path="/ctgl" element={<CtgL/>}/>
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/cartlogin" element={<CartLogIn />} />
-        <Route path="/cartnotlogin" element={<CartNotLogIn />} />
-        <Route path="/cartnonempty" element={<CartNonEmpty/>} />
-        <Route path="/cartempty" element={<CartEmpty/>} />
-        <Route path="/catemenu" element={<CategoryMenu/>}/>
-      </Routes>
-    </BrowserRouter>
+    <SetLoginState.Provider value={setLogin} >
+      <LoginState.Provider value={login}>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/product" element={<Product/>} >
+              <Route path=":productId" element={<Product/>} />
+            </Route>
+            <Route path="/productList" element={<ProductListView />} />
+            <Route path="/categorymenu" element={<CategoryMenu />} />
+            <Route path="/join/simplejoin" element={<SimpleJoin />} />
+            <Route path="/join/joinform" element={<JoinForm />} />
+            <Route path="/allsearch" element={<AllSearch />} />
+            <Route path="/login" element={<LogIn/>} />
+            <Route path="/UNS" element={<UnderNewService/>} />
+            <Route path="/HotBrand" element={<HotBrand/>} />
+            <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
+            <Route path="/cate" element={<MainCate/>}/>
+            <Route path="/ctgl" element={<CtgL/>}/>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/cartlogin" element={<CartLogIn />} />
+            <Route path="/cartnotlogin" element={<CartNotLogIn />} />
+            {/* <Route path="/cartnonempty" element={<CartNonEmpty/>} />
+            <Route path="/cartempty" element={<CartEmpty/>} /> */}
+            <Route path="/catemenu" element={<CategoryMenu/>}/>
+          </Routes>
+        </BrowserRouter>
+      </LoginState.Provider>
+    </SetLoginState.Provider>
   );
 }
 
