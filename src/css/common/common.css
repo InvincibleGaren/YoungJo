@@ -6,11 +6,8 @@
 
 a {
     text-decoration: none !important;
+    /* color: black !important; */
 }
-a:hover {
-    
-}
-
 
 .container-fluid {
     width: 100%;
