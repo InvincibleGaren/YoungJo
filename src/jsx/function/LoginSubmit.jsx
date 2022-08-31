@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
+
 import axios from "axios";
 import jwt from 'jwt-decode';
 import Server from "../../datas/Server.js";
-//postman
-//postman123
+
+import {SetLoginState} from "../globalState/SetLoginState"
+import { useContext } from 'react';
+
+
 
 function LoginSubmit(event) {
     
     event.preventDefault();
-
+    const setLogin = useContext(SetLoginState);
+    
     let loginId = document.getElementById("inp_id").value;
     let password = document.getElementById("inp_pw").value;
     const url = Server.baseUrl+"api/login";
@@ -19,6 +24,7 @@ function LoginSubmit(event) {
         .then(LoginResult => { 
             let jwtdecode = jwt(LoginResult.headers.authentication)
             alert(jwtdecode.name+"님 환영합니다.");
+            setLogin("true");
             window.location.href = "/"
             sessionStorage.setItem("login", LoginResult.headers.authentication)
         })

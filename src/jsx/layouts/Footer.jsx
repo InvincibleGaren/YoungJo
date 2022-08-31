@@ -2,9 +2,33 @@ import React from 'react';
 import Footer_img from "../../img/footer.png";
 import { Link } from 'react-router-dom';
 import "../../css/layout/Footer.css"
-import Logout from '../function/Logout';
+
+import { LoginState } from '../globalState/LoginState';
+import { useContext } from 'react';
+import {SetLoginState} from '../globalState/SetLoginState'
+
+
+
+
+
+
+
+
+
+
 
 function Footer() {
+    const Login = useContext(LoginState);
+    const setLogin = useContext(SetLoginState);
+
+    const Logout = (event) => {
+        event.preventDefault();
+        setLogin("false");
+        sessionStorage.removeItem("login");
+        alert("로그아웃 되었습니다.");
+    }
+    console.log("Login :");
+    console.log(Login);
     return ( 
         <footer>
             <div className='footer_customer'>
@@ -23,7 +47,7 @@ function Footer() {
 
             <div className='footer_nav'>
                 <ul>
-                    { sessionStorage.getItem("login") ? 
+                    { Login === "true" ? 
                         <li><Link to="#" onClick={Logout}>로그아웃</Link></li>
                         :
                         <li><Link to="/login">로그인</Link></li>
