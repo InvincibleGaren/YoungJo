@@ -32,9 +32,9 @@ function CtgL() {
             <div className="ctgl">
                 {
                     ctgLData && ctgLData.map(ctgl1 =>(
-                        <div key ={ctgl1.ctgL1.id}>
-                            <div className="ctgltext" onClick={() => handleView(ctgl1.ctgL1.id)}>
-                                <CtgL1 ctgLL1 = {ctgl1.ctgL1} />
+                        <div key ={ctgl1.listIndex}>
+                            <div className="ctgltext" onClick={() => handleView(ctgl1.category.id)}>
+                                <CtgL1 ctgLL1 = {ctgl1.category} />
                             </div>
                         </div>
                     )).slice(0,4)
@@ -48,9 +48,9 @@ function CtgL() {
             <div className="ctgl">
                 {
                     ctgLData && ctgLData.map(ctgl1 =>(
-                        <div key ={ctgl1.ctgL1.id}>
-                            <div className="ctgltext" onClick={() => handleView(ctgl1.ctgL1.id)}>
-                                <CtgL1 ctgLL1 = {ctgl1.ctgL1} />
+                        <div key ={ctgl1.listIndex}>
+                            <div className="ctgltext" onClick={() => handleView(ctgl1.category.id)}>
+                                <CtgL1 ctgLL1 = {ctgl1.category} />
                             </div>
                         </div>
                     )).slice(4,8)
@@ -64,9 +64,9 @@ function CtgL() {
             <div className="ctgl">
                 {
                     ctgLData && ctgLData.map(ctgl1 =>(
-                        <div key ={ctgl1.ctgL1.id}>
-                            <div className="ctgltext" onClick={() => handleView(ctgl1.ctgL1.id)}>
-                                <CtgL1 ctgLL1 = {ctgl1.ctgL1} />
+                        <div key ={ctgl1.listIndex}>
+                            <div className="ctgltext" onClick={() => handleView(ctgl1.category.id)}>
+                                <CtgL1 ctgLL1 = {ctgl1.category} />
                             </div>
                         </div>
                     )).slice(8,12)
@@ -80,9 +80,9 @@ function CtgL() {
             <div className="ctgl">
                 {
                     ctgLData && ctgLData.map(ctgl1 =>(
-                        <div key ={ctgl1.ctgL1.id}>
-                            <div className="ctgltext" onClick={() => handleView(ctgl1.ctgL1.id)}>
-                                <CtgL1 ctgLL1 = {ctgl1.ctgL1} />
+                        <div key ={ctgl1.listIndex}>
+                            <div className="ctgltext" onClick={() => handleView(ctgl1.category.id)}>
+                                <CtgL1 ctgLL1 = {ctgl1.category} />
                             </div>
                         </div>
                     )).slice(12)
