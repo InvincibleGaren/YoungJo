@@ -45,7 +45,6 @@ function App() {
               <Route path=":productId" element={<Product/>} />
             </Route>
             <Route path="/productList" element={<ProductListView />} />
-            <Route path="/categorymenu" element={<CategoryMenu />} />
             <Route path="/join/simplejoin" element={<SimpleJoin />} />
             <Route path="/join/joinform" element={<JoinForm />} />
             <Route path="/allsearch" element={<AllSearch />} />
@@ -58,7 +57,6 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/cartlogin" element={<CartLogIn />} />
             <Route path="/cartnotlogin" element={<CartNotLogIn />} />
-            <Route path="/catemenu" element={<CategoryMenu/>}/>
             <Route path="/order" element={<Order/>} >
               <Route path=":productId" element={<Order/>} />
             </Route>
