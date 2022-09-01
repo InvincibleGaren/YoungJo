@@ -87,54 +87,53 @@ function CartLogIn() {
                     </fieldset>
                 </div>
             </div>
+            
+            <div>
+                <ul className="mnodr_tab" id="cartTab">
+                    <li className="on">
+                        <a href="#" className="cartTracking">
+                        <span className="mnodr_tab_tx">일반배송(0)</span></a>
+                    </li>
+                    <li>
+                        <a href="#" className="cartTracking">
+                        <span className="mnodr_tab_tx">정기배송(0)</span></a>
+                    </li>
+                    <li className="new">
+                        <a href="#" className="mnodr_bn mnodr_cartshare_banner layer_filter2">
+                            <span className="mnodr_tab_tx">함께장보기(0)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div className="mnodr_info2">
+                <div className="mnodr_info2_header">
+                    <div className="mnodr_info2_row">
+                        <i className="icon ty_sm icon_location" aria-hidden="true"></i>
+                        <h3 className="mnodr_info2_tit">이름</h3>
+                        <span className="mnodr_info2_subtit">기본배송지</span>
+                    </div>
+                    <p className="mnodr_info2_desc"><span className="blind">배송지 주소</span>[우편번호] 주소</p>
+                    <p className="mnodr_info2_desc mnodr_tx_point" id="delicoText"></p>
+                </div>
+                <div className="mnodr_info2_contents">
+                    <div className="mnodr_info2_btnarea">
+                        <button className="mnodr_info2_btn cartTracking" type="button" name="btnReqMultShpp">
+                            여러곳으로 한방에
+                        </button>
+                        <button type="button" id="changeAddressBtn" className="mnodr_info2_btn layer_filter cartTracking">
+                            배송지 변경
+                        </button>
+                        <a className="modal-fix-open"></a>
+                    </div>
+                </div>
+            </div>
 
             { 
-                cartDatas === '' ? 
-                <div>
-                    <div>
-                        <ul className="mnodr_tab" id="cartTab">
-                            <li className="on">
-                                <a href="#" className="cartTracking">
-                                <span className="mnodr_tab_tx">일반배송(0)</span></a>
-                            </li>
-                            <li>
-                                <a href="#" className="cartTracking">
-                                <span className="mnodr_tab_tx">정기배송(0)</span></a>
-                            </li>
-                            <li className="new">
-                                <a href="#" className="mnodr_bn mnodr_cartshare_banner layer_filter2">
-                                    <span className="mnodr_tab_tx">함께장보기(0)</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="mnodr_info2">
-                        <div className="mnodr_info2_header">
-                            <div className="mnodr_info2_row">
-                                <i className="icon ty_sm icon_location" aria-hidden="true"></i>
-                                <h3 className="mnodr_info2_tit">이름</h3>
-                                <span className="mnodr_info2_subtit">기본배송지</span>
-                            </div>
-                            <p className="mnodr_info2_desc"><span className="blind">배송지 주소</span>[우편번호] 주소</p>
-                            <p className="mnodr_info2_desc mnodr_tx_point" id="delicoText"></p>
-                        </div>
-                        <div className="mnodr_info2_contents">
-                            <div className="mnodr_info2_btnarea">
-                                <button className="mnodr_info2_btn cartTracking" type="button" name="btnReqMultShpp">
-                                    여러곳으로 한방에
-                                </button>
-                                <button type="button" id="changeAddressBtn" className="mnodr_info2_btn layer_filter cartTracking">
-                                    배송지 변경
-                                </button>
-                                <a className="modal-fix-open"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mnodr_nodata">
-                        <p className="mnodr_tx_tit">장바구니에 담긴 상품이 없습니다.</p>
-                        <div className="mnodr_btn_area ty_mgtop"></div>
-                    </div>
-                </div> 
+                cartDatas == '' ? 
+                <div className="mnodr_nodata">
+                    <p className="mnodr_tx_tit">장바구니에 담긴 상품이 없습니다.</p>
+                    <div className="mnodr_btn_area ty_mgtop"></div>
+                </div>
                 :
                 <div>
                     <div className='mnodr_control_wrap'>
