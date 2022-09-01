@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Server from '../../../../datas/Server.js';
 import LikeButton from '../LikeButton';
+import { Link } from 'react-router-dom';
 
 import "../../../../css/components/ProductBottomButton.css"
 
@@ -70,9 +71,10 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                         </li>
                         {/* 구매하기 - 장바구니, 바로구매 */}
                         <li>
-                            <a href="#" className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable" target="_parent">
+
+                            <Link to={`/order/${boardId}`} className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable">
                                 <span className="btn_tx">구매하기</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

@@ -13,12 +13,13 @@ function HotBrand() {
     const url = `${Server.baseUrl}api/slide/img`;
 
     useEffect(() => {
-        axios.get(url, {timeout:1000}).then(Response => {
-            setHBData(Response.data)
-        })
-        .catch(error => {
-            setHBData(hbdatas)
-          })
+        // axios.get(url, {timeout:1000}).then(Response => {
+        //     setHBData(Response.data)
+        // })
+        // .catch(error => {
+        //     setHBData(hbdatas)
+        //   })
+        setHBData(hbdatas)
     },[]);
 
     return ( 

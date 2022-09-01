@@ -11,12 +11,13 @@ function Category() {
     const [CategoryData, setCategoryData] = useState([])
     const url = `${Server.baseUrl}api/category/img`
     useEffect(() => {
-        axios.get(url,{}).then(Response => {
-            setCategoryData(Response.data)
-        })
-        .catch(error => {
-            setCategoryData(TempResponse)
-          })
+        // axios.get(url,{}).then(Response => {
+        //     setCategoryData(Response.data)
+        // })
+        // .catch(error => {
+        //     setCategoryData(TempResponse)
+        //   })
+        setCategoryData(TempResponse)
     },[])
     
     return ( 

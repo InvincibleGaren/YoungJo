@@ -16,7 +16,7 @@ import Home from "./jsx/pages/Home";
 import Product from "./jsx/pages/Product";
 import UnderNewService from "./jsx/components/UnderNewService";
 import LogIn from "./jsx/pages/LogIn";
-import HotBrand from "./jsx/components/HotBrand";
+import HotBrand from "./jsx/components/ui/HotBrand";
 import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
 import CtgL from "./jsx/components/CtgL";
 import CategoryMenu from "./jsx/components/ui/CategoryMenu";
@@ -29,6 +29,7 @@ import MainCate from "./jsx/pages/MainCate";
 import ProductListView from "./jsx/pages/ProductListView";
 import CartLogIn from "./jsx/components/ui/Cart/CartLogIn";
 import CartNotLogIn from "./jsx/components/ui/Cart/CartNotLogIn";
+import Order from "./jsx/pages/Order";
 
 function App() {
   const [login, setLogin] = useState(sessionStorage.getItem("login") ? "true": "false");
@@ -58,6 +59,9 @@ function App() {
             <Route path="/cartlogin" element={<CartLogIn />} />
             <Route path="/cartnotlogin" element={<CartNotLogIn />} />
             <Route path="/catemenu" element={<CategoryMenu/>}/>
+            <Route path="/order" element={<Order/>} >
+              <Route path=":productId" element={<Order/>} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </LoginState.Provider>
