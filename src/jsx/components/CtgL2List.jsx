@@ -31,7 +31,7 @@ function CtgL2List({cateData, id}) {
                 isView ? 
                 cateData.subCategoryList.map(data =>(
                     <div className="ctgl2List" key={data.id}>
-                        <Link to={`/productList?categoryLevel=2&ctglId=${data.id}`}>{data.name}</Link>
+                        <Link to={`/productList?name=${cateData.category.name}&categoryLevel=2&ctglId=${data.id}`}>{data.name}</Link>
                     </div>    
                 ))
                 : ""   
