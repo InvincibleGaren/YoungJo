@@ -13,13 +13,14 @@ function CategoryNav() {
     const countQuery = "qty=5";
     
     useEffect(() => {
-        const url = `${Server.baseUrl}api/happyLoungeItem?`+countQuery
-        axios.get(url, {timeout:1000}).then(Response => {
-            setcategoryNav(Response.data)
-        })
-        .catch(error => {
-            setcategoryNav(TempResponse)
-        })
+        // const url = `${Server.baseUrl}api/happyLoungeItem?`+countQuery
+        // axios.get(url, {timeout:1000}).then(Response => {
+        //     setcategoryNav(Response.data)
+        // })
+        // .catch(error => {
+        //     setcategoryNav(TempResponse)
+        // })
+        setcategoryNav(TempResponse)
     },[])
 
 

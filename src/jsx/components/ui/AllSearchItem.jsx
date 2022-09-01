@@ -14,7 +14,8 @@ function AllSearchItem(props) {
                     <div className="mnsditem_thmb">
                         <Link to={`/product/${props.Item.boardId}`} className="mnsditem_thmb_link clickable">
                             <div className="mnsditem_thmb_imgbx">
-                                <img src={props.Item.mainImgUrl} data-src="//sitem.ssgcdn.com/55/70/59/item/1000052597055_i1_500.jpg" alt="2022년 추석 LA갈비 외 인기 축산선물 세트 모음전"  className="ssg_lazy mnsditem_thmb_img loaded" data-ll-status="loaded" />
+
+                                <img src={props.Item.mainImgUrl} data-src="//sitem.ssgcdn.com/55/70/59/item/1000052597055_i1_500.jpg" alt="2022년 추석 LA갈비 외 인기 축산선물 세트 모음전" className="ssg_lazy mnsditem_thmb_img loaded" data-ll-status="loaded" />
                             </div>
                         </Link>
                         <div className="mnsditem_btn_like">

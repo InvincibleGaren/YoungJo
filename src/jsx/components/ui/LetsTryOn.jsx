@@ -15,13 +15,14 @@ function LetsTryOn() {
     const countQuery = "qty=5";
     
     useEffect(() => {
-        const url = `${Server.baseUrl}api/happyLoungeItem?`+countQuery
-        axios.get(url, {timeout:1000}).then(Response => {
-            setHappyLoungeItem(Response.data)
-        })
-        .catch(error => {
-            setHappyLoungeItem(TempResponse)    
-        })
+        // const url = `${Server.baseUrl}api/happyLoungeItem?`+countQuery
+        // axios.get(url, {timeout:1000}).then(Response => {
+        //     setHappyLoungeItem(Response.data)
+        // })
+        // .catch(error => {
+        //     setHappyLoungeItem(TempResponse)    
+        // })
+        setHappyLoungeItem(TempResponse)
     },[])
 
 

@@ -25,12 +25,13 @@ function LetsTryOnItemSlider() {
     const [slideData, setSlideData] = useState([])
     const url = `${Server.baseUrl}api/slide/img`
     useEffect(() => {
-        axios.get(url, {timeout:1000}).then(Response => {
-            setSlideData(Response.data)
-        })
-        .catch(error => {
-            setSlideData(TempResponse)
-          })
+        // axios.get(url, {timeout:1000}).then(Response => {
+        //     setSlideData(Response.data)
+        // })
+        // .catch(error => {
+        //     setSlideData(TempResponse)
+        //   })
+        setSlideData(TempResponse);
     },[])
 
     return ( 

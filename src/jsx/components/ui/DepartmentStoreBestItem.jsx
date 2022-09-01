@@ -13,14 +13,15 @@ function DepartmentStoreBestItem() {
     const[dsbiData, setDSBIData ] = useState([])
 
     useEffect(()=> {
-        const url = `${Server.baseUrl}api/category/img`
+        // const url = `${Server.baseUrl}api/category/img`
 
-        axios.get(url,{timeout:1000}).then(Response => {
-            setDSBIData(Response.data)
-        })
-        .catch(error => {
-            setDSBIData(dsbidatas)
-        })
+        // axios.get(url,{timeout:1000}).then(Response => {
+        //     setDSBIData(Response.data)
+        // })
+        // .catch(error => {
+        //     setDSBIData(dsbidatas)
+        // })
+        setDSBIData(dsbidatas)
     },[])
 
     return ( 

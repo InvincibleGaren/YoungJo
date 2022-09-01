@@ -4,8 +4,13 @@ import Server from "../../../datas/Server.js";
 
 import "../../../css/components/LikeButton.css";
 
+import {LoginState} from "../../globalState/LoginState"
+import { useContext } from 'react';
+import {useNavigate} from "react-router-dom"
+
 function LikeButton(props) {
-    
+    const Login = useContext(LoginState);
+    const Navigate = useNavigate();
     const [LikeState, setLikeState] = useState();
 
     useEffect(()=>{
@@ -19,10 +24,11 @@ function LikeButton(props) {
     },[props.Item.boardLike])
 
     const LikeClick = (e) => {
-        const url = `${Server.baseUrl}api/pdtBoard/pressLike/${props.Item.boardId}`
-        const token = sessionStorage.getItem("login");
-        const config = {timeout:1000, headers:{authentication: token}};
-        if(token){
+        if(Login == "true"){
+            const url = `${Server.baseUrl}api/pdtBoard/pressLike/${props.Item.boardId}`
+            const token = sessionStorage.getItem("login");
+            const config = {timeout:1000, headers:{authentication: token}};
+
             axios.get(url, config)
             .then(LoginResult => { 
                console.log(LoginResult);
@@ -60,7 +66,7 @@ function LikeButton(props) {
                }
             });
         }else{
-            window.location.href = "/login"
+            Navigate("/login");
         }
 
     }
