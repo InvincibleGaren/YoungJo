@@ -5,12 +5,15 @@ import Form from 'react-bootstrap/Form';
 import Server from '../../../../datas/Server.js';
 import LikeButton from '../LikeButton';
 import { Link } from 'react-router-dom';
+import { LoginState } from '../../../globalState/LoginState';
+import { useContext } from 'react';
+
 
 import "../../../../css/components/ProductBottomButton.css"
 
 function ProductBottomButton({option1List, optionName1, optionName2, boardId, productData, LikeCheckState, setLikeCheckState}) {
 // function ProductBottomButton(props) {
-
+    const login = useContext(LoginState);
     console.log(option1List);
 
     const[isView, setIsView] = useState(false);
@@ -71,10 +74,16 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                         </li>
                         {/* 구매하기 - 장바구니, 바로구매 */}
                         <li>
-
-                            <Link to={`/order/${boardId}`} className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable">
-                                <span className="btn_tx">구매하기</span>
-                            </Link>
+                            { 
+                                login==="true" ? 
+                                <Link to={`/order/${boardId}`} className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable">
+                                    <span className="btn_tx">구매하기</span>
+                                </Link>
+                                :
+                                <Link to={`/login`} className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable">
+                                    <span className="btn_tx">구매하기</span>
+                                </Link>                            
+                            }
                         </li>
                     </ul>
                 </div>

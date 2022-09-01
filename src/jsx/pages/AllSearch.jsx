@@ -107,7 +107,7 @@ function AllSearch() {
                     {  
                         itemList.map((item)=>{
                             return(
-                                <AllSearchItem Item={item} LikeCheckState={likeCheck} setLikeCheckState={setLikeCheck}/>
+                                <AllSearchItem key={item.listIndex} Item={item} LikeCheckState={likeCheck} setLikeCheckState={setLikeCheck}/>
                             )
                         })
                     }
