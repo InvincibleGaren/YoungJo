@@ -10,14 +10,6 @@ import {SetLoginState} from "../globalState/SetLoginState"
 import { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 
-
-
-
-
-
-
-
-
 function LogIn() {
     const setLogin = useContext(SetLoginState);
     const Navigate = useNavigate();

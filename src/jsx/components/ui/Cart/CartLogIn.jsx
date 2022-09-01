@@ -7,16 +7,32 @@ import CartItem from './CartItem.jsx';
 
 function CartLogIn() {
 
-    const url = `${Server.baseUrl}api/cart`;
     const access_token = sessionStorage.getItem("login");
 
+    const [userDatas, setUserDatas] = useState();
     const [cartDatas, setCartDatas] = useState();
     const [totalPrice, setTotalPrice] = useState(0);
     
     console.log(access_token);
 
     useEffect(()=>{
-        axios.get (url, {
+        axios.get (`${Server.baseUrl}api/my/deliveryAddr`, {
+                headers: {
+                    'Authentication': access_token
+                }
+            })
+            .then(Response=>{
+                console.log(Response.data);
+                console.log(Response.data.data);
+                setUserDatas(Response.data.data);
+            })
+            .catch(error=>{
+                console.log(error);
+            })
+    }, [])
+
+    useEffect(()=>{
+        axios.get (`${Server.baseUrl}api/cart`, {
                 headers: {
                   'Authentication': access_token
                 }
@@ -32,12 +48,14 @@ function CartLogIn() {
     }, [])
 
     useEffect(()=>{
-        if( cartDatas ) {
-            cartDatas.map(cart => (
-                setTotalPrice(totalPrice + cart.price)
-            ));
-        }
-    },[cartDatas])
+        let tempTotal = 0;
+          if ( cartDatas ) {
+              cartDatas.map(cart => (
+                tempTotal = tempTotal + (cart.price * cart.pdtQty)
+              ));
+          }
+        setTotalPrice(tempTotal)
+      },[cartDatas])
     
     return (  
         <>
@@ -88,46 +106,51 @@ function CartLogIn() {
                 </div>
             </div>
             
-            <div>
-                <ul className="mnodr_tab" id="cartTab">
-                    <li className="on">
-                        <a href="#" className="cartTracking">
-                        <span className="mnodr_tab_tx">일반배송(0)</span></a>
-                    </li>
-                    <li>
-                        <a href="#" className="cartTracking">
-                        <span className="mnodr_tab_tx">정기배송(0)</span></a>
-                    </li>
-                    <li className="new">
-                        <a href="#" className="mnodr_bn mnodr_cartshare_banner layer_filter2">
-                            <span className="mnodr_tab_tx">함께장보기(0)</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div className="mnodr_info2">
-                <div className="mnodr_info2_header">
-                    <div className="mnodr_info2_row">
-                        <i className="icon ty_sm icon_location" aria-hidden="true"></i>
-                        <h3 className="mnodr_info2_tit">이름</h3>
-                        <span className="mnodr_info2_subtit">기본배송지</span>
+            {
+                userDatas &&
+                <div>
+                    <div>
+                        <ul className="mnodr_tab" id="cartTab">
+                            <li className="on">
+                                <a href="#" className="cartTracking">
+                                <span className="mnodr_tab_tx">일반배송</span></a>
+                            </li>
+                            <li>
+                                <a href="#" className="cartTracking">
+                                <span className="mnodr_tab_tx">정기배송</span></a>
+                            </li>
+                            <li className="new">
+                                <a href="#" className="mnodr_bn mnodr_cartshare_banner layer_filter2">
+                                    <span className="mnodr_tab_tx">함께장보기</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <p className="mnodr_info2_desc"><span className="blind">배송지 주소</span>[우편번호] 주소</p>
-                    <p className="mnodr_info2_desc mnodr_tx_point" id="delicoText"></p>
-                </div>
-                <div className="mnodr_info2_contents">
-                    <div className="mnodr_info2_btnarea">
-                        <button className="mnodr_info2_btn cartTracking" type="button" name="btnReqMultShpp">
-                            여러곳으로 한방에
-                        </button>
-                        <button type="button" id="changeAddressBtn" className="mnodr_info2_btn layer_filter cartTracking">
-                            배송지 변경
-                        </button>
-                        <a className="modal-fix-open"></a>
+                    <div className="mnodr_info2">
+                        <div className="mnodr_info2_header">
+                            <div className="mnodr_info2_row">
+                                <i className="icon ty_sm icon_location" aria-hidden="true"></i>
+                                <h3 className="mnodr_info2_tit">{userDatas.recipientName}</h3>
+                                <span className="mnodr_info2_subtit">기본배송지</span>
+                            </div>
+                            <p className="mnodr_info2_desc"><span className="blind">배송지 주소</span>{userDatas.deliveryAddress}</p>
+                            <p className="mnodr_info2_desc mnodr_tx_point" id="delicoText"></p>
+                        </div>
+                        <div className="mnodr_info2_contents">
+                            <div className="mnodr_info2_btnarea">
+                                <button className="mnodr_info2_btn cartTracking" type="button" name="btnReqMultShpp">
+                                    여러곳으로 한방에
+                                </button>
+                                <button type="button" id="changeAddressBtn" className="mnodr_info2_btn layer_filter cartTracking">
+                                    배송지 변경
+                                </button>
+                                <a className="modal-fix-open"></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            }
+            
             { 
                 cartDatas == '' ? 
                 <div className="mnodr_nodata">
@@ -179,13 +202,13 @@ function CartLogIn() {
                             </div>
                             {
                                 cartDatas && cartDatas.map(item => (
-                                    <CartItem key={item.pdtId} cartItem = {item} setTotalPrice={setTotalPrice} />
+                                    <CartItem key={item.pdtId} cartItem = {item} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
                                 ))
                             }
                         </div>
                     </div>
                     <div className="mnodr_acdo_summary" id="shppGrp0">
-                        <span className="ssg_price codr_subtotal_sum">{totalPrice.toLocaleString()}원 + 배송비 0원 = {totalPrice.toLocaleString()}+&#40;배송비&#41;원</span>
+                        <span className="ssg_price codr_subtotal_sum">{totalPrice.toLocaleString()}원 + 배송비 0원 = {totalPrice.toLocaleString()}원</span>
                         <span className="ssg_tx">&nbsp;&#40;무료배송&#41;</span>
                         <button className="mnodr_acdo_smrybtn cartTracking" type="button">
                             <p className="mnodr_tx_gray">배송비SAVE 상품보기 &#187;</p>

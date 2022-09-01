@@ -3,22 +3,25 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Server from "../../../../datas/Server.js";
 
-function CartItem({cartItem, setTotalPrice}) {
+function CartItem({cartItem, totalPrice, setTotalPrice}) {
 
     const [productQty, setProductQty] = useState(cartItem.pdtQty);
+
+    const url = `${Server.baseUrl}api/cart/pdt`;
     const access_token = sessionStorage.getItem("login");
 
     const inCreQty = () =>{
         setProductQty(productQty + 1);
+        setTotalPrice(totalPrice + cartItem.price);
     }
     const deCreQty = () =>{
         if(productQty === 1){
             return alert("상품의 개수는 1 이하가 될 수 없습니다.");
         }
         setProductQty(productQty - 1);
+        setTotalPrice(totalPrice - cartItem.price);
     }
 
-    const url = `${Server.baseUrl}api/cart/pdt`;
     useEffect(()=>{
         console.log(url, access_token, cartItem.pdtId, productQty)
         axios.put(url,
@@ -86,7 +89,6 @@ function CartItem({cartItem, setTotalPrice}) {
                                 </div>
                             </div>
                             
-                            {/* 수량조절부분 */}
                             <div className="mnodr_unit_r">
                                 <div className="mnodr_amount">
                                     <div className="mnodr_opa_area">

@@ -7,16 +7,6 @@ import { LoginState } from '../globalState/LoginState';
 import { useContext } from 'react';
 import {SetLoginState} from '../globalState/SetLoginState'
 
-
-
-
-
-
-
-
-
-
-
 function Footer() {
     const Login = useContext(LoginState);
     const setLogin = useContext(SetLoginState);
@@ -29,6 +19,7 @@ function Footer() {
     }
     console.log("Login :");
     console.log(Login);
+    
     return ( 
         <footer>
             <div className='footer_customer'>
