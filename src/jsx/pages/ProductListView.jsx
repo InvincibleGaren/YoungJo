@@ -28,7 +28,7 @@ function ProductListView() {
             console.log(Response.data.data)
             setProductList(Response.data.data.boardList)
         })
-    },[])
+    },[searchParams,Server])
 
 
     return (
