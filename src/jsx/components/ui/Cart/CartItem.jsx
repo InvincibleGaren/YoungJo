@@ -1,9 +1,42 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect } from 'react'
 import { useState } from 'react'
+import Server from "../../../../datas/Server.js";
 
-function CartItem({cartItem}) {
+function CartItem({cartItem, setTotalPrice}) {
 
-    const [pdtQtyChange, setPdtQtyChange] = useState();
+    const [productQty, setProductQty] = useState(cartItem.pdtQty);
+    const access_token = sessionStorage.getItem("login");
+
+    const inCreQty = () =>{
+        setProductQty(productQty + 1);
+    }
+    const deCreQty = () =>{
+        if(productQty === 1){
+            return alert("상품의 개수는 1 이하가 될 수 없습니다.");
+        }
+        setProductQty(productQty - 1);
+    }
+
+    const url = `${Server.baseUrl}api/cart/pdt`;
+    useEffect(()=>{
+        console.log(url, access_token, cartItem.pdtId, productQty)
+        axios.put(url,
+            {
+                "pdtId" : cartItem.pdtId,
+                "pdtQty" : productQty
+            },
+            { headers: {
+                'Authentication': access_token
+              }}
+            )
+            .then(Response => {
+                console.log(Response);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }, [productQty])
 
     return (
         <div className="mnodr_acdo_cont">
@@ -42,11 +75,13 @@ function CartItem({cartItem}) {
                             </a>
                         </p>
                         <span className="mnodr_unit_option">옵션 :&nbsp;{cartItem.optionValue1} / {cartItem.optionValue2}</span>
+                        <span className="mnodr_unit_option">개당가격 :&nbsp;{(cartItem.price).toLocaleString()}</span>
+                        <span className="mnodr_unit_option">남은수량 :&nbsp;{cartItem.stock}</span>
                         <div className="mnodr_unit_prdpay">
                             <div className="mnodr_unit_l">
                                 <div className="mnodr_unit_newprice">
                                     <span className="blind">판매가격</span>
-                                    <em className="ssg_price itemOrdAmt">{(cartItem.price * cartItem.pdtQty).toLocaleString()}</em>
+                                    <em className="ssg_price itemOrdAmt">{(cartItem.price * productQty).toLocaleString()}</em>
                                     <span className="ssg_tx">원</span>
                                 </div>
                             </div>
@@ -56,22 +91,16 @@ function CartItem({cartItem}) {
                                 <div className="mnodr_amount">
                                     <div className="mnodr_opa_area">
                                         <span className="blind">현재수량</span>
-                                        <span className="mnodr_opa_tx ordQty">{cartItem.pdtQty}</span>
+                                        <span className="mnodr_opa_tx ordQty">{productQty}</span>
                                     </div>
-                                    <button type="button" name="btUpdOrdQtyMinus" className="mnodr_btn_minus cartTracking">
+                                    <button type="button" name="btUpdOrdQtyMinus" className="mnodr_btn_minus cartTracking" onClick={deCreQty}>
                                         <i className="mnodr_ic ic_minus"><span className="blind">주문수량빼기</span></i>
                                     </button>
-                                    <button type="button" name="btUpdOrdQtyPlus" className="mnodr_btn_plus cartTracking">
+                                    <button type="button" name="btUpdOrdQtyPlus" className="mnodr_btn_plus cartTracking" onClick={inCreQty}>
                                         <i className="mnodr_ic ic_plus"><span className="blind">주문수량더하기</span></i>
                                     </button>
                                 </div>
                             </div>
-                        </div>
-                        <div className="mnodr_unit_orderstate">
-                                <div className="mnodr_unit_deadline">
-                                    <i className="icon ty_sm icon_alert" aria-hidden="true"></i>
-                                    <span className="mnodr_tx_point">마감임박 &#40;남은수량:{cartItem.stock}&#41;</span>
-                                </div>
                         </div>
                         <div className="mnodr_unit_btnarea ty_fillbtn">
                             <button type="button" className="mnodr_unit_btn layer_filter cartTracking">
