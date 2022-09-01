@@ -19,7 +19,6 @@ import LogIn from "./jsx/pages/LogIn";
 import HotBrand from "./jsx/components/ui/HotBrand";
 import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
 import CtgL from "./jsx/components/CtgL";
-import CategoryMenu from "./jsx/components/ui/CategoryMenu";
 import SimpleJoin from "./jsx/pages/SimpleJoin";
 import JoinForm from "./jsx/pages/JoinForm";
 import ScrollToTop from "./jsx/function/ScrollTop";
