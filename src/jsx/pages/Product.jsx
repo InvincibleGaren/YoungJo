@@ -21,7 +21,7 @@ function Product() {
       const token = sessionStorage.getItem("login");
       const config = {timeout:1000, headers:{authentication: token}}
       
-      axios.get(url, config)
+      axios.get(url)
       .then(Response => {
          console.log(Response.data);
          console.log(Response.data.data);

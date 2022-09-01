@@ -39,19 +39,19 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
 
     console.log("props.productData");
 
-    useEffect(()=>{
-        axios.post(`${Server.baseUrl}api/cart/addPdt`, {
-                headers: {
-                    'Authentication': access_token
-                }
-            })
-            .then(Response => {
-                console.log(Response);
-            })
-            .catch(error => (
-                console.log(error)
-            ))
-    }, [])
+    // useEffect(()=>{
+    //     axios.post(`${Server.baseUrl}api/cart/addPdt`, {
+    //             headers: {
+    //                 'Authentication': access_token
+    //             }
+    //         })
+    //         .then(Response => {
+    //             console.log(Response);
+    //         })
+    //         .catch(error => (
+    //             console.log(error)
+    //         ))
+    // }, [])
 
     return (
         <div className="ProductBottomButton mndtl_opt_btm _js_mndtl_opt_btm">
@@ -66,9 +66,9 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                             </span>
                         </li>
                         <li onClick={handleView}>
-                            <a href="#" className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable" target="_parent">
+                            <p className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable" target="_parent">
                                 <span className="btn_tx">구매하기</span>
-                            </a>
+                            </p>
                         </li>
                     </ul>
                 </div>
@@ -96,16 +96,17 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                             </Form.Select>
                         </div>
                     </form>
+                    
                     <div className='btm_bgn_in dps2'>
                         <ul className="btm_bgn_bx" id="dps2_buy">
-                            <li onClick={""}>
+                            <li>
                                 <a href="#" className="mndtl_btn type02 clickable" target="_parent">
                                     <span className="btn_tx">장바구니</span>
                                 </a>
                             </li>
-                            <li data-react-unit-type="text" >
+                            <li>
                                 <a href="#" className="mndtl_btn type01 clickable" target="_parent">
-                                    <span className="btn_tx ssgpay">구매하기</span>
+                                    <span className="btn_tx ssgpay"><i className="ico_txt_ssgpay_btm"></i> 바로구매</span>
                                 </a>
                             </li>
                         </ul>
