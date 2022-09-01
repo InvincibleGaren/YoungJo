@@ -29,14 +29,15 @@ function CategoryMenu() {
         //     setCateSubMenu(cateMenu[id].ctgL4List)
         // }
     }
+    
 
     useEffect(()=>{
         console.log(url)
         axios.get(url)
         .then(Response => {
-            console.log(Response.data.data)
+            console.log("Response data :",Response.data.data)
             setCateMenu(Response.data.data)
--           setCateSubMenu(Response.data.data[Number(searchParams.get('ctglId'))].subCategporyList)
+            setCateSubMenu(Response.data.data[Number(searchParams.get('ctglId'))].subCategporyList)
             // if(cateLevel==='2'){
             //     console.log(2)
             //     console.log(Response.data.data[searchParams.get('ctglId')].ctgL3List)
