@@ -13,28 +13,33 @@ import HeaderTop from '../components/ui/HeaderTop';
 import MemberHeader from '../components/ui/MemberHeader';
 
 import "../../css/components/Order.css"
+import OrderItem from '../components/OrderItem';
 
 function Order() {
-   const [productData, setProductData] = useState();
-   const [likeCheck, setLikeCheck] = useState(false);
-
+   const [purchaseData, setPurchaseData] = useState();
+   
    const pathname = useParams();
+   useEffect(()=>{
+    
+    const url = `${Server.baseUrl}api/purch/user/proceed`;
+    const token = sessionStorage.getItem("login");
+    const config = {timeout:1000, headers:{authentication: token}}
+    const data = {pdtIdList:[pathname.productId]}
+    
+    axios.post(url, data, config)
+      .then(Response => {
+         console.log(Response);
+         setPurchaseData(Response.data.data);
+      })
+      .catch(error => {
+         console.log(error)
+      })
+   },[])
 
-//    useEffect(()=>{
-
-//       const url = `${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`;
-//       const token = sessionStorage.getItem("login");
-//       const config = {timeout:1000, headers:{authentication: token}}
-      
-//       axios.get(url, config)
-//       .then(Response => {
-//          console.log(Response.data);
-//          setProductData(Response.data.data);
-//       })
-//       .catch(error => {
-//          console.log(error)
-//       })
-//    }, [likeCheck])
+   const totalPrice = (array) => {
+    const sum = array?.reduce((totalValue, item) => totalValue+item.price, 0);
+    return sum;
+  }
 
     return ( 
       <div className='Order'>
@@ -44,7 +49,7 @@ function Order() {
 	            <article className="mnodr_article mnodr_delivery_infos">
 		            <div className="mnodr_article_head">
 			            <div className="mnodr_article_headlt">
-				            <h2 className="mnodr_tx_tit">배송지 : 박찬우</h2>
+				            <h2 className="mnodr_tx_tit">배송지 : {purchaseData?.myDeliAddr?.recipientName}</h2>
 			            </div>
 			            <div className="mnodr_article_headrt">
 				            <button type="button" className="mnodr_btn ty_grayline ty_xxs payTracking" data-pt-click="주문서|배송지|변경" name="btnShowTgtDiv" data-target-div="shpplocInfoDiv_1">변경</button>
@@ -52,12 +57,12 @@ function Order() {
 			        </div>
 		            <div className="mnodr_article_cont ty_pull">
 			            <div className="mnodr_form_sec">
-				            <p className="mnodr_tx_desc">[46297] 부산 금정구 식물원로36-16, 101호 (장전동, 부광그린빌라)</p>
+				            <p className="mnodr_tx_desc">{purchaseData?.myDeliAddr?.address}</p>
                             <div className="mnodr_tx_wrap ty_space">
                                 <span className="mnodr_tx_size2 mnodr_tx_gray">
-                                    <span id="dispRcptpeNm_0">박찬우</span> 
+                                    <span id="dispRcptpeNm_0">{purchaseData?.myDeliAddr?.recipientName}</span> 
                                     / 
-                                    <span id="dispHpno_0">010-3012-0712</span>
+                                    <span id="dispHpno_0">{purchaseData?.myDeliAddr?.phoneNumber}</span>
                                 </span>
                                 <span className="mnodr_chk">
                                     <input type="checkbox" id="relaxNoUseYn_0" name="shpploc[0].relaxNoUseYn" defaultValue="Y" className="blind payTracking" data-pt-click="|배송지|안심번호 사용" />
@@ -308,19 +313,19 @@ function Order() {
                     <dl className="mnodr_dl_desc">
                         <dt><span className="mnodr_tx_desc mnodr_tx_gray">주문자명</span></dt>
                         <dd>
-                            <p className="mnodr_tx_desc" id="ordpeNmStr">박찬우</p>
+                            <p className="mnodr_tx_desc" id="ordpeNmStr">{purchaseData?.buyerName}</p>
                         </dd>
                     </dl>
                     <dl className="mnodr_dl_desc">
                         <dt><span className="mnodr_tx_desc mnodr_tx_gray">연락처</span></dt>
                         <dd>
-                            <p className="mnodr_tx_desc" id="ordpeHpnoStr">010-3012-0712</p>
+                            <p className="mnodr_tx_desc" id="ordpeHpnoStr">{purchaseData?.buyerPhoneNumber}</p>
                         </dd>
                     </dl>
                     <dl className="mnodr_dl_desc">
                         <dt><span className="mnodr_tx_desc mnodr_tx_gray">이메일</span></dt>
                         <dd>
-                            <p className="mnodr_tx_desc" id="ordpeEmailStr">9cksqhdel3@naver.com</p>
+                            <p className="mnodr_tx_desc" id="ordpeEmailStr">{purchaseData?.buyerEmail}</p>
                         </dd>
                     </dl>
                     <dl className="mnodr_dl_desc">
@@ -378,42 +383,11 @@ function Order() {
 		    <div className="mnodr_article_cont ty_pull">
 			    <div className="mnodr_form_sec">
 					<div className="mnodr_unit">
-			            <div className="mnodr_unit_item">
-				            <div className="mnodr_unit_thmb">
-					            <span className="mnodr_unit_img" aria-hidden="true">
-						            <img src="https://sitem.ssgcdn.com/18/20/64/item/1000034642018_i1_140.jpg" alt="[나이키코리아공식]남성 나이키 레전드 2.0 티 NIKE 718834-010" width="85" height="85" />
-					            </span>
-				            </div>
-                            <div className="mnodr_unit_cont">
-                                <div className="mnodr_unit_info ty2">
-                                    <span className="cm_mall_text">
-                                        <i className="sm">신세계몰</i>					
-                                    </span>
-                                    <em id="dispSalestrNm_1"></em>
-                                </div>
-                                <p className="mnodr_unit_tit ">
-                                    <a>
-                                        <strong className="mnodr_unit_brd">나이키 </strong>
-                                        <span className="mnodr_unit_name">[나이키코리아공식]남성 나이키 레전드 2.0 티 NIKE 718834-010</span>
-                                    </a>
-                                </p> 
-                                <span className="mnodr_unit_option mnodr_tx_point" id="shppRsvtType_1_1_50_"></span>
-                                <span className="mnodr_unit_option">옵션 : 095</span>
-                                <div className="mnodr_unit_prdpay ty_space">
-                                    <div className="mnodr_unit_l">                    
-                                        <div className="mnodr_unit_oldprice ty2">
-                                            <del><span className="blind">정상가격</span><em className="ssg_price">29,000</em></del><span className="ssg_tx">원</span>
-                                        </div>
-                                        <div className="mnodr_unit_newprice ty2">
-                                            <span className="blind">판매가격</span><em className="ssg_price">18,560</em><span className="ssg_tx">원</span>
-                                        </div>
-                                    </div>
-                                    <div className="mnodr_unit_r">
-                                        <span className="mnodr_unit_option">수량 1개</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            purchaseData?.pdtList?.map((item)=>{
+                                return <OrderItem key={item.listIndex} Item={item} />
+                            })
+                        }
 			        </div>
 			    </div>
 		    </div>
@@ -426,7 +400,14 @@ function Order() {
         </div>
         <button type="button" className="mnodr_btn ty_point ty_m payTracking" data-pt-click="주문서|웹바|결제하기" name="processPaymtButton">
             <span className="mnodr_btn_tx">
-            <em className="ssg_price paySummaryPayAmt paySummaryTgtPaymtAmt">21,060</em><span className="ssg_tx">원</span> 결제하기</span>
+                <em className="ssg_price paySummaryPayAmt paySummaryTgtPaymtAmt">
+                    {
+                        totalPrice(purchaseData?.pdtList)
+                    }
+                </em>
+                <span className="ssg_tx">원</span> 
+                결제하기
+            </span>
             {/* <span className="mnodr_btn_tx6 cardDcInfoAmtDiv">(<em className="ssg_price paySummaryPayCardDcAmt">0</em><span className="ssg_tx">원</span> 청구예상)</span>
             <span className="mnodr_btn_tx6 tgtPaymtCardDcInfoAmtDiv">(<em className="ssg_price paySummaryTgtPaymtCardDcAmt">0</em><span className="ssg_tx">원</span> 청구예상)</span> */}
 		</button>

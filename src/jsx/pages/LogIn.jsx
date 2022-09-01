@@ -23,7 +23,7 @@ function LogIn() {
     
         axios.post(url, data, config)
             .then(LoginResult => { 
-                let jwtdecode = jwt(LoginResult.headers.authentication)
+                let jwtdecode = jwt(LoginResult.headers.authentication);
                 alert(jwtdecode.name+"님 환영합니다.");
                 setLogin("true");
                 Navigate("/");
