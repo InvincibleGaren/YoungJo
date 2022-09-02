@@ -9,6 +9,7 @@ import AllSearchItem from '../components/ui/AllSearchItem';
 import "../../css/components/AllSearchItem.css";
 import "../../css/pages/AllSearch.css";
 import CategoryMenu from '../components/ui/CategoryMenu';
+import FooterNav from '../components/ui/FooterNav.jsx';
 
 
 
@@ -83,8 +84,8 @@ function ProductListView() {
 					</div>
                     
         <CategoryMenu />
-        <div classNameName='AllSearch'>
-            <ul id="AllSearchItemList" classNameName="cmitem_grid_lst mnsditem_ty_thmb">
+        <div className='AllSearch'>
+            <ul id="AllSearchItemList" className="cmitem_grid_lst mnsditem_ty_thmb">
                 {
                     productList && productList.map(item=>(
                         <AllSearchItem key={item.listIndex} Item={item}/>
@@ -92,6 +93,7 @@ function ProductListView() {
                 }
             </ul>
         </div>
+		<FooterNav/>
         </>
     )
 }
