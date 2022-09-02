@@ -45,3 +45,13 @@
 .isNonView {
     display: none;
 }
+
+.arrow_button {
+    /* text-align: center;
+    align-items: center; */
+    padding-left: 49%;
+}
+
+.select_box {
+    margin: 1%;
+}
