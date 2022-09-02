@@ -71,18 +71,6 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                                 <LikeButton Item={productData} LikeCheckState={LikeCheckState} setLikeCheckState={setLikeCheckState} />
                             </span>
                         </li>
-                        {/* 구매하기 - 장바구니, 바로구매 */}
-                        {/* <li> */}
-                            {/* { 
-                                login==="true" ? 
-                                <Link to={`/order/${boardId}`} className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable">
-                                    <span className="btn_tx">구매하기</span>
-                                </Link>
-                                :
-                                <Link to={`/login`} className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable">
-                                    <span className="btn_tx">구매하기</span>
-                                </Link>                            
-                            } */}
                         <li onClick={handleView}>
                             <p className="mndtl_btn type01 line _js_mndtl_opt_toggle_btn clickable" target="_parent">
                                 <span className="btn_tx">구매하기</span>
@@ -123,9 +111,16 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="mndtl_btn type01 clickable" target="_parent">
-                                    <span className="btn_tx ssgpay"><i className="ico_txt_ssgpay_btm"></i> 바로구매</span>
-                                </a>
+                                {  
+                                    login==="true" ? 
+                                    <Link to={`/order/${boardId}`} className="mndtl_btn type01 clickable" target="_parent">
+                                        <span className="btn_tx">바로 구매하기</span>
+                                    </Link>
+                                    :
+                                    <Link to={`/login`} className="mndtl_btn type01 clickable" target="_parent">
+                                        <span className="btn_tx">바로 구매하기</span>
+                                    </Link>                            
+                                }                                             
                             </li>
                         </ul>
                     </div>
