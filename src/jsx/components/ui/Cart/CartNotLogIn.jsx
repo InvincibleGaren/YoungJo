@@ -62,7 +62,7 @@ function CartNotLogIn() {
         </div>
 
         {/* 상품O */}
-        <div className="mnodr_info2">
+        {/* <div className="mnodr_info2">
             <div className="mnodr_info2_header">
                 <div className="mnodr_info2_row">
                     <i className="mnodr_ic ic_power"></i> 
@@ -287,7 +287,7 @@ function CartNotLogIn() {
                     </dd>
                 </dl>
             </div>
-        </div>
+        </div> */}
 
         {/* 카트푸터 */}
         <div className="mnodr_thickhr"></div>
