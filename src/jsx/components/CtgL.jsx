@@ -28,19 +28,24 @@ function CtgL() {
     }
 
     return ( 
-        <div className= "clickable category">
-            <div className="ctgl">
-                {
-                    ctgLData && ctgLData.map(ctgl1 =>(
-                        <div key ={ctgl1.listIndex}>
-                            <div className="ctgltext" onClick={() => handleView(ctgl1.category.id)}>
-                                <CtgL1 ctgLL1 = {ctgl1.category} />
-                            </div>
-                        </div>
-                    )).slice(0,4)
-                }
+        <div className="mcom_category_renew react-area">
+		    <div className="clnb_wrap ">
+                <div className="clnb_sub_cate" id="mcom_clnb_cate">
+                    <ul>
+                    {
+                        ctgLData && ctgLData.map(ctgl1 =>(
+                            <CtgL1 
+                                key ={ctgl1.listIndex}
+                                ctgLL1 = {ctgl1.category}  
+                                handleView = {handleView} 
+                                id = {ctgl1.category.id}
+                            />
+                        )).slice(0,4)
+                    }
+                    </ul>
+                </div>
             </div>
-            <div>
+            {/* <div>
                 {
                    cateData && subViewId < 5 ? <CtgL2List cateData = {cateData} id = {subViewId}/> :  ""
                 }
@@ -87,7 +92,7 @@ function CtgL() {
                         </div>
                     )).slice(12)
                 }
-            </div>
+            </div> */}
             <div>
                 {
                    cateData && subViewId > 12 && subViewId < 17  ? <CtgL2List cateData = {cateData} id = {subViewId}/> : ""
