@@ -30,7 +30,9 @@ function AllSearch() {
   
    useEffect(() => {
       // 스크롤 기준 요소가 화면에 보이면
-      if(inView){
+      
+      if(query.query && inView)
+      {
          query.limit = Number(query.limit)+2;
          setUrl({...query, limit: query.limit});
          // setQuery({...query, limit: query.limit});
@@ -38,61 +40,59 @@ function AllSearch() {
     }, [inView])
 
    useEffect(()=>{
-      console.log("likeCheck");
-      console.log(likeCheck);
-      console.log("query");
-      console.log(query);
-      const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
-      const token = sessionStorage.getItem("login");
-      const config = {timeout:3000, headers:{authentication: token}};
-
-      // setUrl({...query, limit: query.limit});
-      
-      query.query==="" || axios.get(url, config)
-         .then(LoginResult => { 
-            console.log(LoginResult);
-            if(LoginResult.data.boardList?.length)
-               setItemList(LoginResult.data.boardList);
-            else
-               setItemList(null);
-         })
-         .catch(error => {
-            console.log(error);
-            switch(error.code){
-               case "ECONNABORTED":
-               case "ERR_NETWORK":
-                    alert("서버와 연결을 하지 못함\n원인 : "+error.message);
-                    return;
-            }
-            switch(error.response.status){
-               case 400:
-                     console.log(error);
-                     alert("필수입력 항목들을 입력해주세요.");
-                     break;
-               case 401:
-                     console.log(error);
-                     alert(error.response.data.data)
-                     break;
-               case 500:
-                     console.log(error);
-                     alert(error.response.data.message)
-                     break;
-               default:
-                     alert("알 수 없는 응답. 에러 코드 : "+error.response.status);
-                     break;
-            }
-         });
+      if(query.query){
+         const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
+         const token = sessionStorage.getItem("login");
+         const config = {timeout:3000, headers:{authentication: token}};
+   
+         // setUrl({...query, limit: query.limit});
+         
+         axios.get(url, config)
+            .then(LoginResult => { 
+               console.log(LoginResult);
+               if(LoginResult.data.boardList?.length)
+                  setItemList(LoginResult.data.boardList);
+               else
+                  setItemList(null);
+            })
+            .catch(error => {
+               console.log(error);
+               switch(error.code){
+                  case "ECONNABORTED":
+                  case "ERR_NETWORK":
+                       alert("서버와 연결을 하지 못함\n원인 : "+error.message);
+                       return;
+               }
+               switch(error.response.status){
+                  case 400:
+                        console.log(error);
+                        alert("필수입력 항목들을 입력해주세요.");
+                        break;
+                  case 401:
+                        console.log(error);
+                        alert(error.response.data.data)
+                        break;
+                  case 500:
+                        console.log(error);
+                        alert(error.response.data.message)
+                        break;
+                  default:
+                        alert("알 수 없는 응답. 에러 코드 : "+error.response.status);
+                        break;
+               }
+            });
+      }
    }, [query, likeCheck]);
 
    useEffect(() => {
-      setQuery({
-         query : URL.get('query') === "null" ? null:URL.get('query'),
-         page : URL.get('page'),
-         limit : URL.get('limit'),
-         sort : URL.get('sort'),
-         minPrice : URL.get('minPrice'),
-         maxPrice : URL.get('maxPrice'),
-       });
+         setQuery({
+            query : URL.get('query') === "null" ? null:URL.get('query'),
+            page : URL.get('page'),
+            limit : URL.get('limit'),
+            sort : URL.get('sort'),
+            minPrice : URL.get('minPrice'),
+            maxPrice : URL.get('maxPrice'),
+          });
    }, [URL]);
 
    // console.log("itemList : ");

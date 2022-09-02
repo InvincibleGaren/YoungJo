@@ -31,7 +31,9 @@ function Search(props) {
 
     //사용자가 쿼리값을 입력하면 Link To 업데이트
     useEffect(()=>{
-      setUrl(`/AllSearch?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`);
+        setUrl(`/AllSearch?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`);
+
+      
     },[query])
 
     // 사용자가 Enter를 치면 검색 버튼 클릭.
