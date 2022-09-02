@@ -6,11 +6,9 @@ import ProductHeader from '../components/ui/product/ProductHeader';
 import Review from '../components/ui/Review';
 import ProductBottomButton from '../components/ui/product/ProductBottomButton';
 import { useParams } from 'react-router-dom';
-import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
-import Server from "../../datas/Server.js";
 import HeaderTop from '../components/ui/HeaderTop';
-
+import Server from "../../datas/Server.js";
 
 function Product() {
    const [productData, setProductData] = useState();
@@ -19,7 +17,6 @@ function Product() {
    const pathname = useParams();
 
    useEffect(()=>{
-
       const url = `${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`;
       const token = sessionStorage.getItem("login");
       const config = {timeout:1000, headers:{authentication: token}}
@@ -27,6 +24,7 @@ function Product() {
       axios.get(url, config)
       .then(Response => {
          console.log(Response.data);
+         console.log(Response.data.data);
          setProductData(Response.data.data);
       })
       .catch(error => {
@@ -34,9 +32,9 @@ function Product() {
       })
    }, [likeCheck])
 
-   console.log("패스네임")
-   console.log(pathname)
-   console.log("프로덕트데이타")
+   console.log("패스네임");
+   console.log(pathname);
+   console.log("프로덕트데이터");
    console.log(productData);
 
     return ( 
@@ -58,9 +56,9 @@ function Product() {
                      LikeCheckState = {likeCheck} 
                      setLikeCheckState = {setLikeCheck}
                   />
-                  <Footer />
                </div>
          }
+         <Footer />
       </div>
    );
 }

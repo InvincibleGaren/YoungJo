@@ -5,7 +5,7 @@
 
 /* ProductImgTxt */
 .mndtl_tmpl_detail {
-    height: 300px;
+    height: 700px;
     overflow: hidden;
 }
 
@@ -27,12 +27,6 @@
     margin-bottom: 60px;
 }
 
-/* .mndtl_detail_more {
-    background-color:yellowgreen;
-    align-content: center;
-} */
-
-
 /* Review */
 .mndtl_cmt_summary {
     margin-bottom: 30px;
@@ -48,10 +42,6 @@
 }
 
 /* ProductBottomButton */
-/* .optionView {
-    display: block;
-}
-
-.optionNonView {
+.isNonView {
     display: none;
-} */
+}
