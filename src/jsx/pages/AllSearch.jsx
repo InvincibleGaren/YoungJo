@@ -38,11 +38,13 @@ function AllSearch() {
     }, [inView])
 
    useEffect(()=>{
-      console.log("통신 쿼리");
+      console.log("likeCheck");
+      console.log(likeCheck);
+      console.log("query");
+      console.log(query);
       const url = `${Server.baseUrl}api/search?query=${query.query}&page=${query.page}&limit=${query.limit}&sort=${query.sort}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`
       const token = sessionStorage.getItem("login");
-      console.log(`토큰 : ${token}`);
-      const config = {timeout:1000, headers:{authentication: token}};
+      const config = {timeout:3000, headers:{authentication: token}};
 
       // setUrl({...query, limit: query.limit});
       
@@ -59,7 +61,6 @@ function AllSearch() {
             switch(error.code){
                case "ECONNABORTED":
                case "ERR_NETWORK":
-                    console.log(error);
                     alert("서버와 연결을 하지 못함\n원인 : "+error.message);
                     return;
             }

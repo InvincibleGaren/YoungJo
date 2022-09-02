@@ -60,7 +60,6 @@ function Search(props) {
           to={URL} 
           onClick={SearchSubmit}>
             <img  src={SearchImg} alt="검색"/></Link>
-        {/* <Cart /> */}
       </div>
     );
 }

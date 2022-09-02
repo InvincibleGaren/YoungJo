@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Server from "../../../../datas/Server.js";
 import CartItem from './CartItem.jsx';
+import { useNavigate } from "react-router-dom";
 
 function CartLogIn() {
-
+    const Navigate = useNavigate();
     const access_token = sessionStorage.getItem("login");
 
     const [userDatas, setUserDatas] = useState();
@@ -64,11 +65,11 @@ function CartLogIn() {
                 <div className="mcom_tit_renew ty_top">
                     <h2 className="mcom_tit_txt">장바구니</h2>
                     <div className="mcom_tit_lft">
-                        <a href="#" className="btn_back">
+                        <Link to="#" className="btn_back" onClick={()=>{Navigate(-1)}}>
                             <span className="sp_ctg_icon ctg_icon_back orderInfoTracking" data-tracking-cd="00014_000000094_t00060" data-tracking-value="뒤로가기">
                                 <span className="blind">이전 페이지</span>
                             </span>
-                        </a>
+                        </Link>
                     </div>
                     <div className="mcom_tit_rgt">
                         <div className="btn_cate btn_search">
