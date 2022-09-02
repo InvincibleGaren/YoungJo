@@ -12,3 +12,8 @@
 .Order .mnodr_article_headbubble{
     display: none;
 }
+
+.Order .mnodr_btn {
+    position: fixed;
+    bottom: 0;
+}
