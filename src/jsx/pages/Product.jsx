@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 import Footer from '../layouts/Footer';
 import HeaderTop from '../components/ui/HeaderTop';
 import Server from "../../datas/Server.js";
+import BackButton from '../components/ui/BackButton';
 
 function Product() {
    const [productData, setProductData] = useState();
@@ -40,9 +41,11 @@ function Product() {
     return ( 
       <div className='Product'>
          <HeaderTop />
+         <BackButton />
          {
             productData &&
                <div>
+                  
                   <ProductHeader productData = {productData} />
                   <ProductDetailInfo productData = {productData} />
                   <Review />
