@@ -19,7 +19,6 @@ import LogIn from "./jsx/pages/LogIn";
 import HotBrand from "./jsx/components/ui/HotBrand";
 import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
 import CtgL from "./jsx/components/CtgL";
-import CategoryMenu from "./jsx/components/ui/CategoryMenu";
 import SimpleJoin from "./jsx/pages/SimpleJoin";
 import JoinForm from "./jsx/pages/JoinForm";
 import ScrollToTop from "./jsx/function/ScrollTop";
@@ -45,7 +44,6 @@ function App() {
               <Route path=":productId" element={<Product/>} />
             </Route>
             <Route path="/productList" element={<ProductListView />} />
-            <Route path="/categorymenu" element={<CategoryMenu />} />
             <Route path="/join/simplejoin" element={<SimpleJoin />} />
             <Route path="/join/joinform" element={<JoinForm />} />
             <Route path="/allsearch" element={<AllSearch />} />
@@ -58,7 +56,6 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/cartlogin" element={<CartLogIn />} />
             <Route path="/cartnotlogin" element={<CartNotLogIn />} />
-            <Route path="/catemenu" element={<CategoryMenu/>}/>
             <Route path="/order" element={<Order/>} >
               <Route path=":productId" element={<Order/>} />
             </Route>
