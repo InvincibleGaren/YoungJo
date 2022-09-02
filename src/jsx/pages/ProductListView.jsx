@@ -9,6 +9,7 @@ import AllSearchItem from '../components/ui/AllSearchItem';
 import "../../css/components/AllSearchItem.css";
 import "../../css/pages/AllSearch.css";
 import CategoryMenu from '../components/ui/CategoryMenu';
+import FooterNav from '../components/ui/FooterNav.jsx';
 
 
 
@@ -92,6 +93,7 @@ function ProductListView() {
                 }
             </ul>
         </div>
+		<FooterNav/>
         </>
     )
 }
