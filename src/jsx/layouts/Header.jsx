@@ -15,12 +15,13 @@ function Header() {
 
     useEffect(()=>{
         setName(path.pathname.split('/')[1])
+        console.log(path.pathname)
     },[])
     return ( 
-        <header className='container-fluid'>
+        <header id="m_header" className='mcom_header react-area'>
             <HeaderTop />
             {
-                name === "product" ? "" :    
+                name !== "" ? "" :    
                 <Slider />
             }
         </header>

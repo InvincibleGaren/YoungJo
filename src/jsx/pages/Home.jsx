@@ -6,7 +6,7 @@ import Footer from "../layouts/Footer";
 
 function Home() {
     return ( 
-        <div>
+        <div id="m_wrap" className="mcom_wrap sm_v3 sm_page_main has_smhero_banner">
             <Header />
             <HomeMain />
             <Footer />

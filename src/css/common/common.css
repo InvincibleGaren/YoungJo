@@ -1,18 +1,7 @@
-* {
-    margin:0px;
-    padding:0px;
-   
-}
 
-a {
-    text-decoration: none !important;
-    /* color: black !important; */
+.gnb_mall {
+    width: auto !important;
 }
-
-.container-fluid {
-    width: 100%;
-}
-
-.clickable {
-    cursor: pointer;
-}
+.gnb_mall a:before {
+    background: none !important;
+} 

@@ -9,14 +9,27 @@ function Cart() {
     const Login = useContext(LoginState);
 
     return ( 
-        <div>
+        <>
             { 
                 Login === "true" ? 
-                <Link to="/cartlogin" className='Cart'><img src={CartImg} alt="카트"/></Link>
+                (
+                    <Link to="/cartlogin" className='gnb_util_mn ty_cart clickable'>
+                    <i class="icon icon_cart">
+                        <span id="mHeaderCartNm" class="blind">장바구니</span>
+                    </i>
+                    <span className="cmnoti_push" id="cartCnt_header"><span class="blind" id="cartCntSpan">담은 상품 수</span>3</span>
+                    </Link> 
+                )
                 :
-                <Link to="/cartnotlogin" className='Cart'><img src={CartImg} alt="카트"/></Link>
-            }
-        </div>
+                (
+                    <Link to="/cartnotlogin" className='gnb_util_mn ty_cart clickable'>
+                    <i class="icon icon_cart">
+                        <span id="mHeaderCartNm" class="blind">장바구니</span>
+                    </i>
+                    </Link> 
+                )
+           }
+        </>
      );
 }
 

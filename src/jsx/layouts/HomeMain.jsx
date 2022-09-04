@@ -14,7 +14,7 @@ import NoticeBar from '../components/ui/NoticeBar';
 
 function HomeMain() {
     return ( 
-        <main>
+        <>
             <HeaderNav />
             <Category />
             <HappyLounge />
@@ -26,7 +26,7 @@ function HomeMain() {
             <LetsTryOn />
             <NoticeBar />
             <FooterNav />
-        </main>
+        </>
      );
 }
 

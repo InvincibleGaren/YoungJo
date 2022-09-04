@@ -18,17 +18,16 @@ import UnderNewService from "./jsx/components/UnderNewService";
 import LogIn from "./jsx/pages/LogIn";
 import HotBrand from "./jsx/components/ui/HotBrand";
 import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
-import CtgL from "./jsx/components/CtgL";
 import SimpleJoin from "./jsx/pages/SimpleJoin";
 import JoinForm from "./jsx/pages/JoinForm";
 import ScrollToTop from "./jsx/function/ScrollTop";
 import AllSearch from "./jsx/pages/AllSearch";
 import Cart from "./jsx/components/ui/Cart";
-import MainCate from "./jsx/pages/MainCate";
 import ProductListView from "./jsx/pages/ProductListView";
 import CartLogIn from "./jsx/components/ui/Cart/CartLogIn";
 import CartNotLogIn from "./jsx/components/ui/Cart/CartNotLogIn";
 import Order from "./jsx/pages/Order";
+import MainCategory from "./jsx/pages/MainCategory";
 
 function App() {
   const [login, setLogin] = useState(sessionStorage.getItem("login") ? "true": "false");
@@ -51,8 +50,7 @@ function App() {
             <Route path="/UNS" element={<UnderNewService/>} />
             <Route path="/HotBrand" element={<HotBrand/>} />
             <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
-            <Route path="/cate" element={<MainCate/>}/>
-            <Route path="/ctgl" element={<CtgL/>}/>
+            <Route path="/category" element={<MainCategory/>}/>
             <Route path="/cart" element={<Cart />} />
             <Route path="/cartlogin" element={<CartLogIn />} />
             <Route path="/cartnotlogin" element={<CartNotLogIn />} />

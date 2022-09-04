@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import CtgL2List from './CtgL2List';
-import CtgL1 from './CtgL1';
+import CategoryListItem from './CategoryListItem';
 
 import Server from "../../datas/Server.js"
-function CtgL() {
+function CategoryList() {
 
     const [ctgLData, setCtgL] = useState()
     const [cateData, setCateData] = useState()
@@ -34,7 +34,7 @@ function CtgL() {
                     <ul>
                     {
                         ctgLData && ctgLData.map(ctgl1 =>(
-                            <CtgL1 
+                            <CategoryListItem 
                                 key ={ctgl1.listIndex}
                                 ctgLL1 = {ctgl1.category}  
                                 handleView = {handleView} 
@@ -103,4 +103,4 @@ function CtgL() {
      );
 }
 
-export default CtgL;
+export default CategoryList;

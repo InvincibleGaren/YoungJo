@@ -8,7 +8,7 @@ function FooterNav() {
         <div id="m_toolbar" className="mcom_toolbar_v2 react-area">
 			<ul className="toolbar_menu" role="navigation">
 				<li className="toolbar_item">
-                    <Link to="/cate" className="toolbar_lnk ty_category clickable" data-react-tarea="웹공통_N|웹바|카테고리|신세계몰">
+                    <Link to="/category" className="toolbar_lnk ty_category clickable" data-react-tarea="웹공통_N|웹바|카테고리|신세계몰">
                         <i className="icon ty_lg icon_category" aria-hidden="true"></i>
                         <span className="toolbar_txt">카테고리</span>
                     </Link>
