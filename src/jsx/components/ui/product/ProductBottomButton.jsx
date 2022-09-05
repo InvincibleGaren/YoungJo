@@ -91,7 +91,6 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
   return (
       <div className="ProductBottomButton mndtl_opt_btm _js_mndtl_opt_btm">
         <div className="opt_btm_bgn">
-            
           <div className={ isView ? "btm_bgn_in dps1" : "isNonView"}>
             <ul className="btm_bgn_bx type_other1">
               <li className="ty_like" data-react-unit-type="item">
@@ -191,8 +190,8 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                     :
                     <Link to={`/login`} className="mndtl_btn type01 clickable" target="_parent">
                         <span className="btn_tx ssgpay"><i className="ico_txt_ssgpay_btm"></i>바로구매</span>
-                    </Link>                            
-                  }                                             
+                    </Link>
+                  }
                 </li>
               </ul>
             </div>

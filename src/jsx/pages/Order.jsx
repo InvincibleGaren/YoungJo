@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ProductDetailInfo from '../components/ui/product/ProductDetailInfo';
-import ProductExtraInfo from '../components/ui/product/ProductExtraInfo';
-import ProductHeader from '../components/ui/product/ProductHeader';
-import Review from '../components/ui/Review';
-import ProductBottomButton from '../components/ui/product/ProductBottomButton';
 import { useParams } from 'react-router-dom';
-import Header from '../layouts/Header';
-import Footer from '../layouts/Footer';
 import Server from "../../datas/Server.js";
-import HeaderTop from '../components/ui/HeaderTop';
 import MemberHeader from '../components/ui/MemberHeader';
 
 import "../../css/components/Order.css"
@@ -392,12 +384,14 @@ function Order() {
 			    </div>
 		    </div>
 	    </article>
-        <div className="mcom_mall_wrap v2">
-            <div className="mcom_noti_wrap">
-                <p className="mcom_noti_txt">㈜에스에스지닷컴에서 판매되는 상품 중에는 개별 판매자가 판매하는 오픈마켓 상품이 포함되어 있습니다.</p>
-                <p className="mcom_noti_txt">오픈마켓 상품의 경우, ㈜에스에스지닷컴은 통신판매중개자로서 거래 당사자가 아니며, 입점 판매사가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.</p>
-            </div>
-        </div>
+        <div className="mcom_footer mcom_footer_order mcom_footer_order_v2 ty_bg ty_space_lg">
+			<div className="mcom_mall_wrap v2">
+				<div className="mcom_noti_wrap">
+					<p className="mcom_noti_txt">㈜에스에스지닷컴에서 판매되는 상품 중에는 개별 판매자가 판매하는 오픈마켓 상품이 포함되어 있습니다.</p>
+                    <p className="mcom_noti_txt">오픈마켓 상품의 경우, ㈜에스에스지닷컴은 통신판매중개자로서 거래 당사자가 아니며, 입점 판매사가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.</p>
+                </div>
+			</div>
+		</div>
         <button type="button" className="mnodr_btn ty_point ty_m payTracking" data-pt-click="주문서|웹바|결제하기" name="processPaymtButton">
             <span className="mnodr_btn_tx">
                 <em className="ssg_price paySummaryPayAmt paySummaryTgtPaymtAmt">
@@ -408,8 +402,6 @@ function Order() {
                 <span className="ssg_tx">원</span> 
                 결제하기
             </span>
-            {/* <span className="mnodr_btn_tx6 cardDcInfoAmtDiv">(<em className="ssg_price paySummaryPayCardDcAmt">0</em><span className="ssg_tx">원</span> 청구예상)</span>
-            <span className="mnodr_btn_tx6 tgtPaymtCardDcInfoAmtDiv">(<em className="ssg_price paySummaryTgtPaymtCardDcAmt">0</em><span className="ssg_tx">원</span> 청구예상)</span> */}
 		</button>
       </div>
    );

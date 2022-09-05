@@ -1,7 +1,32 @@
-.ProductBottomButton ul.btm_bgn_bx.type_other1{
+.ProductBottomButton ul.btm_bgn_bx.type_other1 {
     padding: 0;
 }
 
 .ProductBottomButton a{
     text-decoration: none;
+}
+
+.mndtl_opt_btm {
+    bottom: -2%;
+}
+
+.isNonView {
+    display: none;
+}
+
+.arrow_button {
+    padding-left: 49%;
+}
+
+.select_box {
+    margin: 1%;
+    margin-bottom: 2%;
+}
+
+.mndtl_opt_bar, .mndtl_scr_area {
+    max-height: 400px !important;
+}
+
+ol, ul {
+    padding-left: 0rem;
 }
