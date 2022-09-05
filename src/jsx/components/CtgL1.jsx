@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+git 
 function CtgL1({ctgLL1, id, handleView}) {
     
     return ( 
