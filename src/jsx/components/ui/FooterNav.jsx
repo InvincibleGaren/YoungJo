@@ -26,7 +26,7 @@ function FooterNav() {
 					</Link>
 				</li>
 				<li className="toolbar_item" id="bottomOrderInfoLi">
-					<Link to="/" className="toolbar_lnk ty_myssg clickable" data-react-tarea="웹공통_N|웹바|MY_SSG">
+					<Link to="/mypage" className="toolbar_lnk ty_myssg clickable" data-react-tarea="웹공통_N|웹바|MY_SSG">
 						<i className="icon ty_lg icon_person" aria-hidden="true"></i>
 						<span className="toolbar_txt">MY</span>
 						<span className="cmnoti_push" id="bottomOrderCnt" style={{display:"none"}}><span className="blind" id="bottomOrderCntSpan">새 메세지 수</span></span>

@@ -63,7 +63,7 @@ function ProductListView() {
 							</span>
 							<span className="depth current">
 								
-									<strong className="ctg_txt">{category.name}</strong>
+									<strong className="ctg_txt"></strong>
 									
 							</span>
 						</div>
