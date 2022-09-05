@@ -16,13 +16,18 @@ import FooterNav from '../components/ui/FooterNav.jsx';
 function ProductListView() {
 
     const [searchParams, setSearchParams] = useSearchParams();
-    console.log("categoryId",searchParams.get('ctglId'))
-    console.log("categoryLevel",searchParams.get('categoryLevel'))
+    console.log("categoryId :",searchParams.get('ctglId'))
+    console.log("categoryLevel :",searchParams.get('categoryLevel'))
 
     const [productList, setProductList] = useState();
-    const [cateLevel1Name, setCateLevel1Name] = useState(searchParams.get('name'));
+	const [cateNav, setCateNav] = useState();
+    const [cateNavId, setCateNavId] = useState(searchParams.get('catenavid'));
+	// ctgl1 id
     const [cateLevel2Name, setCateLevel2Name] = useState();
     const [cateLevel3Name, setCateLevel3Name] = useState();
+
+	const [cateSubNavId, setCateSubNavId] = useState(searchParams.get('ctglId'));
+
 
 
     // const [url, setUrl] = useState()
@@ -35,6 +40,16 @@ function ProductListView() {
         })
     },[searchParams,Server])
 
+	useEffect(()=> {
+        axios.get(`${Server.baseUrl}api/ctg/nav${searchParams.get('categoryLevel')}/${searchParams.get('ctglId')}`)
+        .then(Response => {
+            console.log(Response.data.data)
+            setCateNav(Response.data.data.category)
+			// ctgL1 카테고리 데이터
+			setCateSubNavId(Response.data.data.subCategoryList)
+			//id가 고유값이라서 인덱스로 처리 못하는거지?
+        })
+    },[searchParams,Server])
 
     return (
         <>
@@ -43,12 +58,12 @@ function ProductListView() {
 						<div className="cate_path">
 							<span className="depth previous">
 								<a href="https://m.ssg.com/page/ssgfashion/_v19.ssg">
-									<span className="ctg_mn"><span className="ctg_txt">{cateLevel1Name}</span></span>
+									<span className="ctg_mn"><span className="ctg_txt">{cateNav.name}</span></span>
 								</a>
 							</span>
 							<span className="depth current">
 								
-									<strong className="ctg_txt">명품/수입의류</strong>
+									<strong className="ctg_txt">{category.name}</strong>
 									
 							</span>
 						</div>
