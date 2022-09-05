@@ -21,8 +21,8 @@ function HomeMain() {
                     <MainBlank height={20}/>
                     <MainMiddleBanner />
                     <MainBlank height={20}/>
-                    {/* <NewService />
-                    <UnderNewService />
+                    <NewService />
+                    {/* <UnderNewService />
                     <HotBrand />
                     <DepartmentStoreBestItem />
                     <CardPromotion />

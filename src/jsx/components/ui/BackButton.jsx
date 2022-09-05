@@ -11,8 +11,8 @@ function BackButton() {
     const Navigate = useNavigate();
 
     return ( 
-        <div class="BackButton mndtl_lft">
-            <Link to="#" onClick={()=>{Navigate(-1);}} class="mndtl_btn_back clickable"></Link>
+        <div className="BackButton mndtl_lft">
+            <Link to="#" onClick={()=>{Navigate(-1);}} className="mndtl_btn_back clickable"></Link>
         </div>
      );
 }
