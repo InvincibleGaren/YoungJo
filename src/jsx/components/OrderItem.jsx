@@ -2,12 +2,13 @@ import React from 'react';
 
 function OrderItem(props) {
     console.log("AAAAA");
+    console.log(props)
 
     return ( 
         <div className="OrderItem mnodr_unit_item">
             <div className="mnodr_unit_thmb">
                 <span className="mnodr_unit_img" aria-hidden="true">
-                    <img src={props.Item.thumbImg} alt="[나이키코리아공식]남성 나이키 레전드 2.0 티 NIKE 718834-010" width="85" height="85" />
+                    <img src={props.Item.thumbImg} alt="상품 썸네일 이미지" width="85" height="85" />
                 </span>
             </div>
             <div className="mnodr_unit_cont">
@@ -27,12 +28,9 @@ function OrderItem(props) {
                 <span className="mnodr_unit_option">옵션1 : {props.Item.optionValue1}</span>
                 <span className="mnodr_unit_option">옵션2 : {props.Item.optionValue2}</span>
                 <div className="mnodr_unit_prdpay ty_space">
-                    <div className="mnodr_unit_l">                    
-                        {/* <div className="mnodr_unit_oldprice ty2">
-                            <del><span className="blind">정상가격</span><em className="ssg_price">29,000</em></del><span className="ssg_tx">원</span>
-                        </div> */}
+                    <div className="mnodr_unit_l">      
                         <div className="mnodr_unit_newprice ty2">
-                            <span className="blind">판매가격</span><em className="ssg_price">{props.Item.price}</em><span className="ssg_tx">원</span>
+                            <span className="blind">판매가격</span><em className="ssg_price">{(props.Item.price).toLocaleString()}</em><span className="ssg_tx">원</span>
                         </div>
                     </div>
                     <div className="mnodr_unit_r">

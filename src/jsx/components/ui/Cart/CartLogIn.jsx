@@ -9,13 +9,13 @@ import { useNavigate } from "react-router-dom";
 function CartLogIn() {
     const Navigate = useNavigate();
     const access_token = sessionStorage.getItem("login");
+    console.log(access_token);
 
     const [userDatas, setUserDatas] = useState();
     const [cartDatas, setCartDatas] = useState();
     const [totalPrice, setTotalPrice] = useState(0);
+    const [isCheck, setIsCheck] = useState(false);
     
-    console.log(access_token);
-
     useEffect(()=>{
         axios.get (`${Server.baseUrl}api/my/deliveryAddr`, {
                 headers: {
@@ -46,7 +46,7 @@ function CartLogIn() {
             .catch(error=>{
                 console.log(error);
             })
-    }, [])
+    }, [isCheck])
 
     useEffect(()=>{
         let tempTotal = 0;
@@ -56,8 +56,8 @@ function CartLogIn() {
               ));
           }
         setTotalPrice(tempTotal)
-      },[cartDatas])
-    
+    },[cartDatas])
+
     return (  
         <>
             {/* 카트헤더 */}
@@ -79,19 +79,18 @@ function CartLogIn() {
                             </button>
                         </div>
                         <div className="btn_cate btn_home">
-                        <Link to={"/"} id="headerHomeBtn">
-                            <span className="sp_ctg_icon ctg_icon_home"><span className="blind">홈</span></span>
-                        </Link>
+                            <Link to={"/"} id="headerHomeBtn">
+                                <span className="sp_ctg_icon ctg_icon_home"><span className="blind">홈</span></span>
+                            </Link>
                         </div>
                     </div>
                 </div>
-                    {/* 검색누르면 뜨는 거 */}
-                <div className="m_srharea m_srhprev">
+                {/* 검색누르면 뜨는 거 */}
+                {/* <div className="m_srharea m_srhprev">
                     <fieldset>
                         <div className="m_head_srh">
                             <div className="m_head_inparea2">
                                 <div className="addr_ipbx">
-                                    {/* 뒤로가기 화살표 svg */}
                                     <span className="inp_ico_prev"><span className="blind">이전페이지</span></span>
                                     <span className="inpbx2">
                                         <input type="text" id="query" name="query" autoComplete="off" placeholder="검색어를 입력하세요." />
@@ -104,7 +103,7 @@ function CartLogIn() {
                             </div>
                         </div>
                     </fieldset>
-                </div>
+                </div> */}
             </div>
             
             {
@@ -113,15 +112,15 @@ function CartLogIn() {
                     <div>
                         <ul className="mnodr_tab" id="cartTab">
                             <li className="on">
-                                <a href="#" className="cartTracking">
+                                <a className="cartTracking">
                                 <span className="mnodr_tab_tx">일반배송</span></a>
                             </li>
                             <li>
-                                <a href="#" className="cartTracking">
+                                <a className="cartTracking">
                                 <span className="mnodr_tab_tx">정기배송</span></a>
                             </li>
                             <li className="new">
-                                <a href="#" className="mnodr_bn mnodr_cartshare_banner layer_filter2">
+                                <a className="mnodr_bn mnodr_cartshare_banner layer_filter2">
                                     <span className="mnodr_tab_tx">함께장보기</span>
                                 </a>
                             </li>
@@ -174,14 +173,14 @@ function CartLogIn() {
                                     <span className="sm">전체</span>
                                 </label>
                                 <span className="mnodr_control_tx">
-                                    <a href="#" className="mnodr_control_link layer_filter cartTracking">
+                                    <a className="mnodr_control_link layer_filter cartTracking">
                                         <span className="mnodr_selbox_tx">배송방법바꾸기</span>
                                     </a>
                                     <a className="modal-fix-open"></a>
                                 </span>
                             </div>
                             <span className="mnodr_control_delete">
-                                <a href="#" className="df cartTracking" name="btDelChekItemAll">품절상품삭제</a>
+                                <a className="df cartTracking" name="btDelChekItemAll">품절상품삭제</a>
                             </span>
                         </div>
                         
@@ -203,7 +202,14 @@ function CartLogIn() {
                             </div>
                             {
                                 cartDatas && cartDatas.map(item => (
-                                    <CartItem key={item.pdtId} cartItem = {item} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
+                                    <CartItem 
+                                        key={item.pdtId} 
+                                        cartItem={item} 
+                                        totalPrice={totalPrice} 
+                                        setTotalPrice={setTotalPrice}
+                                        isCheck={isCheck}
+                                        setIsCheck={setIsCheck}
+                                    />
                                 ))
                             }
                         </div>
@@ -255,6 +261,16 @@ function CartLogIn() {
                             </dl>
                         </div>
                     </div>
+
+                    <div className="mnodr_btn_area">
+   				        <button className="mnodr_btn ty_line ty_m cartTracking" id="mnodr_btn_gift2">
+                            <i className="icon ty_md icon_gift" aria-hidden="true"></i>
+                            <span className="mnodr_txt_gift">선물하기</span>
+                        </button>
+				        <button type="button" className="mnodr_btn ty_point ty_m cartTracking" name="btOrdCheckbox">
+							<span className="mnodr_btn_tx">주문하기</span>
+						</button>
+   					</div>
                 </div>
             }
 

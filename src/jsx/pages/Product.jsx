@@ -45,7 +45,6 @@ function Product() {
          {
             productData &&
                <div>
-                  
                   <ProductHeader productData = {productData} />
                   <ProductDetailInfo productData = {productData} />
                   <Review />

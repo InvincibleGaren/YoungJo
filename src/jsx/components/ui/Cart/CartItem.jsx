@@ -3,11 +3,10 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Server from "../../../../datas/Server.js";
 
-function CartItem({cartItem, totalPrice, setTotalPrice}) {
+function CartItem({cartItem, totalPrice, setTotalPrice, isCheck, setIsCheck}) {
 
     const [productQty, setProductQty] = useState(cartItem.pdtQty);
 
-    const url = `${Server.baseUrl}api/cart/pdt`;
     const access_token = sessionStorage.getItem("login");
 
     const inCreQty = () =>{
@@ -23,8 +22,8 @@ function CartItem({cartItem, totalPrice, setTotalPrice}) {
     }
 
     useEffect(()=>{
-        console.log(url, access_token, cartItem.pdtId, productQty)
-        axios.put(url,
+        console.log(`${Server.baseUrl}api/cart/pdt`, access_token, cartItem.pdtId, productQty)
+        axios.put(`${Server.baseUrl}api/cart/pdt`,
             {
                 "pdtId" : cartItem.pdtId,
                 "pdtQty" : productQty
@@ -41,6 +40,24 @@ function CartItem({cartItem, totalPrice, setTotalPrice}) {
             })
     }, [productQty])
 
+    const handleDelete = () => {
+        axios.delete(`${Server.baseUrl}api/cart/pdt/${cartItem.pdtId}`,
+            { headers: {
+                'Authentication': access_token
+              }}
+            )
+            .then(Response => {
+                console.log(Response);
+                console.log("상품이 삭제되었습니다.");
+                console.log(isCheck)
+                setIsCheck(!isCheck);
+                console.log(isCheck)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <div className="mnodr_acdo_cont">
             <div className="mnodr_unit">
@@ -51,8 +68,7 @@ function CartItem({cartItem, totalPrice, setTotalPrice}) {
                             <label htmlFor="chk_order_5145007481"><span className="blind">상품선택</span></label>
                         </span>
                         <span className="mnodr_unit_img" aria-hidden="true">
-                            {/* 데이터에 alt 추가 예정 */}
-                            <img src={cartItem.thumbImg} alt="나이키 의류 반팔 티셔츠 반바지 23종 모음" width="75" height="75" /></span>
+                            <img src={cartItem.thumbImg} alt={cartItem.thumbImgAlt} width="75" height="75" /></span>
                         </div>
                     <div className="mnodr_unit_cont">
                         <div className="mnodr_unit_info">
@@ -64,13 +80,13 @@ function CartItem({cartItem, totalPrice, setTotalPrice}) {
                             <button type="button" className="mnodr_unit_pin1 cartTracking" name="btKeep">
                                 <i className="mnodr_ic ic_pin "><span className="blind">계속 담아두기</span></i>
                             </button>
-                            <button type="button" className="mnodr_unit_del cartTracking" name="btnDel">
+                            <button type="button" className="mnodr_unit_del cartTracking" name="btnDel" onClick={handleDelete}>
                                 <i className="mnodr_ic ic_del"><span className="blind">상품 삭제</span></i>
                             </button>
                         </div>
                         
                         <p className="mnodr_unit_tit">
-                            <a className="cartTracking" href="#">
+                            <a className="cartTracking">
                                 <strong className="mnodr_unit_brd"> {cartItem.brand} </strong>
                                 <span className="mnodr_unit_name">
                                     {cartItem.title}
@@ -116,7 +132,6 @@ function CartItem({cartItem, totalPrice, setTotalPrice}) {
                     </div>
                 </div>
             </div>
-            
         </div>
     )
 }
