@@ -32,7 +32,8 @@ function HeaderSlider() {
     },[])
 
     return ( 
-        <Swiper className='HeaderSlider'
+        <div classnam="smhero_banner_wrap" >
+            <Swiper className='HeaderSlider'
             modules={[Autoplay]}
             autoplay={true}
             spaceBetween={0}
@@ -48,6 +49,8 @@ function HeaderSlider() {
                 ))
             }
         </Swiper>
+        </div>
+        
     );
 }
 

@@ -1,9 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import navData from '../../../datas/FooterNav.json'
 import "../../../css/components/FooterNav.css"
 
 function FooterNav() {
+
+    const navigate = useNavigate();
+    const handleUrl = (url) => {
+        navigate(url);
+    }
+
     return ( 
         <div id="m_toolbar" className="mcom_toolbar_v2 react-area">
 			<ul className="toolbar_menu" role="navigation">

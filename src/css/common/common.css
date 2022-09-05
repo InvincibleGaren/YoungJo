@@ -5,3 +5,20 @@
 .gnb_mall a:before {
     background: none !important;
 } 
+ul {
+    padding-left: 0px !important;
+}
+a:link {
+    text-decoration: none !important;
+}
+.cmitem_quick_unit.ty_horizontal_scroll .cmitem_quick_cont {
+    margin: auto !important;
+    padding: 0px 0px 0px 3%;
+}
+.cmitem_quick_unit.ty_horizontal_scroll .cmitem_quick_lst > li {
+    width: 90px !important;
+}
+
+.cmtit_heading .cmtit_subtxt {
+    margin-bottom: 0px !important;
+}

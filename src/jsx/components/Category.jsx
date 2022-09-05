@@ -40,7 +40,7 @@ function CategoryList() {
                                 handleView = {handleView} 
                                 id = {ctgl1.category.id}
                             />
-                        )).slice(0,4)
+                        ))
                     }
                     </ul>
                 </div>
@@ -95,7 +95,7 @@ function CategoryList() {
             </div> */}
             <div>
                 {
-                   cateData && subViewId > 12 && subViewId < 17  ? <CtgL2List cateData = {cateData} id = {subViewId}/> : ""
+                   cateData &&  <CtgL2List cateData = {cateData} id = {subViewId}/> 
                 }
             </div>
             
