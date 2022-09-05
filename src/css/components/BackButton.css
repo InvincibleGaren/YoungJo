@@ -1,0 +1,15 @@
+
+.BackButton .mndtl_btn_back:before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60px;
+    z-index: 2;
+    left: 16px;
+    -webkit-transform: translateY(11px);
+    transform: translateY(11px);
+    width: 35px;
+    height: 28px;
+    background: url("https://sui.ssgcdn.com/ui/m_ssg/img/product/svg/ic_arrback_w.svg") no-repeat 50% 50%;
+    background-size: contain;
+}

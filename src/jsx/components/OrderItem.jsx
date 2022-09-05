@@ -7,7 +7,7 @@ function OrderItem(props) {
         <div className="OrderItem mnodr_unit_item">
             <div className="mnodr_unit_thmb">
                 <span className="mnodr_unit_img" aria-hidden="true">
-                    <img src="https://sitem.ssgcdn.com/18/20/64/item/1000034642018_i1_140.jpg" alt="[나이키코리아공식]남성 나이키 레전드 2.0 티 NIKE 718834-010" width="85" height="85" />
+                    <img src={props.Item.thumbImg} alt="[나이키코리아공식]남성 나이키 레전드 2.0 티 NIKE 718834-010" width="85" height="85" />
                 </span>
             </div>
             <div className="mnodr_unit_cont">
