@@ -7,7 +7,6 @@ function CartItem({cartItem, totalPrice, setTotalPrice}) {
 
     const [productQty, setProductQty] = useState(cartItem.pdtQty);
 
-    const url = `${Server.baseUrl}api/cart/pdt`;
     const access_token = sessionStorage.getItem("login");
 
     const inCreQty = () =>{
@@ -23,8 +22,8 @@ function CartItem({cartItem, totalPrice, setTotalPrice}) {
     }
 
     useEffect(()=>{
-        console.log(url, access_token, cartItem.pdtId, productQty)
-        axios.put(url,
+        console.log(`${Server.baseUrl}api/cart/pdt`, access_token, cartItem.pdtId, productQty)
+        axios.put(`${Server.baseUrl}api/cart/pdt`,
             {
                 "pdtId" : cartItem.pdtId,
                 "pdtQty" : productQty
@@ -40,6 +39,21 @@ function CartItem({cartItem, totalPrice, setTotalPrice}) {
                 console.log(error);
             })
     }, [productQty])
+
+    const handleDelete = () => {
+        axios.delete(`${Server.baseUrl}api/cart/pdt/${cartItem.pdtId}`,
+            { headers: {
+                'Authentication': access_token
+              }}
+            )
+            .then(Response => {
+                console.log(Response);
+                alert("상품이 삭제되었습니다.");
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     return (
         <div className="mnodr_acdo_cont">
@@ -64,7 +78,7 @@ function CartItem({cartItem, totalPrice, setTotalPrice}) {
                             <button type="button" className="mnodr_unit_pin1 cartTracking" name="btKeep">
                                 <i className="mnodr_ic ic_pin "><span className="blind">계속 담아두기</span></i>
                             </button>
-                            <button type="button" className="mnodr_unit_del cartTracking" name="btnDel">
+                            <button type="button" className="mnodr_unit_del cartTracking" name="btnDel" onClick={handleDelete}>
                                 <i className="mnodr_ic ic_del"><span className="blind">상품 삭제</span></i>
                             </button>
                         </div>

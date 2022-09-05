@@ -8,13 +8,12 @@ import CartItem from './CartItem.jsx';
 function CartLogIn() {
 
     const access_token = sessionStorage.getItem("login");
+    console.log(access_token);
 
     const [userDatas, setUserDatas] = useState();
     const [cartDatas, setCartDatas] = useState();
     const [totalPrice, setTotalPrice] = useState(0);
     
-    console.log(access_token);
-
     useEffect(()=>{
         axios.get (`${Server.baseUrl}api/my/deliveryAddr`, {
                 headers: {
@@ -55,7 +54,7 @@ function CartLogIn() {
               ));
           }
         setTotalPrice(tempTotal)
-      },[cartDatas])
+    },[cartDatas])
     
     return (  
         <>
