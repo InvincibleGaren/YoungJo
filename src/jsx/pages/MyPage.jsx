@@ -2,10 +2,15 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import Server from '../../datas/Server.js';
+import MypageTop from '../components/ui/myPage/MypageTop.jsx';
 
-import MypageTop from '../components/MypageTop'
 import FooterNav from '../components/ui/FooterNav'
 import Footer from '../layouts/Footer'
+import OrderShippingTracking from '../components/ui/myPage/OrderShippingTracking.jsx';
+import MyPageMenu from '../components/ui/myPage/MyPageMenu.jsx';
+import MyPageReview from '../components/ui/myPage/MyPageReview.jsx';
+import MyPageBanner from '../components/ui/myPage/MyPageBanner.jsx';
+import MyPageBottomMenu from '../components/ui/myPage/MyPageBottomMenu.jsx';
 
 function MyPage() {
 
@@ -29,6 +34,11 @@ function MyPage() {
     return (
         <div>
             {myPageData && <MypageTop mypagedata = {myPageData}/>}
+            <OrderShippingTracking/>
+            <MyPageMenu/>
+            <MyPageReview/>
+            <MyPageBanner/>
+            <MyPageBottomMenu/>
             <Footer/>
             <FooterNav/>
         </div>
