@@ -13,6 +13,8 @@ function CategoryMenu() {
     console.log("categoryId",searchParams.get('ctglId'))
     console.log("categoryLevel",searchParams.get('categoryLevel'))
 
+    const [cateNavName, setCateNavName] = useState(searchParams.get('name'));
+
     const cateLevel = Number(searchParams.get('categoryLevel'));
     const cateId = Number(searchParams.get('ctglId'));
     console.log(cateLevel,cateId)
@@ -44,7 +46,7 @@ function CategoryMenu() {
                                             "clickable cmctg_lnk on" : "clickable cmctg_lnk"} 
                                         >
                                             <span className="cmctg_txt">
-                                                <Link to={`/productList?categoryLevel=${cateLevel}&ctglId=${cate.category.id}`}>
+                                                <Link to={`/productList?name=${cateNavName}&categoryLevel=${cateLevel}&ctglId=${cate.category.id}`}>
                                                     {cate.category.name}
                                                 </Link>
                                             </span>
@@ -62,7 +64,7 @@ function CategoryMenu() {
                     {
                         cateSubMenu && cateSubMenu.map(cate=>(
                             <li key={cate.id}>
-                                <Link to = {`/productList?categoryLevel=${cateLevel+1}&ctglId=${cate.id}`}><span>{cate.name}</span></Link>
+                                <Link to = {`/productList?name=${cateMenu[cateId-1].category.name}&categoryLevel=${cateLevel+1}&ctglId=${cate.id}`}><span>{cate.name}</span></Link>
                             </li>
                         ))
                     }
