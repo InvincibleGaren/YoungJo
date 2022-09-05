@@ -9,7 +9,7 @@ function HeaderTop(props) {
         <div id='m_gnb' className='mcom_gnb v2'>
             <Logo />
             <div className="gnb_util">
-                <Search setQueryState={props.setQueryState} setUrlState={props.setUrlState}/>
+                <Search QueryState={props.QueryState} setQueryState={props.setQueryState} setUrlState={props.setUrlState}/>
                 <Cart />
             </div>
             
