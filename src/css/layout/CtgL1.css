@@ -1,19 +1,5 @@
-.ctgl {
+.cateLi {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-}
-
-.ctgl1d{
-    /* width : 25%; */
-}
-
-.ctgl1li{
-    list-style: none;
-    text-align: center;
-} 
-
-.ctgltext{
-    width: 150px;
-    word-wrap : break-word;
 }
