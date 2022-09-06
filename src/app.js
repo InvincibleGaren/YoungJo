@@ -29,7 +29,7 @@ import CartNotLogIn from "./jsx/components/ui/Cart/CartNotLogIn";
 import Order from "./jsx/pages/Order";
 import MainCategory from "./jsx/pages/MainCategory";
 import MyPage from "./jsx/pages/MyPage";
-import Test from "./Test";
+import Like from "./jsx/pages/Like";
 
 function App() {
   const [login, setLogin] = useState(sessionStorage.getItem("login") ? "true": "false");
@@ -60,6 +60,7 @@ function App() {
               <Route path=":productId" element={<Order/>} />
             </Route>            
             <Route path ="/mypage" element = {<MyPage/>} />
+            <Route path ="/like" element = {<Like/>} />
           </Routes>
         </BrowserRouter>
       </LoginState.Provider>
