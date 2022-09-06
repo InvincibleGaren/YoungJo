@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import navData from '../../../datas/FooterNav.json'
 import "../../../css/components/FooterNav.css"
+import { LoginState } from '../../globalState/LoginState';
 
 function FooterNav() {
 
@@ -9,6 +10,8 @@ function FooterNav() {
     const handleUrl = (url) => {
         navigate(url);
     }
+	const Login = useContext(LoginState);
+
 
     return ( 
         <div id="m_toolbar" className="mcom_toolbar_v2 react-area">
@@ -31,13 +34,28 @@ function FooterNav() {
 						<span className="toolbar_txt">홈</span>
 					</Link>
 				</li>
-				<li className="toolbar_item" id="bottomOrderInfoLi">
-					<Link to="/mypage" className="toolbar_lnk ty_myssg clickable" data-react-tarea="웹공통_N|웹바|MY_SSG">
-						<i className="icon ty_lg icon_person" aria-hidden="true"></i>
-						<span className="toolbar_txt">MY</span>
-						<span className="cmnoti_push" id="bottomOrderCnt" style={{display:"none"}}><span className="blind" id="bottomOrderCntSpan">새 메세지 수</span></span>
-					</Link>
-				</li>
+				{
+					Login === "true"?
+					(
+						<li className="toolbar_item" id="bottomOrderInfoLi">
+							<Link to="/mypage" className="toolbar_lnk ty_myssg clickable" data-react-tarea="웹공통_N|웹바|MY_SSG">
+								<i className="icon ty_lg icon_person" aria-hidden="true"></i>
+								<span className="toolbar_txt">MY</span>
+								<span className="cmnoti_push" id="bottomOrderCnt" style={{display:"none"}}><span className="blind" id="bottomOrderCntSpan">새 메세지 수</span></span>
+							</Link>
+						</li>
+					)
+					:(
+						<li className="toolbar_item" id="bottomOrderInfoLi">
+							<Link to="/login" className="toolbar_lnk ty_myssg clickable" data-react-tarea="웹공통_N|웹바|MY_SSG">
+								<i className="icon ty_lg icon_person" aria-hidden="true"></i>
+								<span className="toolbar_txt">MY</span>
+								<span className="cmnoti_push" id="bottomOrderCnt" style={{display:"none"}}><span className="blind" id="bottomOrderCntSpan">새 메세지 수</span></span>
+							</Link>
+						</li>
+					)
+				}
+				
 				<li className="toolbar_item" id="bottomHistryLi">
 					<Link to="//m.ssg.com/comm/mHistoryList.ssg" className="toolbar_lnk ty_history clickable" id="_btn_history" data-react-tarea="웹공통_N|웹바|최근본">
 						<i className="icon ty_lg icon_eye" aria-hidden="true"></i>
