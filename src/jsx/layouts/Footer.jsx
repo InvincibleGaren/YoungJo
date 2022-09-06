@@ -10,12 +10,11 @@ function Footer() {
 
     const handleLogout = (event) => {
         event.preventDefault();
-        setLogin("false");
+        setLogin(false);
         sessionStorage.removeItem("login");
         alert("로그아웃 되었습니다.");
     }
     
-    console.log("Login:"+login);
     return ( 
         <footer id="m_footer" className="mcom_footer react-area">
             <div className="footer_notiwrap">
@@ -59,7 +58,7 @@ function Footer() {
                             <Link to="/login" className="clickable" data-react-tarea="푸터|로그인">로그인</Link>
                         </li>
                     }
-                    <li id="footer_joinMemberBtn"><Link to="#" className="clickable" data-react-tarea="푸터|회원가입">회원가입</Link></li>
+                    <li id="footer_joinMemberBtn"><Link to="/join/simplejoin" className="clickable" data-react-tarea="푸터|회원가입">회원가입</Link></li>
                     <li><Link to="https://m-shinsegaemall.ssg.com/comm/app/appLink.ssg?mobilAppSvcNo=2" className="clickable" data-react-tarea="푸터|앱다운로드">앱다운로드</Link></li>
                     <li><Link to="#" className="clickable" data-react-tarea="푸터|PC버전" >PC버전</Link></li>
                 </ul>

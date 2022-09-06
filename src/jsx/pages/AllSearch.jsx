@@ -10,6 +10,7 @@ import "../../css/pages/AllSearch.css";
 import SearchFilter from '../components/ui/SearchFilter';
 import { useRef } from 'react';
 import { useInView } from "react-intersection-observer"
+import Footer from '../layouts/Footer';
 
 
 function AllSearch() {
@@ -162,6 +163,7 @@ function AllSearch() {
                   </ul>
                </div>
             </div>
+            <Footer />
         </div>
      );
 }
