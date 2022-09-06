@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import navData from '../../../datas/headerNav.json'
+import navData from '../../../datas/HeaderNav.json'
 
 function HeaderNav() {
 
