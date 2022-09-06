@@ -36,20 +36,22 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
   }
 
   console.log(option2List);
+  option2List && console.log(option2List[0].pdtId)
   
   const handleSelectSecondOption = (e) => {
     console.log(e.target.value);
 
-    let string = e.target.value;
-    let strArray = string.split('-');
-    console.log(strArray[0]+', '+strArray[1]+', '+strArray[2]+', '+strArray[3]);
-    setSelectProductDatas({ ...selectProductDatas, 
-      "opt2": strArray[0],
-      "opt2pdtId": strArray[1],
-      "opt2price": strArray[2],
-      "opt2stock": strArray[3]
-    });
-
+    for(let i in option2List) {
+      if(e.target.value == option2List[i].pdtId) {
+        console.log("들어옴")
+        setSelectProductDatas({ ...selectProductDatas, 
+          "opt2": option2List[i].opt2Value,
+          "opt2pdtId": e.target.value,
+          "opt2price": option2List[i].price,
+          "opt2stock": option2List[i].stock
+        });
+      }
+    }
     setIsOpt2Select(!isOpt2Select);
   }
  
@@ -58,16 +60,16 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
   }
 
   const inCreQty = () =>{
-    if(productQty == selectProductDatas.opt2stock){
-      return alert("상품의 개수는 남은 수량보다 많을 수 없습니다.");
-  }
+    if(productQty === selectProductDatas.opt2stock){
+      return alert(`해당 상품의 재고가 ${selectProductDatas.opt2stock}개 남았습니다.`);
+    }
     setProductQty(productQty + 1);
   }
   const deCreQty = () =>{
-      if(productQty === 1){
-          return alert("상품의 개수는 1 이하가 될 수 없습니다.");
-      }
-      setProductQty(productQty - 1);
+    if(productQty === 1){
+        return alert("상품의 개수는 1 이하가 될 수 없습니다.");
+    }
+    setProductQty(productQty - 1);
   }
 
   console.log(selectProductDatas.opt2pdtId);
@@ -138,7 +140,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                                   <option>선택하세요. &#40;{optionName2}&#41;</option>
                                   {
                                     option2List && option2List.map(opt2 => (
-                                      <option key={opt2.pdtId} value={`${opt2.opt2Value}-${opt2.pdtId}-${opt2.price}-${opt2.stock}`}>
+                                      <option key={opt2.pdtId} value={opt2.pdtId}>
                                         {opt2.opt2Value} - {(opt2.price).toLocaleString()}원 &#40;남은 수량 : {opt2.stock}개&#41;
                                       </option>
                                       ))
@@ -159,7 +161,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                                   </div>
                                 </dd>
                                 <dd className="mndtl_art_r">			
-                                  <span className="price"><em className="ssg_price">{Number(selectProductDatas.opt2price).toLocaleString()}</em><span className="ssg_tx">원</span></span>			
+                                  <span className="price"><em className="ssg_price">{(selectProductDatas.opt2price * productQty).toLocaleString()}</em><span className="ssg_tx">원</span></span>			
                                 </dd>
                               </dl>
                               <p className="mndtl_item_del"><span className="mndtl_delete">삭제</span></p>	
