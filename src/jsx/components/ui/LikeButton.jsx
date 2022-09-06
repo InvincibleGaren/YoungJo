@@ -28,7 +28,8 @@ function LikeButton(props) {
             const url = `${Server.baseUrl}api/pdtBoard/pressLike/${props.Item.boardId}`
             const token = sessionStorage.getItem("login");
             const config = {timeout:1000, headers:{authentication: token}};
-
+            console.log("url : "+url);
+            
             axios.get(url, config)
             .then(LoginResult => { 
                console.log(LoginResult);

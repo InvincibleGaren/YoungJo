@@ -13,9 +13,10 @@ function Like() {
 
     const [likeProducts, setLikeProducts] = useState();
     const access_token = sessionStorage.getItem("login");
-
+    const [likeCheck, setLikeCheck] = useState(false);
 
     useEffect(() =>{
+        console.log("Like.jsx url : "+`${Server.baseUrl}api/my/like`);
         axios.get(`${Server.baseUrl}api/my/like`, {
             headers: {
                 'Authentication': access_token
@@ -25,7 +26,7 @@ function Like() {
             console.log("like 데이터:", Response.data.data)
             setLikeProducts(Response.data.data)
         })
-    },[])
+    },[likeCheck])
 
     
     return (
@@ -93,7 +94,7 @@ function Like() {
                 <ul id="AllSearchItemList" className="cmitem_grid_lst mnsditem_ty_thmb">
                     {
                         likeProducts && likeProducts.boardList.map(item=>(
-                            <AllSearchItem key={item.listIndex} Item={item}/>
+                            <AllSearchItem key={item.listIndex} Item={item} LikeCheckState={likeCheck} setLikeCheckState={setLikeCheck}/>
                         ))
                     }
                 </ul>

@@ -11,6 +11,7 @@ import SearchFilter from '../components/ui/SearchFilter';
 import { useRef } from 'react';
 import { useInView } from "react-intersection-observer"
 import Footer from '../layouts/Footer';
+import FooterNav from '../components/ui/FooterNav';
 
 
 function AllSearch() {
@@ -166,6 +167,7 @@ function AllSearch() {
                </div>
             </div>
             <Footer />
+            <FooterNav />
         </div>
      );
 }
