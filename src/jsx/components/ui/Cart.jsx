@@ -41,12 +41,13 @@ function Cart() {
                         <i className="icon icon_cart">
                             <span id="mHeaderCartNm" className="blind">장바구니</span>
                         </i>
-                        {
+                        {/* {
                             cartCnt === 0 ?
                             <span className="blind" id="cartCntSpan">담은 상품 수</span>
                             :
                             <span className="cmnoti_push" id="cartCnt_header"><span className="blind" id="cartCntSpan">담은 상품 수</span>{cartCnt}</span>
-                        }
+                        } */}
+                        <span className="cmnoti_push" id="cartCnt_header"><span className="blind" id="cartCntSpan">담은 상품 수</span>{cartCnt}</span>
                     </Link> 
                 )
                 :

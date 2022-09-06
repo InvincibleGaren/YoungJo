@@ -6,7 +6,7 @@ import LikeButton from '../LikeButton';
 import { Link } from 'react-router-dom';
 import { LoginState } from '../../../globalState/LoginState';
 
-import "../../../../css/components/ProductBottomButton.css"
+// import "../../../../css/components/ProductBottomButton.css"
 
 function ProductBottomButton({option1List, optionName1, optionName2, boardId, productData, LikeCheckState, setLikeCheckState}) {
 
@@ -16,7 +16,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
   const [isView, setIsView] = useState(true);
   const [option2List, setOption2List] = useState();
   const [isOpt2Select, setIsOpt2Select] = useState(false);
-  const [selectProductDatas, setSelectProductDatas] = useState({ "opt1":"", "opt2":"", "opt2pdtId":"", "opt2price":"" });
+  const [selectProductDatas, setSelectProductDatas] = useState({ "opt1":"", "opt2":"", "opt2pdtId":"", "opt2price":"", "opt2stock":"" });
   const [productQty, setProductQty] = useState(1);
 
   const access_token = sessionStorage.getItem("login");
@@ -26,25 +26,28 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
     console.log(e.target.value);
     setSelectProductDatas({ ...selectProductDatas, "opt1": e.target.value });
 
-    axios.get(`${Server.baseUrl}api/pdtBoard/detail/opt2/${boardId}/${e.target.value}`).then(Response => {
-      setOption2List(Response.data.data);
-      console.log(Response.data);
-    }).catch(Error => {
-      console.log(Error);
-    })
+    axios.get(`${Server.baseUrl}api/pdtBoard/detail/opt2/${boardId}/${e.target.value}`)
+      .then(Response => {
+        setOption2List(Response.data.data);
+        console.log(Response.data);
+      }).catch(Error => {
+        console.log(Error);
+      })
   }
 
   console.log(option2List);
+  
   const handleSelectSecondOption = (e) => {
     console.log(e.target.value);
 
     let string = e.target.value;
     let strArray = string.split('-');
-    console.log(strArray[0]+', '+strArray[1]+', '+strArray[2]);
+    console.log(strArray[0]+', '+strArray[1]+', '+strArray[2]+', '+strArray[3]);
     setSelectProductDatas({ ...selectProductDatas, 
       "opt2": strArray[0],
       "opt2pdtId": strArray[1],
-      "opt2price": strArray[2]
+      "opt2price": strArray[2],
+      "opt2stock": strArray[3]
     });
 
     setIsOpt2Select(!isOpt2Select);
@@ -55,6 +58,9 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
   }
 
   const inCreQty = () =>{
+    if(productQty == selectProductDatas.opt2stock){
+      return alert("상품의 개수는 남은 수량보다 많을 수 없습니다.");
+  }
     setProductQty(productQty + 1);
   }
   const deCreQty = () =>{
@@ -132,7 +138,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                                   <option>선택하세요. &#40;{optionName2}&#41;</option>
                                   {
                                     option2List && option2List.map(opt2 => (
-                                      <option key={opt2.pdtId} value={`${opt2.opt2Value}-${opt2.pdtId}-${opt2.price}`}>
+                                      <option key={opt2.pdtId} value={`${opt2.opt2Value}-${opt2.pdtId}-${opt2.price}-${opt2.stock}`}>
                                         {opt2.opt2Value} - {(opt2.price).toLocaleString()}원 &#40;남은 수량 : {opt2.stock}개&#41;
                                       </option>
                                       ))
