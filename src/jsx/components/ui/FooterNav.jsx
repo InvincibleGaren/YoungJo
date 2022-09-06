@@ -23,7 +23,7 @@ function FooterNav() {
                     </Link>
                 </li>
                 <li className="toolbar_item">
-                    <Link to="allsearch" className="toolbar_lnk ty_search">
+                    <Link to="/allsearch" className="toolbar_lnk ty_search">
                         <i className="icon ty_lg icon_search" aria-hidden="true"></i>
                         <span className="toolbar_txt">통합검색</span>
                     </Link>

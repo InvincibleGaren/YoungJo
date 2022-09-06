@@ -21,11 +21,11 @@ function AllSearch() {
 
    const [query, setQuery] = useState({
       query : URL.get('query') === "null" ? null:URL.get('query'),
-      page : URL.get('page'),
-      limit : URL.get('limit'),
-      sort : URL.get('sort'),
-      minPrice : URL.get('minPrice'),
-      maxPrice : URL.get('maxPrice'),
+      page : URL.get('page') ? URL.get('page'):"1",
+      limit : URL.get('limit') ? URL.get('limit'):"10",
+      sort : URL.get('sort') ? URL.get('sort'):"추천순",
+      minPrice : URL.get('minPrice') ? URL.get('minPrice'):"1",
+      maxPrice : URL.get('maxPrice') ? URL.get('maxPrice'):"200000000",
     });
 
   
@@ -88,14 +88,16 @@ function AllSearch() {
    useEffect(() => {
          setQuery({
             query : URL.get('query') === "null" ? null:URL.get('query'),
-            page : URL.get('page'),
-            limit : URL.get('limit'),
-            sort : URL.get('sort'),
-            minPrice : URL.get('minPrice'),
-            maxPrice : URL.get('maxPrice'),
+            page : URL.get('page') ? URL.get('page'):"1",
+            limit : URL.get('limit') ? URL.get('limit'):"10",
+            sort : URL.get('sort') ? URL.get('sort'):"추천순",
+            minPrice : URL.get('minPrice') ? URL.get('minPrice'):"1",
+            maxPrice : URL.get('maxPrice') ? URL.get('maxPrice'):"200000000",
           });
    }, [URL]);
 
+   console.log("query : ")
+   console.log(URL.get('page'))
    // console.log("itemList : ");
    // console.log(itemList);
    return ( 
