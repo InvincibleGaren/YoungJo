@@ -8,6 +8,9 @@ import Server from "../../../datas/Server.js";
 import dsbidatas from "../../../datas/DSBIDatas";
 import "../../../css/components/DepartmentStoreBestItem.css"
 
+//찜(하트) 추가해야함.
+//슬라이드 기능 추가해야함
+
 function DepartmentStoreBestItem() {
 
     const[dsbiData, setDSBIData ] = useState([])

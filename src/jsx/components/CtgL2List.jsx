@@ -32,7 +32,6 @@ function CtgL2List({cateData, id}) {
                 cateData.subCategoryList.map(data =>(
                     <div className="ctgl2List" key={data.id}>
                         <Link to={`/productList?catenavid=${cateData.category.id}&categoryLevel=2&ctglId=${data.id}`}>{data.name}</Link>
-                        {/* ctgL1.id를 url로 넘겨줌 */}
                     </div>    
                 ))
                 : ""   
