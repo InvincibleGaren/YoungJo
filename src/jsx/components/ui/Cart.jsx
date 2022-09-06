@@ -4,7 +4,7 @@ import { LoginState } from '../../globalState/LoginState'
 import axios from 'axios';
 import Server from "../../../datas/Server";
 
-import "../../../css/components/Cart.css"
+import "../../../css/components/Cart.css";
 
 function Cart() {
 
@@ -30,7 +30,7 @@ function Cart() {
                 console.log(error);
             })
     }, [])
-    console.log(cartCnt)
+    console.log(cartCnt);
 
     return ( 
         <>
@@ -38,18 +38,23 @@ function Cart() {
                 Login === "true" ? 
                 (
                     <Link to="/cartlogin" className='gnb_util_mn ty_cart clickable'>
-                    <i className="icon icon_cart">
-                        <span id="mHeaderCartNm" className="blind">장바구니</span>
-                    </i>
-                    <span className="cmnoti_push" id="cartCnt_header"><span className="blind" id="cartCntSpan">담은 상품 수</span>{cartCnt}</span>
+                        <i className="icon icon_cart">
+                            <span id="mHeaderCartNm" className="blind">장바구니</span>
+                        </i>
+                        {
+                            cartCnt === 0 ?
+                            <span className="blind" id="cartCntSpan">담은 상품 수</span>
+                            :
+                            <span className="cmnoti_push" id="cartCnt_header"><span className="blind" id="cartCntSpan">담은 상품 수</span>{cartCnt}</span>
+                        }
                     </Link> 
                 )
                 :
                 (
                     <Link to="/cartnotlogin" className='gnb_util_mn ty_cart clickable'>
-                    <i className="icon icon_cart">
-                        <span id="mHeaderCartNm" className="blind">장바구니</span>
-                    </i>
+                        <i className="icon icon_cart">
+                            <span id="mHeaderCartNm" className="blind">장바구니</span>
+                        </i>
                     </Link> 
                 )
            }
