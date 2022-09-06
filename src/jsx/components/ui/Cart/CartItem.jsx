@@ -10,6 +10,9 @@ function CartItem({cartItem, totalPrice, setTotalPrice, isCheck, setIsCheck}) {
     const access_token = sessionStorage.getItem("login");
 
     const inCreQty = () =>{
+        if(productQty == cartItem.stock){
+            return alert("상품의 개수는 남은 수량보다 많을 수 없습니다.");
+        }
         setProductQty(productQty + 1);
         setTotalPrice(totalPrice + cartItem.price);
     }
