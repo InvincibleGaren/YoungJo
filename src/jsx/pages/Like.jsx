@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Server from '../../datas/Server.js';
 import AllSearchItem from '../components/ui/AllSearchItem.jsx';
 import FooterNav from '../components/ui/FooterNav.jsx';
@@ -14,6 +14,8 @@ function Like() {
     const [likeProducts, setLikeProducts] = useState();
     const access_token = sessionStorage.getItem("login");
     const [likeCheck, setLikeCheck] = useState(false);
+    const Navigate = useNavigate();
+
 
     useEffect(() =>{
         console.log("Like.jsx url : "+`${Server.baseUrl}api/my/like`);
@@ -35,7 +37,7 @@ function Like() {
             <div className="mcom_tit_renew  react-area">
                 <h2 className="mcom_tit_txt clickable"><Link to="#">좋아요</Link></h2>
                     <div className="mcom_tit_lft">
-                        <Link to="#" className="btn_back clickable"><span className="sp_ctg_icon ctg_icon_back"><span className="blind">이전 페이지</span></span></Link>
+                        <Link to="#" className="btn_back clickable" onClick={()=>{Navigate(-1)}}><span className="sp_ctg_icon ctg_icon_back"><span className="blind">이전 페이지</span></span></Link>
                     </div>
                 <div className="mcom_tit_rgt">
                 </div>
@@ -90,15 +92,28 @@ function Like() {
             </div>
 
             {/* 상품 나열 */}
-            <div className='AllSearch'>
-                <ul id="AllSearchItemList" className="cmitem_grid_lst mnsditem_ty_thmb">
-                    {
-                        likeProducts && likeProducts.boardList.map(item=>(
-                            <AllSearchItem key={item.listIndex} Item={item} LikeCheckState={likeCheck} setLikeCheckState={setLikeCheck}/>
-                        ))
-                    }
-                </ul>
-            </div>
+            {
+                 likeProducts && likeProducts.totalBoardQty === 0 ?
+                (                   
+                    <div class="mylike_cmitem_none">아직 좋아요한 상품이 없습니다.</div>
+                )
+                :
+                (
+                    <div className='AllSearch'>
+                        <ul id="AllSearchItemList" className="cmitem_grid_lst mnsditem_ty_thmb">
+                            {
+                                likeProducts && likeProducts.boardList.map(item=>(
+                                    <AllSearchItem key={item.listIndex} Item={item} LikeCheckState={likeCheck} setLikeCheckState={setLikeCheck}/>
+                                ))
+                            }
+                            {/* 이미  likeProducts && likeProducts.totalBoardQty === 0 ? 여기서 likeProducts가 값이 있는지 확인하고 있으면 뒤에 코드가 실행되니0
+                            ()안에 코드는 이미 likeProducts가 있는 상탠데 왜 AllSearch 안에서 map돌릴 때 && 안해주면 에러뜨지? */}
+                        </ul>
+                    </div>
+                )                             
+
+            }
+            
             
             {/* 페이지 표시 */}
             <div class="m_paginate_wrap">

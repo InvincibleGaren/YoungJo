@@ -30,6 +30,7 @@ import Order from "./jsx/pages/Order";
 import MainCategory from "./jsx/pages/MainCategory";
 import MyPage from "./jsx/pages/MyPage";
 import Like from "./jsx/pages/Like";
+import ShippingAddressManagement from "./jsx/pages/ShippingAddressManagement";
 
 function App() {
   const [login, setLogin] = useState(sessionStorage.getItem("login") ? "true": "false");
@@ -61,6 +62,7 @@ function App() {
             </Route>            
             <Route path ="/mypage" element = {<MyPage/>} />
             <Route path ="/like" element = {<Like/>} />
+            <Route path="/shipping" element ={<ShippingAddressManagement/>}/>
           </Routes>
         </BrowserRouter>
       </LoginState.Provider>

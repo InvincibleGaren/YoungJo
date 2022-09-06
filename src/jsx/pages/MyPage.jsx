@@ -11,6 +11,7 @@ import MyPageMenu from '../components/ui/myPage/MyPageMenu.jsx';
 import MyPageReview from '../components/ui/myPage/MyPageReview.jsx';
 import MyPageBanner from '../components/ui/myPage/MyPageBanner.jsx';
 import MyPageBottomMenu from '../components/ui/myPage/MyPageBottomMenu.jsx';
+import MyPageHeader from '../components/ui/myPage/MyPageHeader';
 
 function MyPage() {
 
@@ -33,6 +34,7 @@ function MyPage() {
 
     return (
         <div>
+            <MyPageHeader/>
             {myPageData && <MypageTop mypagedata = {myPageData}/>}
             <OrderShippingTracking/>
             <MyPageMenu/>
