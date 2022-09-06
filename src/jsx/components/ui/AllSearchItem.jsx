@@ -48,7 +48,7 @@ function AllSearchItem(props) {
                                     <div className="mnsditem_price_row mnsditem_ty_newpr">
                                         <div className="new_price">
                                             <span className="blind">판매가격</span>
-                                            <em className="ssg_price">{props.Item.minPrice}</em>
+                                            <em className="ssg_price">{(props.Item.minPrice).toLocaleString()}</em>
                                             <span className="ssg_tx">원<span className="cm_tx_opt">~</span></span>
                                         </div>
                                     </div>
