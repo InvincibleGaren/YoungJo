@@ -48,7 +48,7 @@ function MypageTop({mypagedata}) {
             </div>
 
             <div className="myssg_user_manage">
-                <Link to="https://m.ssg.com/myssg/myClip/main.ssg?_mpop=new" className="clickable" data-react-tarea="MYSSG|M_MY_SSG_MY클립"><span className="myssg_manage_text ty_like">좋아요</span>	</Link>
+                <Link to="/like" className="clickable" data-react-tarea="MYSSG|M_MY_SSG_MY클립"><span className="myssg_manage_text ty_like">좋아요</span>	</Link>
                 <Link to="https://member.ssg.com/m/comm/shpplocList.ssg?_mpop=new" className="clickable" data-react-tarea="MYSSG|M_MY_SSG_배송지관리"><span className="myssg_manage_text ty_devliery">배송지 관리</span></Link>
                 <Link to="javascript:void(0);" onClick="javascript:clickPushMsgBtn();" className="clickable" data-react-tarea="MYSSG|M_MY_SSG_PUSH메세지함">
                     <span className="myssg_manage_text ty_alert"> 알림함<span className="myssg_alert_count" id="pushArea"><span id="pushCountArea" className="blind">알림함 수</span>0</span>
