@@ -57,15 +57,13 @@ function JoinForm() {
         
     })
 
-    const [sendData, setSendData] = useState()
+    const [idOverlapCheckState, setIdOverlapCheckState] = useState(false);
 
-    // useEffect(()=>{
-    //     console.log("check")
-    // },[])
 
     const [modalCheck, setmodalCheck] = useState("modalClose");
     const [AddressDetail, setAddressDetail] = useState(false);
     const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [sendData, setSendData] = useState()
 
     useEffect(()=>{
         sessionStorage.setItem("OverlapCheck","false");
@@ -168,7 +166,7 @@ function JoinForm() {
                 }
             });
     }
-
+    //입력칸에 텍스트를 입력한 경우
     const inputChange = (e) => {
         if(e.target.name === "detail")
         {
@@ -191,6 +189,9 @@ function JoinForm() {
             console.log(inputData);
         }
     }
+    const IDInputBlur = (e) => {
+        idOverlapCheck(e);
+    }
 
     //ID 중복체크 함수
     const idOverlapCheck = (e) =>{
@@ -207,10 +208,12 @@ function JoinForm() {
             .then(Result => { 
                 console.log(Result);
                 if(Result.data.data){
-                    alert("이미 사용중인 ID입니다.")
+                    sessionStorage.setItem("OverlapCheck","false");
+                    setIdOverlapCheckState(false)
+                    e.target.focus()
                 }else{
-                    alert("사용가능한 ID입니다.")
                     sessionStorage.setItem("OverlapCheck","true");
+                    setIdOverlapCheckState(true)
                 }
 
             })
@@ -279,9 +282,19 @@ function JoinForm() {
                                             name="loginId" 
                                             defaultValue={inputData.loginId}
                                             onChange={inputChange}
+                                            onBlur={IDInputBlur}
                                         />
                                     </span>
-                                    <button className='cmem_btn cmem_btn_gray' onClick={idOverlapCheck}>중복확인</button>
+                                    {
+                                        
+                                    }
+                                    <button className='cmem_btn cmem_btn_gray' onClick={idOverlapCheck}>
+                                        {
+                                            !idOverlapCheckState ? 
+                                            "사용불가"
+                                            : "사용가능"
+                                        }
+                                    </button>
                                     {/* <input type="hidden" id="isDuplicateMbrLoginId" defaultValue=""></input> */}
                                 </div>
                                 <span className="cmem_noti"><em className="usable_value"><p id="id_msg"></p></em>
