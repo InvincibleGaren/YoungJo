@@ -19,8 +19,8 @@ function NewServiceItem() {
                         <div className="swiper-pagination swiper-pagination-progressbar"><span className="swiper-pagination-progressbar-fill"></span></div>
                     </div>
                 </div>
-                <div className="cmhero_viewer" role="dialog" tabindex="-1" aria-hidden="true">
-                    <div className="cmhero_wrap" role="document" tabindex="0">
+                <div className="cmhero_viewer" role="dialog" tabIndex="-1" aria-hidden="true">
+                    <div className="cmhero_wrap" role="document" tabIndex="0">
                         <div className="cmhero_scroll">
                             <div className="cmhero_head">
                                 <h3 className="cmhero_head_tit">전체보기</h3>

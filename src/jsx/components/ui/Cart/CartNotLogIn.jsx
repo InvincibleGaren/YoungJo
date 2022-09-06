@@ -29,12 +29,11 @@ function CartNotLogIn() {
             </div>
         </div>
             {/* 검색누르면 뜨는 거 */}
-        <div className="m_srharea m_srhprev">
+        {/* <div className="m_srharea m_srhprev">
             <fieldset>
                 <div className="m_head_srh">
                     <div className="m_head_inparea2">
                         <div className="addr_ipbx">
-                            {/* 뒤로가기 화살표 svg */}
                             <span className="inp_ico_prev"><span className="blind">이전페이지</span></span>
                             <span className="inpbx2">
                                 <input type="text" id="query" name="query" autoComplete="off" placeholder="검색어를 입력하세요." />
@@ -47,7 +46,7 @@ function CartNotLogIn() {
                     </div>
                 </div>
             </fieldset>
-        </div>
+        </div> */}
 
         {/* 상품X */}
         <div className="mnodr_nodata">

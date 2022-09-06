@@ -1,4 +1,4 @@
-ProductPrice
+/* ProductPrice */
 .isSamePrice {
     visibility: hidden;
 }
@@ -20,23 +20,4 @@ ProductPrice
 
 .isNonView {
     display : none;
-}
-
-/* ProductExtraInfo */
-.mndtl_etc_cont {
-    margin-bottom: 60px;
-}
-
-/* Review */
-.mndtl_cmt_summary {
-    margin-bottom: 30px;
-}
-
-.mndtl_cmtsum_desc {
-    width: auto;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
 }

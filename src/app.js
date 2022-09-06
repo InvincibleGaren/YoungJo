@@ -29,6 +29,7 @@ import CartNotLogIn from "./jsx/components/ui/Cart/CartNotLogIn";
 import Order from "./jsx/pages/Order";
 import MainCategory from "./jsx/pages/MainCategory";
 import MyPage from "./jsx/pages/MyPage";
+import Test from "./Test";
 
 function App() {
   const [login, setLogin] = useState(sessionStorage.getItem("login") ? "true": "false");

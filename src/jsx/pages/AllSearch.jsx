@@ -99,7 +99,7 @@ function AllSearch() {
    // console.log(itemList);
    return ( 
         <div className='AllSearch'>
-            <HeaderTop setQueryState={setQuery} setUrlState={setUrl}/>
+            <HeaderTop QueryState={query} setQueryState={setQuery} setUrlState={setUrl}/>
             {URL.get('query') ? 
                 itemList ?
                 <div>
