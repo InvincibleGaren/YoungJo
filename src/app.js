@@ -14,10 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from "./jsx/pages/Home";
 import Product from "./jsx/pages/Product";
-import UnderNewService from "./jsx/components/UnderNewService";
 import LogIn from "./jsx/pages/LogIn";
-import HotBrand from "./jsx/components/ui/HotBrand";
-import DepartmentStoreBestItem from "./jsx/components/DepartmentStoreBestItem";
 import SimpleJoin from "./jsx/pages/SimpleJoin";
 import JoinForm from "./jsx/pages/JoinForm";
 import ScrollToTop from "./jsx/function/ScrollTop";
@@ -50,9 +47,6 @@ function App() {
             <Route path="/join/joinform" element={<JoinForm />} />
             <Route path="/allsearch" element={<AllSearch />} />
             <Route path="/login" element={<LogIn/>} />
-            <Route path="/UNS" element={<UnderNewService/>} />
-            <Route path="/HotBrand" element={<HotBrand/>} />
-            <Route path="/DepartmentStoreBestItem" element={<DepartmentStoreBestItem/>}/>
             <Route path="/category" element={<MainCategory/>}/>
             <Route path="/cart" element={<Cart />} />
             <Route path="/cartlogin" element={<CartLogIn />} />
