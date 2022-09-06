@@ -10,7 +10,7 @@ function Footer() {
 
     const handleLogout = (event) => {
         event.preventDefault();
-        setLogin(false);
+        setLogin("false");
         sessionStorage.removeItem("login");
         alert("로그아웃 되었습니다.");
     }
@@ -49,7 +49,7 @@ function Footer() {
             <div className="mcom_btnbx_warp">
                 <ul className="mcom_btnbx_list">
                     {
-                        login ? 
+                        login === "true"? 
                         <li id="footer_logoutBtn">
                             <Link to="/" onClick={handleLogout} className="clickable" data-react-tarea="푸터|로그아웃">로그아웃</Link>
                         </li>
