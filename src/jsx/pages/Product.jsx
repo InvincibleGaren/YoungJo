@@ -11,6 +11,8 @@ import HeaderTop from '../components/ui/HeaderTop';
 import Server from "../../datas/Server.js";
 import BackButton from '../components/ui/BackButton';
 
+import '../../css/pages/Product.css'
+
 function Product() {
    const [productData, setProductData] = useState();
    const [likeCheck, setLikeCheck] = useState(false);
@@ -39,7 +41,7 @@ function Product() {
    console.log(productData);
 
     return ( 
-      <div className='Product'>
+      <div className='mcom_wrap sm_v3 sm_page_main has_smhero_banner Product'>
          <HeaderTop />
          <BackButton />
          {

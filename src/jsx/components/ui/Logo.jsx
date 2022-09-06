@@ -17,7 +17,7 @@ function Logo() {
                     </Link>
                 </span>
             </h1>
-            <button className="gnb_mall_gate clickable" type="button" aria-expanded="false" onclick="javascript:ssg_react.directCall({tarea: '웹공통_N|GNB|몰이동'});">
+            <button className="gnb_mall_gate clickable" type="button" aria-expanded="false">
                 <span className="btn_label ty_off"><span className="blind">몰 목록 펼치기</span></span>
                 <span className="btn_label ty_on"><span className="blind">몰 목록 접기</span></span>
             </button>
