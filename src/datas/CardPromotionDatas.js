@@ -21,7 +21,7 @@ const cardPromotionDatas = [
         card : "SSG.COM 삼성카드",
         text : "첫결제쿠폰/즉시할인",
         brand : "samsung"
-    },
+    }
     // {
     //     id : 3,
     //     rate : 8,

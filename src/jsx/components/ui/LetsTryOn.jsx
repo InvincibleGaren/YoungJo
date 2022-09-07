@@ -7,7 +7,7 @@ import TitleUi from './MainTitleUi';
 import SubTitleUi from './SubTitleUi';
 import LetsTryOnItemSlider from '../widgets/LetsTryOnItemSlider';
 import Server from "../../../datas/Server.js";
-
+import MainTitleUi from './MainTitleUi';
 
 function LetsTryOn() {
 
@@ -29,10 +29,10 @@ function LetsTryOn() {
 
     return ( 
         <div className='HappyLounge'>
-            <TitleUi title="Let's Try on" />
-            <div className="HappyLoungeSubTitle">
-                <SubTitleUi title="직접 만져보고 입는 것처럼 생동감있는 쇼핑"/>
-            </div>
+            <MainTitleUi 
+                title = "Let's Try on"
+                subTitle= "직접 만져보고 입는 것처럼 생동감있는 쇼핑"
+            />
             <LetsTryOnItemSlider />
         </div>
      );

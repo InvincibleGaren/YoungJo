@@ -177,6 +177,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
               </div>
             </div>
               
+            
             <div className='btm_bgn_in dps2'>
               <ul className="btm_bgn_bx" id="dps2_buy">
                 <li>
@@ -186,7 +187,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                         <span className="btn_tx">장바구니</span>
                     </p>
                     :
-                    <Link to={`#`} className="mndtl_btn type02 clickable" target="_parent">
+                    <Link to={`/login`} className="mndtl_btn type02 clickable" target="_parent">
                         <span className="btn_tx">장바구니</span>
                     </Link>                            
                   }
