@@ -41,7 +41,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/product" element={<Product/>} >
-              <Route path=":boardId" element={<Product/>} />
+              <Route path=":productId" element={<Product/>} />
             </Route>
             <Route path="/productList" element={<ProductListView />} />
             <Route path="/join/simplejoin" element={<SimpleJoin />} />

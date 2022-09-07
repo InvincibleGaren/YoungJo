@@ -55,6 +55,8 @@ function ProductListView() {
         })
     },[searchParams,Server])
 
+	cateNav && console.log(cateNav.name)
+
     return (
         <>
 		<Header/>
@@ -62,6 +64,7 @@ function ProductListView() {
 			<div id="mcom_path_cate" className="mcom_category">
 						<div className="cate_path">
 							<span className="depth previous">
+
 								<Link to="https://m.ssg.com/page/ssgfashion/_v19.ssg" >
 									<span className="ctg_mn"><span className="ctg_txt">{cateNav && cateNav.name}여기가 어딘가</span></span>
 								</Link>

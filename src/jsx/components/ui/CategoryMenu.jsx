@@ -30,7 +30,7 @@ function CategoryMenu() {
             setCateMenu(Response.data.data)
             setCateSubMenu(Response.data.data[cateId-1].subCategoryList)
             console.log("Response.data.data[cateId-1].subCategoryList",Response.data.data[cateId-1].subCategoryList)
-            console.log("cateMenu[cateId-1].category.name",cateMenu[cateId-1].category.name)
+            cateMenu && console.log("cateMenu[cateId-1].category.name",cateMenu[cateId-1].category.name)
         })
     },[url, searchParams])
 
