@@ -95,7 +95,7 @@ function Like() {
             {
                  likeProducts && likeProducts.totalBoardQty === 0 ?
                 (                   
-                    <div class="mylike_cmitem_none">아직 좋아요한 상품이 없습니다.</div>
+                    <div className="mylike_cmitem_none">아직 좋아요한 상품이 없습니다.</div>
                 )
                 :
                 (

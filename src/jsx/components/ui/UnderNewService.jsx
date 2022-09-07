@@ -11,10 +11,6 @@ function UnderNewService() {
 
     useEffect(()=> {
         setUNSData(unsdatas)
-        // axios.get(`${Server.baseUrl}api/mainPage/newService/bottom`)
-        // .then(Response => {
-        //     setUNSData(Response.data)
-        // })
     },[])
 
 
