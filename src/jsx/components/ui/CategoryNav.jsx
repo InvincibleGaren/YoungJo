@@ -4,8 +4,6 @@ import TempResponse from "../../../datas/CategoryNav.json"
 
 import { Link } from 'react-router-dom';
 import "../../../css/components/CategoryNav.css"
-import Server from "../../../datas/Server.js";
-
 
 function CategoryNav() {
 
@@ -13,13 +11,6 @@ function CategoryNav() {
     const countQuery = "qty=5";
     
     useEffect(() => {
-        // const url = `${Server.baseUrl}api/happyLoungeItem?`+countQuery
-        // axios.get(url, {timeout:1000}).then(Response => {
-        //     setcategoryNav(Response.data)
-        // })
-        // .catch(error => {
-        //     setcategoryNav(TempResponse)
-        // })
         setcategoryNav(TempResponse)
     },[])
 

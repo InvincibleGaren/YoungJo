@@ -28,6 +28,7 @@ import MainCategory from "./jsx/pages/MainCategory";
 import MyPage from "./jsx/pages/MyPage";
 import Like from "./jsx/pages/Like";
 import ShippingAddressManagement from "./jsx/pages/ShippingAddressManagement";
+import DepartmentStoreBestItem from "./jsx/components/ui/DepartmentStoreBestItem";
 
 function App() {
   const [login, setLogin] = useState(sessionStorage.getItem("login") ? "true": "false");
@@ -57,6 +58,8 @@ function App() {
             <Route path ="/mypage" element = {<MyPage/>} />
             <Route path ="/like" element = {<Like/>} />
             <Route path="/shipping" element ={<ShippingAddressManagement/>}/>
+            {/* 백화점아이템 확인용 */}
+            <Route path="/department" element ={<DepartmentStoreBestItem/>}/>
           </Routes>
         </BrowserRouter>
       </LoginState.Provider>
