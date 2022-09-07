@@ -1,25 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function CartNotLogIn() {
+
+    const Navigate = useNavigate();
+
   return (
     <>
         {/* 카트헤더 */}
         <div className="mcom_tit_renew ty_top">
             <h2 className="mcom_tit_txt">장바구니</h2>
             <div className="mcom_tit_lft">
-                <a href="#" className="btn_back">
+                <Link to="#" className="btn_back" onClick={()=>{Navigate(-1)}}>
                     <span className="sp_ctg_icon ctg_icon_back orderInfoTracking" data-tracking-cd="00014_000000094_t00060" data-tracking-value="뒤로가기">
                         <span className="blind">이전 페이지</span>
                     </span>
-                </a>
+                </Link>
             </div>
             <div className="mcom_tit_rgt">
                 <div className="btn_cate btn_search">
-                    <button type="button">
-                        {/* 검색버튼 */}
-                        <span className="sp_ctg_icon ctg_icon_search payTracking" data-pt-click="장바구니|GNB|검색"><span className="blind">검색</span></span>
-                    </button>
+                    <Link to="/allsearch">
+                        <button type="button">
+                            {/* 검색버튼 */}
+                            <span className="sp_ctg_icon ctg_icon_search payTracking" data-pt-click="장바구니|GNB|검색"><span className="blind">검색</span></span>
+                        </button>
+                    </Link>
                 </div>
                 <div className="btn_cate btn_home">
                 <Link to={"/"} id="headerHomeBtn">
@@ -54,9 +59,11 @@ function CartNotLogIn() {
             <p className="mnodr_tx_tit">장바구니에 담긴 상품이 없습니다.</p>
             <p className="mnodr_tx_desc">로그인을 하시면 담긴 상품이 있는지 바로 확인하실 수 있습니다!</p>
             <div className="mnodr_btn_area ty_mgtop">
-                <button type="button" name="loginBtn" className="mnodr_btn ty_point ty_lg codr_btn_login">
-                    <span className="mnodr_btn_tx">로그인하기</span>
-                </button>
+                <Link to="/login">
+                    <button type="button" name="loginBtn" className="mnodr_btn ty_point ty_lg codr_btn_login">
+                        <span className="mnodr_btn_tx">로그인하기</span>
+                    </button>
+                </Link>
             </div>
         </div>
 

@@ -20,7 +20,7 @@ function Product() {
    const pathname = useParams();
 
    useEffect(()=>{
-      const url = `${Server.baseUrl}api/pdtBoard/detail/${pathname.productId}`;
+      const url = `${Server.baseUrl}api/pdtBoard/detail/${pathname.boardId}`;
       const token = sessionStorage.getItem("login");
       const config = {timeout:1000, headers:{authentication: token}}
       

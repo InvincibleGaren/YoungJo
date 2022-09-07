@@ -7,6 +7,7 @@ import CartItem from './CartItem.jsx';
 import { useNavigate } from "react-router-dom";
 
 function CartLogIn() {
+
     const Navigate = useNavigate();
     const access_token = sessionStorage.getItem("login");
     console.log(access_token);
@@ -73,10 +74,12 @@ function CartLogIn() {
                     </div>
                     <div className="mcom_tit_rgt">
                         <div className="btn_cate btn_search">
-                            <button type="button">
-                                {/* 검색버튼 */}
-                                <span className="sp_ctg_icon ctg_icon_search payTracking" data-pt-click="장바구니|GNB|검색"><span className="blind">검색</span></span>
-                            </button>
+                            <Link to="/allsearch">
+                                <button type="button">
+                                    {/* 검색버튼 */}
+                                    <span className="sp_ctg_icon ctg_icon_search payTracking" data-pt-click="장바구니|GNB|검색"><span className="blind">검색</span></span>
+                                </button>
+                            </Link>
                         </div>
                         <div className="btn_cate btn_home">
                             <Link to={"/"} id="headerHomeBtn">
