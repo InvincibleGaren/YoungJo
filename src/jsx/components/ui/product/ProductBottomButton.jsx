@@ -23,6 +23,7 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
   console.log(access_token);
 
   const handleSelectFirstOption = (e) => {
+    console.log("1 들어옴");
     console.log(e.target.value);
     setSelectProductDatas({ ...selectProductDatas, "opt1": e.target.value });
 
@@ -39,11 +40,12 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
   option2List && console.log(option2List[0].pdtId)
   
   const handleSelectSecondOption = (e) => {
+    console.log("2 들어옴");
     console.log(e.target.value);
 
     for(let i in option2List) {
       if(e.target.value == option2List[i].pdtId) {
-        console.log("들어옴")
+        
         setSelectProductDatas({ ...selectProductDatas, 
           "opt2": option2List[i].opt2Value,
           "opt2pdtId": e.target.value,
@@ -137,6 +139,8 @@ function ProductBottomButton({option1List, optionName1, optionName2, boardId, pr
                               </div>
                               <div className='select_box'>
                                 <Form.Select id="option2" onChange={handleSelectSecondOption}>
+                                  {/* {console.log("setSelectProductDatas.opt1 : "+selectProductDatas.opt1)}
+                                  {console.log("option2List : ") && console.log(option2List)} */}
                                   <option>선택하세요. &#40;{optionName2}&#41;</option>
                                   {
                                     option2List && option2List.map(opt2 => (
