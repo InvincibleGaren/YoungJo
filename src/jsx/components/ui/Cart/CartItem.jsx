@@ -91,12 +91,12 @@ function CartItem({cartItem, totalPrice, setTotalPrice, isCheck, setIsCheck}) {
                         </div>
 
                         <p className="mnodr_unit_tit">
-                            {/* <Link to={`/product/${cartItem.boardId}`}> */}
+                            <Link to={`/product/${cartItem.boardId}`}>
                                 <strong className="mnodr_unit_brd"> {cartItem.brand} </strong>
                                 <span className="mnodr_unit_name">
                                     {cartItem.title}
                                 </span>
-                            {/* </Link> */}
+                            </Link>
                         </p>
                         
                         <span className="mnodr_unit_option">옵션 :&nbsp;{cartItem.optionValue1} / {cartItem.optionValue2}</span>

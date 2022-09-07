@@ -22,12 +22,13 @@ function HomeMain() {
                     <MainMiddleBanner />
                     <MainBlank height={20}/>
                     <NewService />
-                    {/* <UnderNewService />
-                    <HotBrand />
-                    <DepartmentStoreBestItem />
-                    <CardPromotion />
-                    <LetsTryOn />
-                    <NoticeBar /> */}
+
+                    {/* <UnderNewService /> */}
+                    {/* <HotBrand /> */}
+                    {/* <DepartmentStoreBestItem /> */}
+                    {/* <CardPromotion /> */}
+                    {/* <LetsTryOn /> */}
+                    {/* <NoticeBar /> */}
                 </div>
             </div>
             

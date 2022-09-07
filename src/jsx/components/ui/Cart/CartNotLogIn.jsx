@@ -33,7 +33,7 @@ function CartNotLogIn() {
                 </div>
             </div>
         </div>
-            {/* 검색누르면 뜨는 거 */}
+        {/* 검색누르면 뜨는 거 */}
         {/* <div className="m_srharea m_srhprev">
             <fieldset>
                 <div className="m_head_srh">
