@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import Server from "../../../../datas/Server.js";
 
 function CartItem({cartItem, totalPrice, setTotalPrice, isCheck, setIsCheck}) {
@@ -71,8 +72,9 @@ function CartItem({cartItem, totalPrice, setTotalPrice, isCheck, setIsCheck}) {
                             <label htmlFor="chk_order_5145007481"><span className="blind">상품선택</span></label>
                         </span>
                         <span className="mnodr_unit_img" aria-hidden="true">
-                            <img src={cartItem.thumbImg} alt={cartItem.thumbImgAlt} width="75" height="75" /></span>
-                        </div>
+                            <img src={cartItem.thumbImg} alt={cartItem.thumbImgAlt} width="75" height="75" />
+                        </span>
+                    </div>
                     <div className="mnodr_unit_cont">
                         <div className="mnodr_unit_info">
                             <span className="cm_mall_text">
@@ -87,15 +89,16 @@ function CartItem({cartItem, totalPrice, setTotalPrice, isCheck, setIsCheck}) {
                                 <i className="mnodr_ic ic_del"><span className="blind">상품 삭제</span></i>
                             </button>
                         </div>
-                        
+
                         <p className="mnodr_unit_tit">
-                            <a className="cartTracking">
+                            <Link to={`/product/${cartItem.boardId}`}>
                                 <strong className="mnodr_unit_brd"> {cartItem.brand} </strong>
                                 <span className="mnodr_unit_name">
                                     {cartItem.title}
                                 </span>
-                            </a>
+                            </Link>
                         </p>
+                        
                         <span className="mnodr_unit_option">옵션 :&nbsp;{cartItem.optionValue1} / {cartItem.optionValue2}</span>
                         <span className="mnodr_unit_option">개당가격 :&nbsp;{(cartItem.price).toLocaleString()}</span>
                         <span className="mnodr_unit_option">남은수량 :&nbsp;{cartItem.stock}</span>
