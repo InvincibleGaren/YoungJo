@@ -58,7 +58,11 @@ function Footer() {
                             <Link to="/login" className="clickable" data-react-tarea="푸터|로그인">로그인</Link>
                         </li>
                     }
-                    <li id="footer_joinMemberBtn"><Link to="/join/simplejoin" className="clickable" data-react-tarea="푸터|회원가입">회원가입</Link></li>
+                    {
+                        login === "false" &&
+                        <li id="footer_joinMemberBtn"><Link to="/join/simplejoin" className="clickable" data-react-tarea="푸터|회원가입">회원가입</Link></li>
+                    }
+                    
                     <li><Link to="https://m-shinsegaemall.ssg.com/comm/app/appLink.ssg?mobilAppSvcNo=2" className="clickable" data-react-tarea="푸터|앱다운로드">앱다운로드</Link></li>
                     <li><Link to="#" className="clickable" data-react-tarea="푸터|PC버전" >PC버전</Link></li>
                 </ul>
