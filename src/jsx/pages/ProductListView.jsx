@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useEffect, useState } from 'react';
 
-import { useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
 import Server from '../../datas/Server.js';
 import AllSearchItem from '../components/ui/AllSearchItem';
@@ -10,6 +10,7 @@ import "../../css/components/AllSearchItem.css";
 import "../../css/pages/AllSearch.css";
 import CategoryMenu from '../components/ui/CategoryMenu';
 import FooterNav from '../components/ui/FooterNav.jsx';
+import Header from '../layouts/Header.jsx';
 
 
 
@@ -27,6 +28,9 @@ function ProductListView() {
     const [cateLevel3Name, setCateLevel3Name] = useState();
 
 	const [cateSubNavId, setCateSubNavId] = useState(searchParams.get('ctglId'));
+
+	const Navigate = useNavigate();
+
 
 
 
@@ -53,13 +57,14 @@ function ProductListView() {
 
     return (
         <>
+		<Header/>
         <div className="mcom_tit_renew  react-area">
 			<div id="mcom_path_cate" className="mcom_category">
 						<div className="cate_path">
 							<span className="depth previous">
-								<a href="https://m.ssg.com/page/ssgfashion/_v19.ssg">
-									<span className="ctg_mn"><span className="ctg_txt">{cateNav.name}</span></span>
-								</a>
+								<Link to="https://m.ssg.com/page/ssgfashion/_v19.ssg" >
+									<span className="ctg_mn"><span className="ctg_txt">{cateNav && cateNav.name}여기가 어딘가</span></span>
+								</Link>
 							</span>
 							<span className="depth current">
 								
@@ -69,7 +74,7 @@ function ProductListView() {
 						</div>
 					</div>
 				<div className="mcom_tit_lft">
-								<a href="javascript:history.back();" className="btn_back clickable"><span className="sp_ctg_icon ctg_icon_back"><span className="blind">이전 페이지</span></span></a>
+								<Link to="#;" className="btn_back clickable"><span className="sp_ctg_icon ctg_icon_back" onClick={()=>{Navigate(-1)}}><span className="blind">이전 페이지</span></span></Link>
 							</div>
 						<div className="mcom_tit_rgt">
 						<div className="btn_cate btn_clip">

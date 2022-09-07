@@ -16,7 +16,7 @@ function CategoryMenu() {
 
     const cateLevel = Number(searchParams.get('categoryLevel'));
     const cateId = Number(searchParams.get('ctglId'));
-    console.log(cateLevel,cateId)
+    console.log("두번째 께 카테 아이디",cateLevel,cateId)
     const [cateMenu, setCateMenu] = useState();
     const url = `${Server.baseUrl}api/ctg/menu${cateLevel}/${cateId}`
     const [cateSubMenu, setCateSubMenu] = useState();
@@ -29,8 +29,12 @@ function CategoryMenu() {
             console.log("Response data :",Response.data.data)
             setCateMenu(Response.data.data)
             setCateSubMenu(Response.data.data[cateId-1].subCategoryList)
+            console.log("Response.data.data[cateId-1].subCategoryList",Response.data.data[cateId-1].subCategoryList)
+            console.log("cateMenu[cateId-1].category.name",cateMenu[cateId-1].category.name)
         })
     },[url, searchParams])
+
+    // console.log("cateMenu[cateId-1].category.name",cateMenu[cateId-1].category.name)
 
     return (  
         <div id="m_top_catelist" className="m_catelst_wrap_v2">
@@ -61,7 +65,7 @@ function CategoryMenu() {
            <div className="m_catelst">    
                 <ul className="lst_cate">
                     {
-                        cateSubMenu && cateSubMenu.map(cate=>(
+                        cateMenu && cateSubMenu && cateSubMenu.map(cate=>(
                             <li key={cate.id}>
                                 <Link to = {`/productList?name=${cateMenu[cateId-1].category.name}&categoryLevel=${cateLevel+1}&ctglId=${cate.id}`}><span>{cate.name}</span></Link>
                             </li>
