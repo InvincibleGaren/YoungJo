@@ -8,7 +8,7 @@ import jwt from 'jwt-decode';
 import Server from "../../datas/Server.js";
 import {SetLoginState} from "../globalState/SetLoginState"
 import { useContext } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function LogIn() {
     const setLogin = useContext(SetLoginState);
@@ -78,11 +78,10 @@ function LogIn() {
                     <RedButton title={"로그인"} clickCallback={LoginSubmit}/>
 
                     <div className="cmem_login_support">
-                        <a href="#">아이디 찾기</a>
-                        <a href="#">비밀번호 찾기</a>
-                        <a href="#">회원가입</a>
+                        <Link to="#">아이디 찾기</Link>
+                        <Link to="#">비밀번호 찾기</Link>
+                        <Link to="/join/simplejoin">회원가입</Link>
                     </div>
-
                     <SNSLogIn />
                 </div>
             </form>
