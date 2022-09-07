@@ -22,3 +22,7 @@ a:link {
 .cmtit_heading .cmtit_subtxt {
     margin-bottom: 0px !important;
 }
+
+.mcom_gnb .gnb_util .gnb_util_search .gnb_search_inpbox_inp{
+    background-color: #f5f5f5;
+}
