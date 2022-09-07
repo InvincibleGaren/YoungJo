@@ -183,7 +183,7 @@ function CartLogIn() {
                                 </span>
                             </div>
                             <span className="mnodr_control_delete">
-                                <a className="df cartTracking" name="btDelChekItemAll">품절상품삭제</a>
+                                <button className="df cartTracking" name="btDelChekItemAll">품절상품삭제</button>
                             </span>
                         </div>
                         

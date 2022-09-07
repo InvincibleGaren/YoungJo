@@ -45,8 +45,8 @@ function CartItem({cartItem, totalPrice, setTotalPrice, isCheck, setIsCheck}) {
     }, [productQty])
 
     const handleDelete = () => {
-        axios.delete(`${Server.baseUrl}api/cart/pdt/${cartItem.pdtId}`,
-            { headers: {
+        axios.delete(`${Server.baseUrl}api/cart/pdt/${cartItem.pdtId}`, { 
+                headers: {
                 'Authentication': access_token
               }}
             )
