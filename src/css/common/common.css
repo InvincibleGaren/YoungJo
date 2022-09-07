@@ -80,3 +80,8 @@ a:link {
 ol, ul {
     padding-left: 0rem;
 }
+
+
+.mcom_gnb .gnb_util .gnb_util_search .gnb_search_inpbox_inp{
+    background-color: #f5f5f5;
+}
