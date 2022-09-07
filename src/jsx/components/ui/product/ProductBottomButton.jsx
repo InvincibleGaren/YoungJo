@@ -6,8 +6,6 @@ import LikeButton from '../LikeButton';
 import { Link } from 'react-router-dom';
 import { LoginState } from '../../../globalState/LoginState';
 
-// import "../../../../css/components/ProductBottomButton.css"
-
 function ProductBottomButton({option1List, optionName1, optionName2, boardId, productData, LikeCheckState, setLikeCheckState}) {
 
   const login = useContext(LoginState);

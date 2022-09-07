@@ -22,16 +22,16 @@ const cardPromotionDatas = [
         text : "첫결제쿠폰/즉시할인",
         brand : "samsung"
     },
-    {
-        id : 3,
-        rate : 8,
-        price : "isNonView",
-        percent : "isView",
-        logo : samsungLogo,
-        card : "삼성카드",
-        text : "쓱페이결제시 청구할인",
-        brand : "samsung"
-    }
+    // {
+    //     id : 3,
+    //     rate : 8,
+    //     price : "isNonView",
+    //     percent : "isView",
+    //     logo : samsungLogo,
+    //     card : "삼성카드",
+    //     text : "쓱페이결제시 청구할인",
+    //     brand : "samsung"
+    // }
 ]
 
 export default cardPromotionDatas;

@@ -11,8 +11,6 @@ import HeaderTop from '../components/ui/HeaderTop';
 import Server from "../../datas/Server.js";
 import BackButton from '../components/ui/BackButton';
 
-// import '../../css/pages/Product.css'
-
 function Product() {
    const [productData, setProductData] = useState();
    const [likeCheck, setLikeCheck] = useState(false);
