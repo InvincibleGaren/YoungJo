@@ -6,40 +6,42 @@ const starimg = "data:image/svg+xml, %3Csvg width='16' height='16' xmlns='http:/
 const DSBIData = [
     
     {
-        id : 1,
-        imgUrl : img01,
-        brandName : "샤넬",
-        name : "[주문폭증으로 순차적 출고 예정][2021년 햅쌀]쌀가게 수향미 (특등급) 10KG" ,
-        //이름 길면 ...으로 표시되야함
-        salePrice : 31527 ,
-        salePercent : 43, 
-        star : starimg,
-        asterion : 4.7 ,
-        numOfReview : 420 
-
+        listIndex :0,
+        boardId : 1,
+        mainImgUrl : img01,
+        mainImgAlt : "쌀가게 수향미",
+        title : "[주문폭증으로 순차적 출고 예정][2021년 햅쌀]쌀가게 수향미 (특등급) 10KG" ,
+        brand : "샤넬",
+        totalReviewQty : 420,
+        totalScore : 4.7 ,
+        minPrice : 31527 ,
+        baardLike : false
     },
     {
-        id : 2,
-        imgUrl : img02,
-        brandName : "밀레(MILLET)",
-        name : "밀레 (22년 역시즌) 남성 헤비 페딩 구스다운 모음 2종 택1 슈흐H구스다운/콜마르H구스다운 MVQWD441/MVQWD443(추리가 479,000원)" ,
-        salePrice : 59092 ,
+        listIndex :1,
+        boardId : 2,
+        mainImgUrl : img02,
+        mainImgAlt : "남성 헤비 페딩 구스다운 모음 2종",
+        title : "밀레 (22년 역시즌) 남성 헤비 페딩 구스다운 모음 2종 택1 슈흐H구스다운/콜마르H구스다운 MVQWD441/MVQWD443(추리가 479,000원)" ,
+        brand : "밀레(MILLET)",
+        totalReviewQty : 46,
+        totalScore : 4.6 ,
+        minPrice : 59092 ,
         salePercent : 25, 
-        star : starimg,
-        asterion : 4.6 ,
-        numOfReview : 46 
-
+        baardLike : false     
     },
     {
-        id : 3,
-        imgUrl : img03,
-        brandName : "네파(NEPA)",
-        name : "남성 3칼라 네파 C-TR 카고 아이스 하프 팬츠 7H31762 시즌마감 최종가" ,
-        salePrice : 21250 ,
+        listIndex :2,
+        boardId : 3,
+        mainImgUrl : img03,
+        mainImgAlt : "카고 아이스 하프 팬츠",
+        title : "남성 3칼라 네파 C-TR 카고 아이스 하프 팬츠 7H31762 시즌마감 최종가" ,
+        brand : "네파(NEPA)",
+        totalReviewQty : 2,
+        totalScore : 5.0 ,
+        minPrice : 21250 ,
         salePercent : 15, 
-        star : starimg,
-        asterion : 5.0 ,
-        numOfReview : 2 
+        baardLike : false
     }
 ]
 

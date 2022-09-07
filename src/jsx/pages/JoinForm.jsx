@@ -7,6 +7,7 @@ import Footer from '../layouts/Footer';
 import Server from "../../datas/Server.js";
 import axios from "axios";
 import DaumPostcode from 'react-daum-postcode';
+import { useNavigate } from "react-router-dom";
 
 import "../../css/pages/JoinForm.css"
 
@@ -20,7 +21,7 @@ import "../../css/pages/JoinForm.css"
 // }
 
 function JoinForm() {
-
+    const navigate = useNavigate();
     // const [apiAddress, setApiAddress] = useState({
     //     city: "",
     //     street: "",
@@ -136,7 +137,7 @@ function JoinForm() {
             .then(LoginResult => { 
                 console.log(LoginResult);
                 alert("회원가입 되었습니다. 로그인해주세요");
-                window.location.href = "/login";
+                navigate("/login");
             })
             .catch(error => {
                 console.log(error);
@@ -186,7 +187,6 @@ function JoinForm() {
             setInputData({
                 ...inputData, [e.target.name]:e.target.value
             })
-            console.log(inputData);
         }
     }
     const IDInputBlur = (e) => {
@@ -237,6 +237,7 @@ function JoinForm() {
 
     // 주소 API 모달창에서 주소를 선택했을 때 호출되는 함수
     const selectAddressAPI = (data) => {
+        // console.log(data);
         let city = data.sido;
         let street = data.roadAddress;
         let detail = "";
