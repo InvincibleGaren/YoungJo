@@ -85,3 +85,7 @@ ol, ul {
 .mcom_gnb .gnb_util .gnb_util_search .gnb_search_inpbox_inp{
     background-color: #f5f5f5;
 }
+
+.cmitem_grid_lst{
+    width: 100%;
+}

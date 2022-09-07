@@ -35,7 +35,7 @@ function AllSearch() {
       
       if(query.query && inView)
       {
-         query.limit = Number(query.limit)+2;
+         query.limit = Number(query.limit)+15;
          setUrl({...query, limit: query.limit});
          // setQuery({...query, limit: query.limit});
       }
