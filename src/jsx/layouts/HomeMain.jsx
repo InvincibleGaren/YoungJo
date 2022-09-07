@@ -10,6 +10,8 @@ import NoticeBar from '../components/ui/NoticeBar';
 import CmgridFullBox from '../components/ui/CmgridFullBox';
 import MainBlank from '../components/MainBlank';
 import MainMiddleBanner from '../components/ui/MainMiddleBanner';
+import DepartmentBanner from '../components/ui/DepartmentBanner';
+import SmileClubYoutubeBanner from '../components/ui/SmileClubYoutubeBanner';
 
 function HomeMain() {
     return ( 
@@ -23,15 +25,19 @@ function HomeMain() {
                     <MainBlank height={20}/>
                     <NewService />
 
-                    {/* <UnderNewService /> */}
-                    {/* <HotBrand /> */}
+                    <UnderNewService />
+                    <MainBlank height={20}/>
+                    <DepartmentBanner />
+                    <CardPromotion />
+                    <MainBlank height={20}/>
+                    <SmileClubYoutubeBanner />
+                    <HotBrand />
+
                     {/* <DepartmentStoreBestItem /> */}
-                    {/* <CardPromotion /> */}
                     {/* <LetsTryOn /> */}
                     {/* <NoticeBar /> */}
                 </div>
             </div>
-            
         </div>
      );
 }

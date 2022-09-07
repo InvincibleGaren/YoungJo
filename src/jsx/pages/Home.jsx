@@ -15,7 +15,7 @@ function Home() {
                 <HeaderSlider />
                 <HeaderNav />
                 <HomeMain />
-                <div style={{height: "768px"}}></div>
+                <div style={{height: "100px"}}></div>
                 <Footer />
             </div>
             <FooterNav />

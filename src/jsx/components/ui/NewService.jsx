@@ -10,7 +10,6 @@ function NewService() {
                 subTitle= "새롭게 오픈한 서비스를 소개해드려요"
             />
             <NewServiceItem />
-            
         </>
     );
 }

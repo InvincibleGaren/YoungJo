@@ -93,33 +93,7 @@ ol, ul {
     padding-left: 0rem;
 }
 
-
-
-.cmitem_cardbnfit_cont {
-    /* font-size: 10px;
-    color: tomato; */
-}
-
-.cmitem_cardbnfit_cont a {
-    text-decoration: none;
-}
-
-.cmitem_cardbnfit_cont li {
-    list-style: none;
-}
-
-.cmitem_cardbnfit_cont em {
-    font-style: normal;
-    font-weight: bold;
-}
-
-.card_info_tx1 {
-    font-size: 14px;
-}
-
-.isView {
-    /* display: block; */
-}
-.isNonView {
-    display: none;
+/* CardPromotion */
+.cmitem_cardbenfit_unit {
+    margin-left: 5%;
 }
