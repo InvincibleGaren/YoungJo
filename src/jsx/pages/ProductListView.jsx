@@ -58,7 +58,7 @@ function ProductListView() {
 						<div className="cate_path">
 							<span className="depth previous">
 								<a href="https://m.ssg.com/page/ssgfashion/_v19.ssg">
-									<span className="ctg_mn"><span className="ctg_txt">{cateNav.name}</span></span>
+									<span className="ctg_mn"><span className="ctg_txt">{cateNav?.name}</span></span>
 								</a>
 							</span>
 							<span className="depth current">
